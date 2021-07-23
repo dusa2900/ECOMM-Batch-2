@@ -1,0 +1,13 @@
+
+<div [ngClass]="view" (click)="onClick()">
+    <p>{{info}}</p>
+    <p>{{title}}</p>
+    
+    <hr>
+    <ul>
+        <li *ngFor="let x of title1" (click)="clicked(x)" style="cursor: pointer;">{{x}}</li>
+    </ul>
+</div>
+
+
+
