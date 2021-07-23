@@ -1,0 +1,88 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 jumbotron bg-dark text-white mt-3">
+            <h1 class="text-center">
+                Create Account
+            </h1>
+            <form #ref="ngForm" (ngSubmit)="onSubmit(ref.value)">
+
+                <!-- //firstName -->
+                <div class="row mt-3">
+                    <div class="col-sm-4 form-group text-center" style="margin: auto">
+                        <label title="FirstName" for="firstname">First Name:</label>
+                    </div>
+                    <div class="col-sm-8 form-group" style="margin: auto">
+                        <input type="text" id="firstname" name="firstName" class="form-control"
+                            placeholder="Enter First Name..." ngModel>
+                    </div>
+                </div>
+
+                <!-- //email--id -->
+                <div class="row mt-3">
+                    <div class="col-sm-4 form-group text-center" style="margin: auto">
+                        <label title="Email" for="email"> Email Id:</label>
+                    </div>
+                    <div class="col-sm-8 form-group" style="margin: auto">
+                        <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email..."
+                            ngModel>
+                    </div>
+                </div>
+                <!-- //Mobilenumber -->
+                <div class="row mt-3">
+                    <div class="col-sm-4 form-group text-center" style="margin: auto">
+                        <label title="Mobile" for="mobile">Mobile Number:</label>
+                    </div>
+                    <div class="col-sm-8 form-group" style="margin: auto">
+                        <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Enter Mobile..."
+                            ngModel>
+                    </div>
+                </div>
+
+                <!-- //password  -->
+                <div class="row mt-3">
+                    <div class="col-sm-4 form-group text-center" style="margin: auto">
+                        <label for="Password">Password:</label>
+                    </div>
+                    <div class="col-sm-8 form-group" style="margin: auto">
+                        <input type="Password" id="Password" name="Password" class="form-control"
+                            placeholder=" Password" ngModel>
+                    </div>
+                </div>
+        
+                  <!-- //cf-password -->
+                <div class="row mt-3">
+                    <div class="col-sm-4 form-group text-center" style="margin: auto">
+                        <label for="cfpassword">confirm password:</label>
+                    </div>
+                    <div class="col-sm-8 form-group" style="margin: auto">
+                        <input type="password" id="cfpassword" name="cfpassword" class="form-control"
+                            placeholder="confirm Password..." ngModel>
+                    </div>
+                </div>
+        
+
+    
+
+              
+                <div class="row">
+                    <div class="col-sm-12 mt-3 text-center">
+                        <button type="submit" class="btn btn-warning pt-1">
+                            Register
+                        </button>
+                    </div>
+                </div>
+
+             
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3"></div>
+
+
+
+<!-- </div> -->

@@ -1,0 +1,162 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-black" style="background-color: rgb(0, 14, 14);" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="/assets/images/logo.png" style="width: 60px;height: 60px;" alt=""> <span>Batch-II</span></a>
+    <form class="d-flex example">
+      <input class="form-control"  type="text" placeholder="Search" aria-label="Search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <button class="navbar-toggler" type="button" style="background-color: #74bcdb;"  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "  ></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+      
+  
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 " >
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/login" style="color:white;">
+            <span >
+            Hello,{{login}}  <i class="fa fa-user-circle" style="color: #b2babd;font-size: 25px;"></i>  <br>
+            Accounts &Lists
+            </span></a>
+          
+        </li>
+       
+       
+        <!-- <li class="nav-item active">
+          <a class="nav-link " href="#"  style="color:white;">
+            <span class="fa fa-cart-plus" style="font-size: 30px;" > <span  class="badge badge-danger" style="font-size: 10px;">{{cartCount}}</span></span>
+            Cart</a>
+        </li> -->
+        <button routerLink="cart" class="btn btn-primary">
+          <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+          <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+      </button>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<div class="row" style="text-align: center; width: 100%; background-color:#74bcdb">
+  <div class="col-md-4">
+    <div class="row align-items-center">
+      <div class="dropdown">
+        <button class="dropbtn">APPARALS</button>
+        <div class="dropdown-content">
+          <a routerLink="/appearels/menswear">MEN</a>
+          <a  routerLink="/appearels/womenswear">WOMEN</a>
+          <a  routerLink="/appearels/kidswear">KIDS</a>
+        </div>
+    </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="row align-items-center">
+      <div class="dropdown">
+        <button class="dropbtn">ELECTRONICS</button>
+        <div class="dropdown-content">
+          <a href="#">MOBILES</a>
+          <a href="#">LAPTOPS</a>
+          <a href="#">HOME APPLIANCES</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="row align-items-center">
+      <div class="dropdown">
+        <button class="dropbtn">HOME FURNISHINGS</button>
+        <div class="dropdown-content">
+          <a href="#">KITCHEN</a>
+          <a href="#">FURNITURE</a>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+ <!---
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <img src="/assets/images/logo.png" alt=""></a>
+  </div>
+</nav>
+
+
+<header>
+
+  <form class="example" action="/action_page.php">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  <nav>
+    <ul>
+      <li>
+        
+        <span >
+          Hello,{{login}}  <i class="fa fa-user-circle"></i>  <br>
+          Accounts &Lists
+          </span>
+      </li>
+      <li>
+        
+        <span class="fa fa-cart-plus" style="font-size: 30px;" > <span  class="badge badge-warning" style="font-size: 10px;">{{cartCount}}</span> Cart</span>
+        
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<mat-toolbar class="toolbar" style="color: white;">
+    <span><img src="/assets/images/logo.png" height=45 width=65></span>
+    <a mat-button class="Namey">Batch-II</a>
+    <a mat-button><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for products.."
+        title="Type in a name"></a>
+    <span class="flex-spacer"></span>
+    <a mat-button><span class="fa fa-sign-in fa-lg"></span>Login</a>
+  </mat-toolbar>
+  <p style="background-color:rgb(100, 98, 98);">hello</p>
+ 
+  <div class="row" style="text-align: center; width: 100%; background-color: #1a1919;">
+    <div class="col-md-4">
+      <div class="row align-items-center">
+        <div class="dropdown">
+          <button class="dropbtn">APPARALS</button>
+          <div class="dropdown-content">
+            <a href="#">MEN</a>
+            <a href="#">WOMEN</a>
+            <a href="#">KIDS</a>
+          </div>
+      </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row align-items-center">
+        <div class="dropdown">
+          <button class="dropbtn">ELECTRONICS</button>
+          <div class="dropdown-content">
+            <a href="#">MOBILES</a>
+            <a href="#">LAPTOPS</a>
+            <a href="#">HOME APPLIANCES</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row align-items-center">
+        <div class="dropdown">
+          <button class="dropbtn">HOME FURNISHINGS</button>
+          <div class="dropdown-content">
+            <a href="#">KITCHEN</a>
+            <a href="#">FURNITURE</a>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+  -->
+  

@@ -1,0 +1,23 @@
+
+<div class="container-fluid" style="margin-top: 40px;">
+    <h1 class="text-info text-center mt-3">Forgot Password</h1>
+    <div class="row mt-3">
+        <div class="col-sm-4 "></div>
+        <div class="col-sm-4 jumbotron bg-dark text-white">
+          <form #forgotpassword="ngForm" (ngSubmit)=onForgotPassword(forgotpassword.value)>
+            <div class="form-group">
+              <label for="Mobilenumber">Enter your Mobilenumber</label>
+              <input type="text" name="Mobilenumber" id="Mobilenumber" class="form-control" ngModel>
+              <!-- <h6 class="text-danger">{{validUser}}</h6> -->
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-success">Reset password</button>
+            </div>
+           </form>
+         
+        </div>
+        <div class="col-sm-4 "></div>
+    </div>
+   
+  </div>
+  

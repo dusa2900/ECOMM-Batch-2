@@ -1,0 +1,60 @@
+.card p a{
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+  }
+  
+  .card {
+      height: 400px;
+      width: 400px;
+      margin: auto;
+      overflow: hidden;
+      box-shadow: 3px 3px 3px grey;
+    } 
+   
+   .card img {  
+      transition: 0.9s all ease-in-out; 
+      width: 100%;
+    } 
+           
+    .card:hover img { 
+      transform: scale(1.2,1.4); 
+    }
+  @media screen and (max-width:895px)
+  {
+    .home h2
+    {
+      font-size: 29px;
+    }
+  }
+  @media screen and (max-width:830px)
+  {
+    .home h2
+    {
+      font-size: 25px;
+    }
+  }
+  @media screen and (min-width:860px)
+  {
+    .col-md-4 .apparels p  .btn
+    {
+      margin-top: 45px;
+    }
+  }
+  @media screen and (max-width:768px)
+  {
+    .col-md-4 
+    {
+      margin-top: 15px;
+    }
+  }
+  @media screen and (max-width:760px)
+  {
+    .card
+    {
+      width: 380px;
+      height: 380px;
+    }
+  }
+  
+  /**cards styles*/
