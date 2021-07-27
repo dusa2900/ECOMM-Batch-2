@@ -12,7 +12,13 @@
 
         <mat-form-field class="example-full-width" appearance="fill" >
           <input matInput color="primary" placeholder="Full Name" 
-          name="full_name" formControlName="full_name"  >
+          name="full_name" formControlName="full_name"  [ngClass]="{ 'is-invalid': submitted && f.full_name.errors }" >
+          <div *ngIf="submitted && f.full_name.errors" class="invalid-feedback">
+            <div *ngIf="f.full_name.errors.required"> Name is required</div>
+            <div *ngIf="f.full_name.errors.minlength"> Name should have minimum 3 characters</div>
+            <div *ngIf="f.full_name.errors.pattern"> Name should have only characters</div>
+
+        </div>
         </mat-form-field>
       </div>
     </div>
@@ -21,7 +27,12 @@
         <mat-label style="font-size: 20px;font-weight: bold;">Email ID:</mat-label>
 
         <mat-form-field class="example-full-width" appearance="fill" >
-          <input matInput color="primary" placeholder="Email address" formControlName="email_id">
+          <input matInput color="primary" placeholder="Email address"  
+          formControlName="email_id" [ngClass]="{ 'is-invalid': submitted && f.email_id.errors }">
+          <div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
+            <div *ngIf="f.email_id.errors.required">Email is required</div>
+            <div *ngIf="f.email_id.errors.pattern">Email must be a valid email address@</div>
+        </div>
         </mat-form-field>
       </div>
     </div>
@@ -30,8 +41,14 @@
         <mat-label style="font-size: 20px;font-weight: bold;">Mobile:</mat-label>
 
         <mat-form-field class="example-full-width" appearance="fill" >
-          <input matInput color="primary" placeholder="Mobile Number" formControlName="mob_number" >
-        
+          <input matInput color="primary" placeholder="Mobile Number" minlength="10" maxlength="10"
+          formControlName="mob_number" [ngClass]="{ 'is-invalid': submitted && f.mob_number.errors }" >
+          <div *ngIf="submitted && f.mob_number.errors" class="invalid-feedback">
+            <div *ngIf="f.mob_number.errors.required">mobile number required</div>
+            <!-- <div *ngIf="f.mob_number.errors.minlength">mobile number should have 10 digits</div> -->
+
+            <div *ngIf="f.mob_number.errors.pattern">mobile number must be valid(6-9)</div>
+        </div>
         </mat-form-field>
       </div>
     </div>

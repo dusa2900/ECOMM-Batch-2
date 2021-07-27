@@ -1,6 +1,8 @@
 import { Component,OnInit} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
+
+
 import { UserProfileService } from '../../../SERVICES/user-profile.service';
 
 
@@ -12,11 +14,12 @@ import { UserProfileService } from '../../../SERVICES/user-profile.service';
 export class UserProfileComponent implements OnInit {
 
  profile:any={};
+ submitted = false;
  profileForm=new FormGroup(
    {  
-    full_name:new FormControl(''),
-    email_id:new FormControl(''),
-    mob_number:new FormControl('',[Validators.required, Validators.pattern('[10,]\\d{10}')]),
+    full_name:new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z ]*$')]),
+    email_id:new FormControl('',[Validators.required, Validators.pattern('[^@]+@[^@]+\.[a-zA-Z]{2,6}')]),
+    mob_number:new FormControl('',[Validators.required, Validators.pattern('[6-9]\\d{9}')]),
     address_line1:new FormControl(''),
     address_line2:new FormControl(''),
     city:new FormControl(''),
@@ -42,7 +45,7 @@ export class UserProfileComponent implements OnInit {
 
     
   }
-
+  get f() { return this.profileForm.controls; }
 
 
 getProfile()
@@ -70,6 +73,12 @@ getProfile()
     )
     
   
+    this.submitted = true;
+    // stop here if form is invalid
+    if (this.profileForm.invalid) {
+      return;
+    }
+
   }
   )
 }
@@ -77,14 +86,21 @@ getProfile()
 
 
 updateProfile() {
-  console.log('form values to update', this.profileForm.value);
+  
   this._user.updateprofile(this.profileForm.value).subscribe( (res)=>
   {
     console.log(res);
   })
+
  
 
 }
+
+onCancel()
+{
+  
+}
+
 
 
   }

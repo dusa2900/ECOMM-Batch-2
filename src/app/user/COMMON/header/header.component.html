@@ -14,17 +14,25 @@
   
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 " >
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/login" style="color:white;">
+          <a class="nav-link active" aria-current="page" [matMenuTriggerFor]="menu" #menuTrigger style="color:white;">
             <span >
             Hello,{{login}}  <i class="fa fa-user-circle" style="color: #b2babd;font-size: 25px;"></i>  <br>
             Accounts &Lists
+            
             </span></a>
-          
+            <mat-menu #menu="matMenu" >
+              <div class="div" style="width: 150px; text-align: center;">
+                
+              <p mat-menu-item routerLink="/login" style=" text-align: center; font-weight: bold;">Sign In</p>
+              <p mat-menu-item (click)="openDialog()" style=" text-align: center; font-weight: bold;" *ngIf="showUserList">User Profile</p>
+              <p mat-menu-item (click)="openDialog()" style=" text-align: center; font-weight: bold;" *ngIf="showUserList">Sign Out</p>
+              </div>
+            </mat-menu>
         </li>
        
        
         <li class="nav-item active">
-          <a class="nav-link " routerLink="/user"  style="color:white;">
+          <a class="nav-link "   style="color:white;"  >
             <span class="fa fa-cart-plus" style="font-size: 30px;" > <span  class="badge badge-danger" style="font-size: 10px;">{{cartCount}}</span></span>
             Cart</a>
         </li>

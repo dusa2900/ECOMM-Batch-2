@@ -11,7 +11,7 @@ export class UserProfileService {
   constructor(private _http:HttpClient){}
 
   public getprofile():Observable<any>{   
-    console.log(" get profile service"); 
+    
     return this._http.get(this.apiUrl);   
 
      
@@ -20,7 +20,7 @@ export class UserProfileService {
 
 
       updateprofile(res:any):Observable<any>{
-        console.log("update profile service",res);
+       
       
         return this._http.put(this.apiUrl,res);
       

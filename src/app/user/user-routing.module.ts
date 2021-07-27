@@ -18,7 +18,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-         component:UserProfileComponent
+         component:HomeComponent
        },
       {
         path: 'login',
@@ -38,7 +38,7 @@ const routes: Routes = [
       },
       {
         path:'user',
-        component:ProfileComponent
+        component:UserProfileComponent
       }
 
     ]
