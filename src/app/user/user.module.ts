@@ -10,7 +10,6 @@ import { RegisterComponent } from './LOGIN/register/register.component';
 import { LoginComponent } from './LOGIN/login/login.component';
 import { ForgetComponent } from './LOGIN/forget/forget.component';
 import { ResetComponent } from './LOGIN/reset/reset.component';
-import { UserProfileComponent } from './COMMON/user-profile/user-profile.component';
 import { MensWearComponent } from './PRODUCTS/APPEARELS/mens-wear/mens-wear.component';
 import { WomensWearComponent } from './PRODUCTS/APPEARELS/womens-wear/womens-wear.component';
 import { KidsWearComponent } from './PRODUCTS/APPEARELS/kids-wear/kids-wear.component';
@@ -31,6 +30,7 @@ import { ElectronicsComponent } from './PRODUCTS/ELECTORNIC/electronics/electron
 import { HomeKitchenComponent } from './PRODUCTS/HOME&KITCHEN/home-kitchen/home-kitchen.component';
 import {  HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { UserprofileComponent } from './COMMON/userprofile/userprofile.component';
 
 
 
@@ -42,7 +42,6 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     ForgetComponent,
     ResetComponent,
-    UserProfileComponent,
     MensWearComponent,
     WomensWearComponent,
     KidsWearComponent,
@@ -59,6 +58,7 @@ import { ToastrModule } from 'ngx-toastr';
     AppearelsComponent,
     ElectronicsComponent,
     HomeKitchenComponent,
+    UserprofileComponent,
  
   ],
   imports: [

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddCartComponent } from './COMMON/add-cart/add-cart.component';
+import { UserprofileComponent } from './COMMON/userprofile/userprofile.component';
 import { HomeComponent } from './HOME/home/home.component';
 import { MainComponent } from './HOME/main/main.component';
 import { ForgetComponent } from './LOGIN/forget/forget.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: '',
         component:HomeComponent 
+      },
+      {
+        path: 'user',
+        component:UserprofileComponent 
       },
       {
         path: 'login',

@@ -22,5 +22,21 @@ register(value:any):Observable<any>{
   return this.hc.post('http',value)
   
 }
+public apiUrl:string="http://localhost:4000/profile";
 
+public getprofile():Observable<any>{   
+  console.log(" get profile service"); 
+  return this.hc.get(this.apiUrl);   
+
+   
+
+    } 
+
+
+    updateprofile(res:any):Observable<any>{
+      console.log("update profile service",res);
+    
+      return this.hc.put(this.apiUrl,res);
+    
+    }
 }
