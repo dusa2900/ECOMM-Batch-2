@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import{AngmaterialModule} from '../ANGMATERIAL/angmaterial.module';
 
 import { USERRoutingModule } from './user-routing.module';
 import { HeaderComponent } from './COMMON/header/header.component';
@@ -29,6 +30,8 @@ import { AppearelsComponent } from './PRODUCTS/APPEARELS/appearels/appearels.com
 import { ElectronicsComponent } from './PRODUCTS/ELECTORNIC/electronics/electronics.component';
 import { HomeKitchenComponent } from './PRODUCTS/HOME&KITCHEN/home-kitchen/home-kitchen.component';
 import {  HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -55,12 +58,13 @@ import {  HttpClientModule } from '@angular/common/http';
     CarouselComponent,
     AppearelsComponent,
     ElectronicsComponent,
-    HomeKitchenComponent
+    HomeKitchenComponent,
+ 
   ],
   imports: [
-    CommonModule,HttpClientModule,
-    USERRoutingModule,
-MatToolbarModule,FormsModule
+    CommonModule,HttpClientModule, ToastrModule.forRoot(),
+    USERRoutingModule,AngmaterialModule,
+MatToolbarModule,FormsModule,ReactiveFormsModule 
 
   ]
 })

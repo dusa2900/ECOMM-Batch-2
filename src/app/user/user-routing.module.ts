@@ -40,6 +40,7 @@ const routes: Routes = [
         path: 'register',
         component:RegisterComponent
       },
+    
       {
         path: 'reset',
         component:ResetComponent
@@ -52,7 +53,7 @@ const routes: Routes = [
    
          
       {
-        path: 'kidswear',
+        path: 'appearels/kidswear',
         component:KidsWearComponent
       },
       {
@@ -67,45 +68,43 @@ const routes: Routes = [
   // ELECTORNICS
   {
     path:'electronics',
-    component:ElectronicsComponent,
-    children: [
+    component:ElectronicsComponent},
+
    
   {
-    path: 'homeappliances',
+    path: 'electronics/homeappliances',
     component:HomeAppliancesComponent
   },
   {
-    path: 'laptops',
+    path: 'electronics/laptops',
     component:LaptopsComponent
   },
   {
-    path: 'mobiles',
+    path: 'electronics/mobiles',
     component:MobilesComponent
   },
-]
-},
+
+
 
 ///HOME AND KITCHEN
 
 {
   path:'home-kitchen',
-  component:HomeKitchenComponent,
-  children: [
+  component:HomeKitchenComponent},
+
   
 {
-  path: 'home-furnituring',
+  path: 'home-kitchen/home-furnituring',
   component:HomeFurnituringsComponent
 },
 {
-  path: 'kitchen-items',
+  path: 'home-kitchen/kitchen-items',
   component:KitchenItemsComponent
 }
 ]
 }
     ]
-  }
-];
-
+ 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

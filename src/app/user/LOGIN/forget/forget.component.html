@@ -1,23 +1,43 @@
-
 <div class="container-fluid" style="margin-top: 40px;">
-    <h1 class="text-info text-center mt-3">Forgot Password</h1>
-    <div class="row mt-3">
-        <div class="col-sm-4 "></div>
-        <div class="col-sm-4 jumbotron bg-dark text-white">
-          <form #forgotpassword="ngForm" (ngSubmit)=onForgotPassword(forgotpassword.value)>
-            <div class="form-group">
-              <label for="Mobilenumber">Enter your Mobilenumber</label>
-              <input type="text" name="Mobilenumber" id="Mobilenumber" class="form-control" ngModel>
-              <!-- <h6 class="text-danger">{{validUser}}</h6> -->
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-success">Reset password</button>
-            </div>
-           </form>
-         
+  <h1 class="text-info text-center mt-3">Forgot Password</h1>
+  <div class="row mt-3">
+    <div class="col-sm-4 "></div>
+    <div class="col-sm-4 jumbotron bg-dark text-white">
+      <form #forgotpassword="ngForm" (ngSubmit)=onForgotPassword(forgotpassword.value)>
+        <div class="form-group" id="mobilenumber">
+          <label for="mobilenumber">Enter your Registered Mobilenumber</label><br><br>
+
+          <input ngModel id="mobilenumber"  class="mbinput" pattern="^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$" 
+          #phNo="ngModel" name="mobilenumber"placeholder="mobilenumber" type="text"  minlength="10" maxlength="10">
         </div>
-        <div class="col-sm-4 "></div>
-    </div>
-   
-  </div>
+
+<div id="mobilenumber">
+        <div *ngIf="phNo.invalid&&(phNo.dirty||phNo.touched)" class="alert alert-danger">
+          <div *ngIf="phNo.errors?.required">Phone Number is required</div>
+          <div *ngIf="phNo.errors?.minlength">Phone Number atleast 10 Digits</div>
+          <div *ngIf="phNo.errors?.pattern">
+            Phone number is not valid
+          </div>
+        </div>
+      </div>
+        <br>
+        <br>
+        <br>
+
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-success">Reset password</button>
+        </div>
+      </form>
+
+      <button (click)="showToaster()">
+        Show Toaster
+    </button>
   
+    </div>
+    <div class="col-sm-4 "></div>
+  </div>
+</div>
+
+
+
