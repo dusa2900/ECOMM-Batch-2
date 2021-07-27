@@ -75,20 +75,6 @@
       "id": 15
     },
     {
-      "name": "kamal",
-      "age": "98",
-      "gender": "male",
-      "email": "kamal@gmail.com",
-      "designation": "actor",
-      "phone": "8027289987",
-      "address": {
-        "Country": "India",
-        "State": "Maharashtra",
-        "City": "Mumbai"
-      },
-      "id": 16
-    },
-    {
       "name": "chiranjeevi",
       "age": "76",
       "gender": "male",
@@ -101,6 +87,20 @@
         "City": "Hyderabad"
       },
       "id": 17
+    },
+    {
+      "name": "fdhuid",
+      "age": "223",
+      "gender": "male",
+      "email": "sdsfdsd",
+      "designation": "dssd",
+      "phone": "sdfsf",
+      "address": {
+        "Country": "USA",
+        "State": "Delhi",
+        "City": "Agra"
+      },
+      "id": 22
     }
   ]
 }

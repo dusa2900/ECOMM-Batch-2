@@ -1,0 +1,74 @@
+nav
+{
+    width: 100%;
+    height: 40px;
+    background-color: rgb(100, 97, 97);
+}
+nav 
+{
+    padding-left: 400px;
+}
+
+/*carousel*/
+.carousel
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    width: 95%;
+    margin: auto;
+}
+.carousel img
+{
+    width: 100%;
+    height: 380px;
+}
+@media screen and (max-width:1110px)
+{
+    .carousel img
+    {
+        height: 330px;
+    }
+}
+@media screen and (max-width:900px)
+{
+    .carousel img
+    {
+        height: 320px;
+    }
+}
+@media screen and (max-width:800px)
+{
+    .carousel img
+    {
+        height: 290px;
+    }
+}
+@media screen and (max-width:700px)
+{
+    .carousel img
+    {
+        height: 260px;
+    }
+}
+@media screen and (max-width:600px)
+{
+    .carousel img
+    {
+        height: 230px;
+    }
+}
+@media screen and (max-width:500px)
+{
+    .carousel img
+    {
+        height: 220px;
+    }
+}
+@media screen and (max-width:400px)
+{
+    .carousel img
+    {
+        height: 200px;
+    }
+}

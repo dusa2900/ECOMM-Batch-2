@@ -1,0 +1,18 @@
+{
+  "profile": {
+    "full_name": "dusa",
+    "email_id": "dusa@gmail.com",
+    "mob_number": "8986923",
+    "address_line1": "7-91",
+    "address_line2": "vsdvssd",
+    "city": "karimnagar",
+    "state": "Telangana",
+    "pin_code": "606231",
+    "alt_number": "42352352",
+    "type": {
+      "home": true,
+      "office": "",
+      "others": ""
+    }
+  }
+}

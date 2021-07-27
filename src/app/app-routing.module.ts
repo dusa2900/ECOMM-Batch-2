@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ParentComponent } from './decorator/parent/parent.component';
 
 const routes: Routes = [
   {
     path:'',
-    loadChildren: ()=> import('./user/user.module').then( m=> m.UserModule)
+    loadChildren:()=>import('./USER/user.module').then( m=>m.USERModule)
   },
   {
-    path:'parent',
-    component:ParentComponent
+    path:'admin',
+    loadChildren:()=>import('./ADMIN/admin.module').then( m=>m.AdminModule)
   }
 ];
 
