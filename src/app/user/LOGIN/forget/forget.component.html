@@ -3,26 +3,23 @@
   <div class="row mt-3">
     <div class="col-sm-4 "></div>
     <div class="col-sm-4 jumbotron bg-dark text-white">
-      <form #forgotpassword="ngForm" (ngSubmit)=onForgotPassword(forgotpassword.value)>
-        <div class="form-group" id="mobilenumber">
-          <label for="mobilenumber">Enter your Registered Mobilenumber</label><br><br>
-
-          <input ngModel id="mobilenumber"  class="mbinput" pattern="^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$" 
-          #phNo="ngModel" name="mobilenumber"placeholder="mobilenumber" type="text"  minlength="10" maxlength="10">
-        </div>
-
-<div id="mobilenumber">
-        <div *ngIf="phNo.invalid&&(phNo.dirty||phNo.touched)" class="alert alert-danger">
-          <div *ngIf="phNo.errors?.required">Phone Number is required</div>
-          <div *ngIf="phNo.errors?.minlength">Phone Number atleast 10 Digits</div>
-          <div *ngIf="phNo.errors?.pattern">
-            Phone number is not valid
+      <form  [formGroup]="forgotpassword" (ngSubmit)="onForgotPassword(forgotpassword.value)">
+        <div class="form-group ">
+          <div class="row">
+              <div class="col-md-4 form-group text-center" >
+                  <label  for="mobile"> Mobilenumber:</label>
+              </div>
+              <div class="col-md-8 form-group">
+          <input type="text" formControlName="mobile" id="mobile" class="form-control" 
+           minlength="10" maxlength="10" [ngClass]="{'is-invalid': submitted && f.mobile.errors }" />
+          <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+              <div *ngIf="f.mobile.errors.required">mobile number required</div>
+              <div *ngIf="f.mobile.errors.pattern">mobile number must be valid(6-9)and 10 digits</div>
           </div>
-        </div>
+              </div>
+          </div>
       </div>
-        <br>
-        <br>
-        <br>
+      
 
 
         <div class="text-center">
