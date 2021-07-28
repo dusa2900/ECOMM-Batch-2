@@ -1,4 +1,5 @@
-
+<br>
+<br>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-4 "></div>
@@ -6,19 +7,73 @@
         <div class="col-sm-4 mt-5">
             <div class="jumbotron bg-dark text-white">
               <h1 class="text-center">Login</h1>
-                <form #ref="ngForm"  (ngSubmit)="onSubmit(ref.value)">
+              <form [formGroup]="LoginForm" (ngSubmit)="onSubmit(LoginForm.value)">
                  
-                  <div class="form-group mt-2">
+                  <!-- <div class="form-group mt-2">
                     <label for="Mobilenumber" class="text-left">Mobilenumber:</label>
                     <input type="text" name="Mobilenumber" id="Mobilenumber" class="form-control" ngModel>
-                  </div>
-                  <div class="form-group">
+                  </div> -->
+                  <div class="form-group ">
+                    <div class="row">
+                        <div class="col-md-4 form-group text-center" >
+                            <label  for="mobile"> Mobilenumber:</label>
+                        </div>
+                        <div class="col-md-8 form-group">
+                    <input type="text" formControlName="mobile" id="mobile" class="form-control" 
+                     minlength="10" maxlength="10" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                    <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                        <div *ngIf="f.mobile.errors.required">mobile number required</div>
+                        <div *ngIf="f.mobile.errors.pattern">mobile number must be valid(6-9)</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                  <!-- <div class="form-group">
                     <label for="password" class="text-left">Password:</label>
                     <input type="password" name="password" id="password" class="form-control" ngModel>
-                  </div>
+                  </div> -->
+
+
+                  <div class="form-group ">
+                    <div class="row">
+                        <div class="col-md-4 form-group text-center" >
+                            <label for="Password"> Password:</label>
+                        </div>
+                        <div class="col-md-8 form-group">
+                    <input type="password" formControlName="password" id="Password" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" [type]="hide? 'password':'text'" />
+                    <!-- <i class="material-icons" (click)="hide= !hide">{{hide ? 'visibility':'visibility_off'}}</i> -->
+       
+                       
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.PasswordStrengthValidator">Password must be one special character,one small and one capital letter</div>
+                    </div>
+                    <div class="errors" style="color:rgb(241, 55, 55)" *ngIf="LoginForm.get('password').invalid && (LoginForm.get('password').touched || LoginForm.get('password').dirty)">
+
+                        <div *ngIf="LoginForm.get('password').hasError('required')">
+                            password is required
+                        </div>
+                
+                        <div *ngIf="LoginForm.get('password').errors.minlength">
+                            Password must be at least 8 characters
+                        </div>
+                
+                        <div class="error-text" *ngIf="LoginForm.get('password').hasError('passwordStrength')">
+                            {{LoginForm.get('password').errors['passwordStrength']}}
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+
+
                   <div class="form-group text-center">
                     <button type="submit" class="btn btn-warning">login</button>
                   </div>
+
+
                   </form>
                   <div class="row">
                     
@@ -35,3 +90,4 @@
         <div class="col-sm-4 "></div>
     </div>
   </div>
+

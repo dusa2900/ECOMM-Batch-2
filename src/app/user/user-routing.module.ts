@@ -22,13 +22,25 @@ import { KitchenItemsComponent } from './PRODUCTS/HOME&KITCHEN/kitchen-items/kit
 
 const routes: Routes = [
   {
-    path:'',
-    component:MainComponent,
+    path: 'main',
+    component:MainComponent ,
     children: [
       {
         path: '',
         component:HomeComponent 
+      }
+    ]
+  },
+  {
+    path:'',
+    component:MainComponent,
+    children: [
+      
+      {
+        path: '',
+        component:HomeComponent 
       },
+    
       {
         path: 'user',
         component:UserprofileComponent 

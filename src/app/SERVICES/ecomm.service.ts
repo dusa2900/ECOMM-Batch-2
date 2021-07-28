@@ -10,11 +10,18 @@ import { Observable } from 'rxjs';
 export class EcommService {
 
   constructor(private hc:HttpClient) { }
+
+  //login
+login(value:any):Observable<any>{
+console.log("login service",value);
+return this.hc.post('',value)
+
+}
 //forgotpassword//
   forgotpassword(value:any):Observable<any>{
     console.log("forgotpassword service",value);
     
-    return this.hc.get('h')
+    return this.hc.post('h',value)
   }
 //register//
 register(value:any):Observable<any>{

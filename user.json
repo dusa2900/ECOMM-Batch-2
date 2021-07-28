@@ -1,18 +1,8 @@
 {
   "profile": {
-    "full_name": "dusa",
-    "email_id": "dusa@gmail.com",
-    "mob_number": "8986923666",
-    "address_line1": "7-91,hyderabad",
-    "address_line2": "vsdvssd,chennai",
-    "city": "karimnagar",
-    "state": "Telangana",
-    "pin_code": "606231",
-    "alt_number": "42352352",
-    "type": {
-      "home": "",
-      "office": "",
-      "others": ""
-    }
+    "full_name": "pavan",
+    "email_id": "pavan@gmail.com",
+    "mob_number": "8986923666"
+  
   }
 }
