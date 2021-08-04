@@ -21,19 +21,19 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      Name: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*$')]],
+      firstname: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*$')]],
       mobile: ['', Validators.compose([Validators.required, Validators.pattern('[6-9]\\d{9}')])],
 
       email: ['', [Validators.required, Validators.pattern('[^@]+@[^@]+\.[a-zA-Z]{2,6}')]],
       password: [null, Validators.compose([
         Validators.required, Validators.minLength(8), PasswordStrengthValidator])],
 
-      confirmPassword: [null, Validators.compose([
-        Validators.required, Validators.minLength(8), PasswordStrengthValidator])],
+      // confirmPassword: [null, Validators.compose([
+      //   Validators.required, Validators.minLength(8), PasswordStrengthValidator])],
 
       acceptTerms: [false, Validators.requiredTrue]
     }, {
-      validator: MustMatch('password', 'confirmPassword')
+      // validator: MustMatch('password', 'confirmPassword')
     });
   }
 
@@ -44,17 +44,18 @@ export class RegisterComponent implements OnInit {
     
     this.ecomm.register(value).subscribe((res: any)=>      {
        
-//       if (res && res.status == 'success') {
+      if ( res== 'ACCEPTED') {
      
-//         this.toastr.success('User created  successfully')
+        this.toastr.success('User created  successfully')
+        this.router.navigate(['/login']);
 
-//         this.router.navigate(['/login']);
-//       }
-// else{
-//         this.toastr.error('User Already Exists')
+       
+      }
+else{
+        this.toastr.error('User Already Exists')
 
-// }
-     this.toastr.error('User Already Exists')
+}
+    //  this.toastr.error('User Already Exists')
 
     }
  

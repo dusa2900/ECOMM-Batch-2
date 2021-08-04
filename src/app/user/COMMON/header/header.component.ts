@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-    import {​​​ MatDialog }​​​ from'@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 import { CartService } from 'src/app/SERVICES/cart.service';
+import { EcommService } from 'src/app/SERVICES/ecomm.service';
 import { UserprofileComponent } from '../userprofile/userprofile.component';
 
 @Component({
@@ -11,26 +13,45 @@ import { UserprofileComponent } from '../userprofile/userprofile.component';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-login:string="Sign in";
-// cartCount:number=0;
 
-public totalItem : number = 0;
-constructor(private cartService : CartService,public dialog: MatDialog) { }
-
-ngOnInit() {
-  this.cartService.getProducts()
-  .subscribe(res=>{
-    this.totalItem = res.length;
-  })
-}
+  title: string = "Sign in";
+  authorised: boolean = false;
+  public totalItem: number = 0;
+  constructor(private cartService: CartService, public dialog: MatDialog,private ecomm:EcommService,private router: Router) { }
 
 
-openDialog() {​​​
-const dialogRef = this.dialog.open(UserprofileComponent);
-dialogRef.afterClosed().subscribe(result=> {​​​
-console.log(`Dialog result: ${​​​result}​​​`);
-    }​​​);
-  }​​​
 
+  ngOnInit() {
+    this.getuser()
+    this.cartService.getProducts()
+      .subscribe(res => {
+        this.totalItem = res.length;
+      })
+  }
+
+
+  openDialog() {
+    const dialogRef = this.dialog.open(UserprofileComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}​​​`);
+    });
+  }
+
+  logout() {
+    localStorage.clear();
+    this.authorised = false;
+    this.title = 'Sign In'
+    this.router.navigate([''])
+  }
+
+
+  getuser()
+{​​​
+this.ecomm.getprofile().subscribe( res=>{​​​
+console.log('username',res.Name)
+this.title=`${​​​res.Name}​​​`;
+this.authorised=true;
+}​​​)
+}​​​
 
 }

@@ -22,16 +22,17 @@
                 <div class="form-group">
                     <br>
           <div class="row">
+
                     <div class="col-md-4 form-group text-center" >
-                        <label  for="Name"> Name:</label>
+                        <label  for="firstname"> Name:</label>
                     </div>
                     <div class="col-md-8 form-group">
-                    <input type="text" formControlName="Name" id="Name" class="form-control" 
-                    minlength="3"[ngClass]="{ 'is-invalid': submitted && f.Name.errors }" />
-                    <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
-                        <div *ngIf="f.Name.errors.required"> Name is required</div>
-                        <div *ngIf="f.Name.errors.minlength"> Name should have minimum 3 characters</div>
-                        <div *ngIf="f.Name.errors.pattern"> Name should have only characters</div>
+                    <input type="text" formControlName="firstname" id="firstname" class="form-control" 
+                    minlength="3"[ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
+                    <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstname.errors.required"> Name is required</div>
+                        <div *ngIf="f.firstname.errors.minlength"> Name should have minimum 3 characters</div>
+                        <div *ngIf="f.firstname.errors.pattern"> Name should have only characters</div>
             
                     </div>
                     </div>
@@ -65,7 +66,7 @@
                 minlength="10" maxlength="10" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
                 <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
                     <div *ngIf="f.mobile.errors.required">mobile number required</div>
-                    <div *ngIf="f.mob_number.errors.pattern">mobile number must be valid(6-9)</div>
+                    <div *ngIf="f.mobile.errors.pattern">mobile number must be valid(6-9)</div>
                 </div>
                     </div>
                 </div>
@@ -106,7 +107,8 @@
                 </div>
                     </div>
                 </div>
-         
+                
+<!--          
                 <div class="form-group ">
                     <div class="row">
                         <div class="col-md-4 form-group text-center" >
@@ -120,7 +122,7 @@
                     </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
            
           
             
@@ -141,4 +143,4 @@
 
 
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->

@@ -11,22 +11,28 @@ export class EcommService {
 
   constructor(private hc:HttpClient) { }
 
-  //login
-login(value:any):Observable<any>{
-console.log("login service",value);
-return this.hc.post('',value)
 
-}
+ 
+    //login
+login(value:any):Observable<any>{​​​
+return this.hc.post(this.apiUrl,value)
+}​​​
+///login for token get
+loggedIn()
+{​​​
+return !!localStorage.getItem('user');
+}​​​
+
 //forgotpassword//
   forgotpassword(value:any):Observable<any>{
     console.log("forgotpassword service",value);
     
-    return this.hc.post('h',value)
+    return this.hc.get('h')
   }
 //register//
 register(value:any):Observable<any>{
   console.log("register service",value);
-  return this.hc.post('http',value)
+  return this.hc.post<any>("http://shoppingapp-env.eba-itwffxiz.ap-south-1.elasticbeanstalk.com/registration/register",value)
   
 }
 public apiUrl:string="http://localhost:4000/profile";

@@ -22,18 +22,22 @@ export class LoginComponent implements OnInit {
   }
     )}
     get f() { return this.LoginForm.controls; }
+
   onSubmit(value:any){
-
-    this.ecomm.login(value).subscribe((res: any)=>      {
-      console.log("login",value);
-
-    }
+    this.ecomm.login(value).subscribe(
+res=>
+       {​​​
+console.log("login",res);
+localStorage.setItem('user',JSON.stringify(res));
+this.submitted = true;
+this.router.navigate(['/main'])
+        }​​​,
+err=>
+console.log(err)
     )
-    this.submitted = true;
     // stop here if form is invalid
     if (this.LoginForm.invalid) {
       return;
     }
-    this.router.navigate(['/main'])
   }
 }

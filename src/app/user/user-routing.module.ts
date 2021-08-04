@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../Auth/auth.guard';
 import { AddCartComponent } from './COMMON/add-cart/add-cart.component';
+import { ReturnComponent } from './COMMON/return/return.component';
 import { UserprofileComponent } from './COMMON/userprofile/userprofile.component';
 import { HomeComponent } from './HOME/home/home.component';
 import { MainComponent } from './HOME/main/main.component';
@@ -21,106 +23,42 @@ import { HomeKitchenComponent } from './PRODUCTS/HOME&KITCHEN/home-kitchen/home-
 import { KitchenItemsComponent } from './PRODUCTS/HOME&KITCHEN/kitchen-items/kitchen-items.component';
 
 const routes: Routes = [
-  {
-    path: 'main',
-    component:MainComponent ,
-    children: [
-      {
-        path: '',
-        component:HomeComponent 
-      }
-    ]
-  },
-  {
-    path:'',
-    component:MainComponent,
-    children: [
-      
-      {
-        path: '',
-        component:HomeComponent 
-      },
-    
-      {
-        path: 'user',
-        component:UserprofileComponent 
-      },
-      {
-        path: 'login',
-        component:LoginComponent 
-      },
-      {
-        path: 'forget',
-        component:ForgetComponent
-      },
-      {
-        path: 'register',
-        component:RegisterComponent
-      },
-    
-      {
-        path: 'reset',
-        component:ResetComponent
-      },
-      {path:'cart', component: AddCartComponent},
-      //APPEARELS
-      {
-        path:'appearels',
-        component:AppearelsComponent},
-   
-         
-      {
-        path: 'appearels/kidswear',
-        component:KidsWearComponent
-      },
-      {
-        path: 'appearels/menswear',
-        component:MensWearComponent
-      },
-      {
-        path: 'appearels/womenswear',
-        component:WomensWearComponent
-      },
 
-  // ELECTORNICS
-  {
-    path:'electronics',
-    component:ElectronicsComponent},
-
-   
-  {
-    path: 'electronics/homeappliances',
-    component:HomeAppliancesComponent
-  },
-  {
-    path: 'electronics/laptops',
-    component:LaptopsComponent
-  },
-  {
-    path: 'electronics/mobiles',
-    component:MobilesComponent
-  },
-
-
-
+  {​​​
+path:'main',   component:MainComponent ,    canActivate:[AuthGuard],
+children: [
+   {​​​ path:'',component:HomeComponent }​​​
+ ]
+}​​​,
+{​​​  path:'',  component:MainComponent,
+children: [
+           {​​​ path:'',component:HomeComponent  }​​​,    
+           {​​​ path:'user', component:UserprofileComponent ,canActivate:[AuthGuard] }​​​,
+           {​​​ path:'forget',component:ForgetComponent}​​​,
+           {​​​ path:'login', component:LoginComponent   }​​​,
+           {​​​ path:'register',component:RegisterComponent}​​​,
+           {​​​ path:'reset', component:ResetComponent }​​​,
+           {​​​path:'cart', component:AddCartComponent,canActivate:[AuthGuard]}​​​,
+           {​​​path:'return', component:ReturnComponent,canActivate:[AuthGuard]}​​​,
+//APPEARELS
+           {​​​ path:'appearels',component:AppearelsComponent}​​​,
+           {​​​ path:'appearels/kidswear',component:KidsWearComponent}​​​,
+           {​​​ path:'appearels/menswear',component:MensWearComponent}​​​,
+           {​​​ path:'appearels/womenswear', component:WomensWearComponent }​​​,
+// ELECTORNICS
+             {​​​ path:'electronics', component:ElectronicsComponent}​​​,
+             {​​​ path:'electronics/homeappliances',component:HomeAppliancesComponent }​​​,
+             {​​​ path:'electronics/laptops',component:LaptopsComponent }​​​,
+             {​​​ path:'electronics/mobiles', component:MobilesComponent }​​​,
 ///HOME AND KITCHEN
-
-{
-  path:'home-kitchen',
-  component:HomeKitchenComponent},
-
-  
-{
-  path: 'home-kitchen/home-furnituring',
-  component:HomeFurnituringsComponent
-},
-{
-  path: 'home-kitchen/kitchen-items',
-  component:KitchenItemsComponent
-}
-]
-}
+           {​​​ path:'home-kitchen', component:HomeKitchenComponent}​​​,
+           {​​​ path:'home-kitchen/home-furnituring',component:HomeFurnituringsComponent}​​​,
+           {​​​ path:'home-kitchen/kitchen-items', component:KitchenItemsComponent}​​​
     ]
+     }​​​
+ ]
+
+    
  
 @NgModule({
   imports: [RouterModule.forChild(routes)],

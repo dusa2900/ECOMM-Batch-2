@@ -1,8 +1,10 @@
 {
   "profile": {
-    "full_name": "pavan",
-    "email_id": "pavan@gmail.com",
-    "mob_number": "8986923666"
-  
+    "Name": "techwave",
+    "mobile": "9876543210",
+    "email": "techwave@gmail.com",
+    "password": "Tech@123",
+    "confirmPassword": "Tech@123",
+    "acceptTerms": true
   }
 }

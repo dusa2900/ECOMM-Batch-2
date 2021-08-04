@@ -1,0 +1,18 @@
+
+
+.container{
+    margin-top: 20px;
+}
+ul li{
+    margin-right: 80px;
+}
+ul li a {
+    color: White;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+background-color:none;
+}
+ul li a:hover{
+    background-color: #74bcdb;
+    color: black;
+}

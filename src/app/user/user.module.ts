@@ -31,6 +31,7 @@ import { HomeKitchenComponent } from './PRODUCTS/HOME&KITCHEN/home-kitchen/home-
 import {  HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { UserprofileComponent } from './COMMON/userprofile/userprofile.component';
+import { ReturnComponent } from './COMMON/return/return.component';
 
 
 
@@ -59,6 +60,7 @@ import { UserprofileComponent } from './COMMON/userprofile/userprofile.component
     ElectronicsComponent,
     HomeKitchenComponent,
     UserprofileComponent,
+    ReturnComponent,
  
   ],
   imports: [
