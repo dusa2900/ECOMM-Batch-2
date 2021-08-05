@@ -6,8 +6,11 @@ import { CouponsComponent } from './DASHBOARD/coupons/coupons.component';
 import { PaymentsComponent } from './DASHBOARD/payments/payments.component';
 import { ViewUserComponent } from './DASHBOARD/view-user/view-user.component';
 import { TrackerComponent } from './DASHBOARD/tracker/tracker.component';
-import { HeaderComponent } from './COMMON/header/header.component';
 import { FooterComponent } from './COMMON/footer/footer.component';
+import { SidenavBarComponent } from './COMMON/sidenav-bar/sidenav-bar.component';
+import { ReturnorderComponent } from './DASHBOARD/returnorder/returnorder.component';
+import { ForgotpasswordUserComponent } from './DASHBOARD/forgotpassword-user/forgotpassword-user.component';
+import { ProductlistN } from './DASHBOARD/productlist-n.oofproducts/productlist-n.oofproducts.component';
 
 
 @NgModule({
@@ -17,7 +20,11 @@ import { FooterComponent } from './COMMON/footer/footer.component';
     ViewUserComponent,
     TrackerComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SidenavBarComponent,
+    ReturnorderComponent,
+    ForgotpasswordUserComponent,
+    ProductlistN.OofproductsComponent
   ],
   imports: [
     CommonModule,
