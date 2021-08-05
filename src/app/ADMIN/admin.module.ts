@@ -11,6 +11,7 @@ import { SidenavBarComponent } from './COMMON/sidenav-bar/sidenav-bar.component'
 import { ReturnorderComponent } from './DASHBOARD/returnorder/returnorder.component';
 import { ForgotpasswordUserComponent } from './DASHBOARD/forgotpassword-user/forgotpassword-user.component';
 import { ProductlistN } from './DASHBOARD/productlist-n.oofproducts/productlist-n.oofproducts.component';
+import { ProductlistStatusComponent } from './DASHBOARD/productlist-status/productlist-status.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ProductlistN } from './DASHBOARD/productlist-n.oofproducts/productlist-
     SidenavBarComponent,
     ReturnorderComponent,
     ForgotpasswordUserComponent,
-    ProductlistN.OofproductsComponent
+    ProductlistN.OofproductsComponent,
+    ProductlistStatusComponent
   ],
   imports: [
     CommonModule,
