@@ -43,8 +43,9 @@ export class RegisterComponent implements OnInit {
   onSubmit(value: any) {
     
     this.ecomm.register(value).subscribe((res: any)=>      {
+    //  console.log("res",res);
        
-      if ( res== 'ACCEPTED') {
+      if (res=="Done") {
      
         this.toastr.success('User created  successfully')
         this.router.navigate(['/login']);
@@ -72,3 +73,5 @@ else{
     this.registerForm.reset();
   }
 }
+
+

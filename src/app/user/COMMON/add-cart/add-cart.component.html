@@ -6,9 +6,7 @@
                     <thead>
                         <tr>
                             <th>Sr.No</th>
-                            <th>Product Name</th>
-                            <th>Product Image</th>
-                            <th>Description</th>
+                            <th>Product</th>
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Total</th>
@@ -16,14 +14,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of products; let i = index">
-                            <td>{{i+1}}</td>
-                            <td>{{item.title}}</td>
-                            <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
-                            <td style="width: 25%;">{{item.description}}</td>
+                        <tr *ngFor="let item of products;">
+                            <td>1</td>
+                            <td>{{item.title}}<br>
+                                <img style="width: 120px;" src="{{item.image}}" alt=""></td>
                             <th style="width: 12%;">{{item.price}}</th>
-                            <td style="width: 12%;">{{item.quantity}}</td>
-                            <td style="width: 12%;">{{item.total}}</td>
+                            <td style="width: 12%;">
+                                <button type="button" class="btn"><i class="fa fa-plus" (click)="inc(item)"></i></button>
+                                {{item.quantity}}
+                                <button type="button" class="btn"><i class="fa fa-minus" (click)="dec(item)"></i></button>
+                            </td>
+                            <td style="width: 12%;">{{item.quantity*item.price}}</td>
                             <td>
                                 <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                             </td>
@@ -32,8 +33,16 @@
                             <td colspan="4"></td>
                             <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
                             <td><button routerLink="/appearels" class="btn btn-primary">Shop More</button></td>
-                            <td><button class="btn btn-success">Checkout</button></td>
-                            <td><strong>Grand Total : ${{grandTotal}}</strong></td>
+                            <td>
+                                <!-- <button class="btn btn-success" (click)="makePayment(grandTotal)">Checkout</button> -->
+                              
+    
+
+     <button class="btn btn-success"routerLink = "/payment">Checkout</button>
+
+
+                            </td>
+                            <td><strong>Grand Total : ₹{{grandTotal}}</strong></td>
                         </tr>
                     </tbody>
                 </table>

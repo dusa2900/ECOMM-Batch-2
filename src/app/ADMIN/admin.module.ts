@@ -8,9 +8,10 @@ import { ViewUserComponent } from './DASHBOARD/view-user/view-user.component';
 import { TrackerComponent } from './DASHBOARD/tracker/tracker.component';
 import { FooterComponent } from './COMMON/footer/footer.component';
 import { ReturnorderComponent } from './DASHBOARD/returnorder/returnorder.component';
-import { SidenavBarComponent } from './COMMON/sidenav-bar/sidenav-bar.component';
 import { ForgotpasswordUserComponent } from './DASHBOARD/forgotpassword-user/forgotpassword-user.component';
 import { ProductlistStatusComponent } from './DASHBOARD/productlist-status/productlist-status.component';
+import { SidenavComponent } from './COMMON/sidenav/sidenav.component';
+import { HomeComponent } from './COMMON/home/home.component';
 
 
 @NgModule({
@@ -22,8 +23,9 @@ import { ProductlistStatusComponent } from './DASHBOARD/productlist-status/produ
     FooterComponent,
     ProductlistStatusComponent,
     ReturnorderComponent,
-    SidenavBarComponent,
-    ForgotpasswordUserComponent
+    SidenavComponent,
+    ForgotpasswordUserComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

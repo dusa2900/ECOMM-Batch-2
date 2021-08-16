@@ -1,0 +1,442 @@
+{
+  "profile": {
+    "mobile": "8897806798",
+    "password": "Prabhakar7890?"
+  },
+  "Order": [
+    {
+      "productName": "I Kall K500 Smartphone (4Gb Ram, 64Gb Internal Memory, Dual Sim 4G Volte) (Flame Red)",
+      "image": "../../assets/images/Orders/mobile.jpg",
+      "productId": 148464435,
+      "rating": 2.5,
+      "price": 7000,
+      "description": " 4GB Ram and 64GB Internal Storage || 3000 mAh Battery || Expandable Memory 64GB with Memory Card 8MP Rear Camera and 5MP Front Camera || 3.5 MM Audio Jack 1 Year manufacturing warranty for Mobile and 6 Months for box accessories   2000 Plus Service Centre All Over India || Customer Care No - 0120-4731048 or reach us at helpdesk@ikall.in"
+    }
+  ],
+  "Orders": [
+    {
+      "productName": "I Kall K500 Smartphone (4Gb Ram, 64Gb Internal Memory, Dual Sim 4G Volte) (Flame Red)",
+      "image": "mobile.jpg",
+      "productId": 148464435,
+      "rating": 2.5,
+      "Price": 7000,
+      "description": " 4GB Ram and 64GB Internal Storage || 3000 mAh Battery || Expandable Memory 64GB with Memory Card 8MP Rear Camera and 5MP Front Camera || 3.5 MM Audio Jack 1 Year manufacturing warranty for Mobile and 6 Months for box accessories   2000 Plus Service Centre All Over India || Customer Care No - 0120-4731048 or reach us at helpdesk@ikall.in"
+    },
+    {
+      "productName": "Dia A Dia Men's Poly Viscose V-Shape Tuxedo Style Black Regular Fit Waistcoat",
+      "image": "shirt.jpg",
+      "productId": 143453347,
+      "rating": 4.1,
+      "Price": 800,
+      "description": "Fit Type Slim Fit  Size guide  waist coat/blazer size should be (6)  inch over your jeans waist size (for eg : if you wear a  (36) size jeans your waist coat size should be This waist coat can be worn both casually and formally as a substitute to blazer in Summers, Also can be used in contrast with different colour blazers as a 3 piece suit Slim fit and solid pattern party wear waist coat            Do not wash, dry clean only"
+    }
+  ],
+  "products": {
+    "apparels": {
+      "menswear": [
+        {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "shirt",
+          "image": "../../assets/images/Products/Appearels/hp.jpg"
+        },
+        {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "T-shirt",
+          "image": "../../assets/images/Products/Appearels/Tshirt.jpg"
+        },
+        {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "jeans",
+          "image": "../../assets/images/Products/Appearels/Jeans.jpg"
+        },
+        {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "jacket",
+          "image": "../../assets/images/Products/Appearels/jacket2.jpg"
+        }
+      ],
+      "womenswear": [
+        {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "saree",
+          "image": "../../assets/images/Products/Appearels/sarees.jpg"
+        },
+        {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "kurta",
+          "image": "../../assets/images/Products/Appearels/kurtas.jpg"
+        },
+        {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "women-jacket",
+          "image": "../../assets/images/Products/Appearels/wjacket.jpg"
+        },
+        {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "kurta",
+          "image": "../../assets/images/Products/Appearels/tees.jpg"
+        }
+      ],
+      "kidswear": [
+        {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "kid-shirt",
+          "image": "../../assets/images/Products/Appearels/kshirt.jpg"
+        },
+        {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "kid-Tshirt",
+          "image": "../../assets/images/Products/Appearels/ktshirt.jpg"
+        },
+        {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "kid-jacket",
+          "image": "../../assets/images/Products/Appearels/kids.jpg"
+        },
+        {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "kid-jeans",
+          "image": "../../assets/images/Products/Appearels/kjeans.jpg"
+        }
+      ]
+    }
+  },
+  "TotalProducts": [
+    {
+      "id": 1,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "shirt",
+      "image": "../../assets/images/Products/Appearels/hp.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "T-shirt",
+      "image": "../../assets/images/Products/Appearels/Tshirt.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "shirt",
+      "image": "../../assets/images/Products/Appearels/Shirt.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "shirt",
+      "image": "../../assets/images/Products/Appearels/shirt1.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "shirt",
+      "image": "../../assets/images/Products/Appearels/shirt2.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "T-shirt",
+      "image": "../../assets/images/Products/Appearels/Tshirt1.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "T-shirt",
+      "image": "../../assets/images/Products/Appearels/Tshirt2.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "T-shirt",
+      "image": "../../assets/images/Products/Appearels/Tshirt3.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "jeans",
+      "image": "../../assets/images/Products/Appearels/jeans1.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "jeans",
+      "image": "../../assets/images/Products/Appearels/jeans2.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "jeans",
+      "image": "../../assets/images/Products/Appearels/jeans3.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "jacket",
+      "image": "../../assets/images/Products/Appearels/jacket3.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "jacket",
+      "image": "../../assets/images/Products/Appearels/jacket1.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "jacket",
+      "image": "../../assets/images/Products/Appearels/jacket.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "saree",
+      "image": "../../assets/images/Products/Appearels/sarees.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "saree",
+      "image": "../../assets/images/Products/Appearels/saree1.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "saree",
+      "image": "../../assets/images/Products/Appearels/saree2.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "kurta",
+      "image": "../../assets/images/Products/Appearels/kurtas.jpg"
+    },
+    {
+      "id": 20,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "kurta",
+      "image": "../../assets/images/Products/Appearels/kurta3.jpg"
+    },
+    {
+      "id": 21,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "kurta",
+      "image": "../../assets/images/Products/Appearels/kurta2.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "kurta",
+      "image": "../../assets/images/Products/Appearels/kurta1.jpg"
+    },
+    {
+      "id": 23,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "women-jacket",
+      "image": "../../assets/images/Products/Appearels/wjacket.jpg"
+    },
+    {
+      "id": 24,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "women-jacket",
+      "image": "../../assets/images/Products/Appearels/wjacket2.jpg"
+    },
+    {
+      "id": 25,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "women-jacket",
+      "image": "../../assets/images/Products/Appearels/wjacket1.jpg"
+    },
+    {
+      "id": 26,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "women-jacket",
+      "image": "../../assets/images/Products/Appearels/wjacket3.jpg"
+    },
+    {
+      "id": 27,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "kid-shirt",
+      "image": "../../assets/images/Products/Appearels/kshirt.jpg"
+    },
+    {
+      "id": 28,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "kid-shirt",
+      "image": "../../assets/images/Products/Appearels/kshirt1.jpg"
+    },
+    {
+      "id": 29,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "kid-shirt",
+      "image": "../../assets/images/Products/Appearels/kshirt2.jpg"
+    },
+    {
+      "id": 30,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "kid-shirt",
+      "image": "../../assets/images/Products/Appearels/kshirt3.jpg"
+    },
+    {
+      "id": 31,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "saree",
+      "image": "../../assets/images/Products/Appearels/dress.jpg"
+    }
+  ],
+  "postreturnorder": {},
+  "admin": {
+    "productstatus": {
+      "menswear": [
+        {
+          "category": "shirts",
+          "noofproducts": "9",
+          "available": "8",
+          "sold": "1",
+          "image": "../../assets/images/Products/Appearels/hp.jpg"
+        },
+        {
+          "category": "T-shirt",
+          "image": "../../assets/images/Products/Appearels/Tshirt.jpg",
+          "noofproducts": "9",
+          "available": "6",
+          "sold": "3"
+        },
+        {
+          "category": "jeans",
+          "image": "../../assets/images/Products/Appearels/Jeans.jpg",
+          "noofproducts": "9",
+          "available": "7",
+          "sold": "2"
+        },
+        {
+          "category": "jacket",
+          "image": "../../assets/images/Products/Appearels/jacket2.jpg",
+          "noofproducts": "9",
+          "available": "8",
+          "sold": "1"
+        }
+      ],
+      "womenswear": [
+        {
+          "noofproducts": "9",
+          "available": "3",
+          "sold": "6",
+          "category": "saree",
+          "image": "../../assets/images/Products/Appearels/sarees.jpg"
+        },
+        {
+          "noofproducts": "9",
+          "available": "4",
+          "sold": "5",
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "category": "kurta",
+          "image": "../../assets/images/Products/Appearels/kurtas.jpg"
+        },
+        {
+          "noofproducts": "9",
+          "available": "8",
+          "sold": "1",
+          "category": "women-jacket",
+          "image": "../../assets/images/Products/Appearels/wjacket.jpg"
+        },
+        {
+          "noofproducts": "9",
+          "available": "6",
+          "sold": "3",
+          "category": "kurta",
+          "image": "../../assets/images/Products/Appearels/tees.jpg"
+        }
+      ],
+      "kidswear": [
+        {
+          "noofproducts": "9",
+          "available": "7",
+          "sold": "2",
+          "category": "kid-shirt",
+          "image": "../../assets/images/Products/Appearels/kshirt.jpg"
+        },
+        {
+          "noofproducts": "9",
+          "available": "5",
+          "sold": "4",
+          "category": "kid-Tshirt",
+          "image": "../../assets/images/Products/Appearels/ktshirt.jpg"
+        },
+        {
+          "noofproducts": "9",
+          "available": "6",
+          "sold": "3",
+          "category": "kid-jacket",
+          "image": "../../assets/images/Products/Appearels/kids.jpg"
+        },
+        {
+          "noofproducts": "9",
+          "available": "7",
+          "sold": "2",
+          "category": "kid-jeans",
+          "image": "../../assets/images/Products/Appearels/kjeans.jpg"
+        }
+      ]
+    }
+  }
+}

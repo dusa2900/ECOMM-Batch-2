@@ -9,7 +9,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { AuthGuard } from './Auth/auth.guard';
 import { EcommService } from './SERVICES/ecomm.service';
-
 @NgModule({
   declarations: [
     AppComponent

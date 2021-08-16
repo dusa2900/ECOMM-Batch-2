@@ -9,7 +9,8 @@ export class AppearelsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
+  
 }

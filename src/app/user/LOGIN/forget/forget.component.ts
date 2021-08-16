@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EcommService } from 'src/app/SERVICES/ecomm.service';
 import { ToastrService } from 'ngx-toastr'; 
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-forget',
   templateUrl: './forget.component.html',
@@ -9,7 +10,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class ForgetComponent implements OnInit {
 
-  constructor(private ecomm:EcommService,private toastr: ToastrService,private formBuilder: FormBuilder) { }
+  constructor(private ecomm:EcommService,private toastr: ToastrService,private formBuilder: FormBuilder,private router: Router) { }
   forgotpassword:any
   submitted = false;
   ngOnInit() {
@@ -21,19 +22,34 @@ export class ForgetComponent implements OnInit {
     console.log("forgot",value);
     this.ecomm.forgotpassword(value).subscribe((res: any)=>{
       this.forgotpassword=res
+if(res=="success"){
+  this.toastr.success('Send link to email successfully')
+  this.router.navigate(['/reset'])
+
+}
+else { 
+  this.toastr.error('Invalid mobile number')
+
+}
  })
  this.submitted = true;
     // stop here if form is invalid
     if (this.forgotpassword.invalid) {
+    
       return;
+
     }
+ 
+
+
   }
+  
 
   get f() { return this.forgotpassword.controls; }
 
-  showToaster(){
-    this.toastr.success("Hello, I'm the toastr message.")
-}
+//   showToaster(){
+//     this.toastr.success("Hello, I'm the toastr message.")
+// }
   
   // showSuccess(){
   //   this.toastr.success('User logged in successfully')

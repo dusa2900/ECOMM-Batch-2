@@ -1,8 +1,46 @@
 nav a{
   color: white;
-  font-size: large;
+  font-size: medium;
   font-weight: bold;
 }
+
+.ul{
+  overflow:hidden;
+padding-left:5px
+
+  }
+  li{
+  display:inline-block;
+  }
+
+  /* .navbar{​​​​​​​​
+ justify-content: space-evenly;
+  height: 55px;
+  }​​​​​​​​,
+   
+  .ul{​​​​​​​​
+  overflow:hidden;
+  padding-left:5px
+  
+    }​​​​​​​​
+  li{​​​​​​​​
+  display:inline-block;
+  color: white;
+  text-align: center;
+  margin-top: 8px;
+    }​​​​​​​​
+  a{​​​​​​​​
+  color: white;      
+  padding: auto3px;
+    }​​​​​​​​
+  
+  .nav-link:hover{​​​​​​​​
+  border: 1pxsolidwhite;
+  color: white;
+  }​​​​​​​​ */
+  
+  
+  
 @media screen and (min-width:980px  )
 {
   .collapse

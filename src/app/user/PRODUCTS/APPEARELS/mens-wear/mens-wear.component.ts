@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/SERVICES/api.service';
 import { CartService } from 'src/app/SERVICES/cart.service';
+import { ProductsService } from 'src/app/SERVICES/products.service';
 @Component({
   selector: 'app-mens-wear',
   templateUrl: './mens-wear.component.html',
@@ -9,10 +9,10 @@ import { CartService } from 'src/app/SERVICES/cart.service';
 export class MensWearComponent implements OnInit {
 
   public productList : any ;
-  constructor(private api : ApiService, private cartService : CartService) { }
+  constructor(private ps : ProductsService, private cartService : CartService) { }
 
   ngOnInit() {
-    this.api.getProduct()
+    this.ps.getProduct()
     .subscribe(res=>{
       this.productList = res;
 

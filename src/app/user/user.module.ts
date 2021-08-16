@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import{AngmaterialModule} from '../ANGMATERIAL/angmaterial.module';
-
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { USERRoutingModule } from './user-routing.module';
 import { HeaderComponent } from './COMMON/header/header.component';
 import { FooterComponent } from './COMMON/footer/footer.component';
@@ -10,19 +10,10 @@ import { RegisterComponent } from './LOGIN/register/register.component';
 import { LoginComponent } from './LOGIN/login/login.component';
 import { ForgetComponent } from './LOGIN/forget/forget.component';
 import { ResetComponent } from './LOGIN/reset/reset.component';
-import { MensWearComponent } from './PRODUCTS/APPEARELS/mens-wear/mens-wear.component';
-import { WomensWearComponent } from './PRODUCTS/APPEARELS/womens-wear/womens-wear.component';
-import { KidsWearComponent } from './PRODUCTS/APPEARELS/kids-wear/kids-wear.component';
-import { MobilesComponent } from './PRODUCTS/ELECTORNIC/mobiles/mobiles.component';
-import { LaptopsComponent } from './PRODUCTS/ELECTORNIC/laptops/laptops.component';
-import { HomeAppliancesComponent } from './PRODUCTS/ELECTORNIC/home-appliances/home-appliances.component';
-import { KitchenItemsComponent } from './PRODUCTS/HOME&KITCHEN/kitchen-items/kitchen-items.component';
-import { HomeFurnituringsComponent } from './PRODUCTS/HOME&KITCHEN/home-furniturings/home-furniturings.component';
 import { AddCartComponent } from './COMMON/add-cart/add-cart.component';
 import { HomeComponent } from './HOME/home/home.component';
 import { PaymentComponent } from './PAYMENTS/payment/payment.component';
 import { MainComponent } from './HOME/main/main.component';
-
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { CarouselComponent } from './HOME/carousel/carousel.component';
 import { AppearelsComponent } from './PRODUCTS/APPEARELS/appearels/appearels.component';
@@ -32,7 +23,11 @@ import {  HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { UserprofileComponent } from './COMMON/userprofile/userprofile.component';
 import { ReturnComponent } from './COMMON/return/return.component';
-
+import { ProductDescriptionComponent } from './PRODUCTS/RE-USABLE/product-description/product-description.component';
+import { ProductCategoryTypeComponent } from './PRODUCTS/RE-USABLE/product-category-type/product-category-type.component';
+import { MensWearComponent } from './PRODUCTS/APPEARELS/mens-wear/mens-wear.component';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { NgxImgZoomModule } from 'ngx-img-zoom';
 
 
 @NgModule({
@@ -43,14 +38,6 @@ import { ReturnComponent } from './COMMON/return/return.component';
     LoginComponent,
     ForgetComponent,
     ResetComponent,
-    MensWearComponent,
-    WomensWearComponent,
-    KidsWearComponent,
-    MobilesComponent,
-    LaptopsComponent,
-    HomeAppliancesComponent,
-    KitchenItemsComponent,
-    HomeFurnituringsComponent,
     AddCartComponent,
     HomeComponent,
     PaymentComponent,
@@ -61,12 +48,14 @@ import { ReturnComponent } from './COMMON/return/return.component';
     HomeKitchenComponent,
     UserprofileComponent,
     ReturnComponent,
- 
+ ProductDescriptionComponent,
+ ProductCategoryTypeComponent,
+ MensWearComponent
   ],
   imports: [
     CommonModule,HttpClientModule, ToastrModule.forRoot(),
-    USERRoutingModule,AngmaterialModule,
-MatToolbarModule,FormsModule,ReactiveFormsModule 
+    USERRoutingModule,AngmaterialModule,Ng2SearchPipeModule,
+MatToolbarModule,FormsModule,ReactiveFormsModule ,NgxImageZoomModule,NgxImgZoomModule
 
   ]
 })

@@ -1,0 +1,30 @@
+<!-- <div class="div">
+
+
+    <a href="large.jpg" class="MagicZoom" data-options="zoomWidth:400px; zoomHeight:400px"> 
+       <img src="{{overview.image}}" alt=""></a>
+
+  <span class="data">
+     <p> RS: <span style="text-decoration: line-through;"> 1000 </span> /-&nbsp;<span style="color: red;">Rs:{{overview.price}}/-</span></p>
+     <p>{{overview.title}}</p>
+     <p>{{overview.category}}</p>
+ 
+
+ </span>
+     <p> <span style="color: green; font-weight: bolder;"> Description:</span>{{overview.description}}</p>
+ 
+ 
+ </div> -->
+
+ 
+ <lib-ngx-image-zoom
+ [thumbImage]=myThumbnail
+    [fullImage]=myFullresImage
+    [magnification]="1"
+    [enableScrollZoom]="true"
+    [enableLens]="true"
+    [lensWidth]="200"
+    [lensHeight]="200"
+></lib-ngx-image-zoom>
+
+

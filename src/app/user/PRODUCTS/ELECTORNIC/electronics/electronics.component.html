@@ -1,28 +1,46 @@
-<div fxLayout="row"  fxLayoutGap="12px"  [style.margin-top]="'12px'">
-  <mat-card>
-    <div class="mat-body-2">Code compilé</div>
-    <div class="mat-body-1">Le code écrit en TypeScript est compilé en JavaScript avant d'être utilisé : de ce fait, tout code JavaScript valide est du code TypeScript valide.</div>
-  </mat-card>
-  <mat-card>
-    <div class="mat-body-2">Impératif</div>
-    <div class="mat-body-1">Se rapproche des langages de type impératif, tels que le Java : utilisation de classes, interfaces, héritage ...</div>
-  </mat-card>
+<div class="container" >
+  <div class="row"> <h1>Mens Wear:</h1>
+      <ng-container *ngFor="let item of mensList">
+          <!-- <div class="card col-md-3" (click)="onClick(item.category)"> -->
+        
+            <div class="card col-md-3" routerLink="/products/{{item.category}}">
+                <img src="{{item.image}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+                <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> ${{item.price}}</p> -->
+                <!-- <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button> -->
+            </div>
+       
+      </ng-container>
 
-  <mat-card>
-    <div class="mat-body-2">Impératif</div>
-    <div class="mat-body-1">Se rapproche des langages de type impératif, tels que le Java : utilisation de classes, interfaces, héritage ...</div>
-  </mat-card>
-  <mat-card>
-    <div class="mat-body-2">Impératif</div>
-    <div class="mat-body-1">Se rapproche des langages de type impératif, tels que le Java : utilisation de classes, interfaces, héritage ...</div>
-  </mat-card>
-  <mat-card>
-    <div class="mat-body-2">Impératif</div>
-    <div class="mat-body-1">Se rapproche des langages de type impératif, tels que le Java : utilisation de classes, interfaces, héritage ...</div>
-  </mat-card>
-  <mat-card>
-    <div class="mat-body-2">Impératif</div>
-    <div class="mat-body-1">Se rapproche des langages de type impératif, tels que le Java : utilisation de classes, interfaces, héritage ...</div>
-  </mat-card>
+  </div>
+  <br>
+  <div class="row"> <h1>Womens Wear:</h1>
+    <ng-container *ngFor="let item of womensList">
+        <!-- <div class="card col-md-3" (click)="onClick(item.category)"> -->
+            <div class="card col-md-3" routerLink="/products/{{item.category}}" >
+            <img src="{{item.image}}" alt="">
+            <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+            <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+            <p><strong>Price:</strong> ${{item.price}}</p> -->
+            <!-- <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button> -->
+        </div>
+    </ng-container>
+
 </div>
-<router-outlet></router-outlet>
+<br>
+<div class="row"> <h1>Kids Wear:</h1>
+  <ng-container *ngFor="let item of kidsList">
+      <!-- <div class="card col-md-3" (click)="onClick(item.category)"> -->
+          <div class="card col-md-3" routerLink="/products/{{item.category}}" >
+          <img src="{{item.image}}" alt="">
+          <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+          <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+          <p><strong>Price:</strong> ${{item.price}}</p> -->
+          <!-- <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button> -->
+      </div>
+  </ng-container>
+
+</div>
+</div>
+
