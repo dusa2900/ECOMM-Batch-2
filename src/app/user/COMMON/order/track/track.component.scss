@@ -1,0 +1,61 @@
+
+.progresses {
+    position: relative;
+    max-width: 80%;
+    margin: auto
+}
+
+.progresses ul {
+    list-style: none;
+    padding: 0
+}
+
+.progresses ul li {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    z-index: 2;
+    position: relative
+}
+
+// .progresses ul li.blue {
+    
+//     background-color: #3268ff
+// }
+
+.progresses ul li::after {
+    position: absolute;
+    top: 35px;
+    left: -15px;
+    font-size: 0.8rem;
+    width: 95px
+}
+
+#step-1::after {
+    content: "Product Ordered"
+}
+
+#step-2::after {
+    content: "In Transit";
+    left: -5px
+}
+
+#step-3::after {
+    content: "Pickup";
+    left: -5px;
+    
+}
+#step-4::after {
+    content: "Delivered"
+}
+
+.progresses .progress {
+    height: 0.8rem;
+    width: 100%;
+    top: 33px;
+    position: absolute;
+    background-color: #f0f0f0;
+    border-radius: 10px
+}
+

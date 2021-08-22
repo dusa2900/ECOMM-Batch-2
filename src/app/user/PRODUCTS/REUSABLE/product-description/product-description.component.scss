@@ -1,0 +1,23 @@
+.card
+{
+  margin: 0 auto;
+}
+
+@media(max-width:360px)
+{
+  .card .container-fluid .media .row{
+    width: 360px;
+  }
+  
+}
+.media-body
+{
+  margin-top: 50px;
+}
+.btn
+{
+  border-radius: 50%;
+  background-color: firebrick;
+  margin: 0 4px;
+  cursor: pointer;
+}

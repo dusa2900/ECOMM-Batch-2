@@ -1,5 +1,6 @@
 {
   "profile": {
+<<<<<<< HEAD
     "full_name": "dusa",
     "email_id": "dusa@gmail.com",
     "mob_number": "8986923",
@@ -14,5 +15,11 @@
       "office": "",
       "others": ""
     }
+=======
+    "full_name": "pavan",
+    "email_id": "pavan@gmail.com",
+    "mob_number": "8986923666"
+  
+>>>>>>> origin/pavan
   }
 }

@@ -1,0 +1,119 @@
+
+<div class="container">
+    <div class="row">
+  
+      <div class="col-lg-4  .col-6">
+        <div class="row ">
+          <a ><img src="{{overview.image}}" style="width:350px;  height:450px;"></a>
+         
+      </div>
+      <div class="row m-5 w-0 list" >
+          <li type="none"><a href=""><img src="{{overview.image}}"  style="width: 50px; height:50px"></a></li>
+          <li type="none"><a href=""><img src="{{overview.image}}"  style="width: 50px; height:50px"></a></li>
+         
+          <li type="none"><a href=""><img src="{{overview.image}}"   style="width: 50px; height:50px"></a></li>
+     
+      </div>
+      </div>
+  
+      <div class="col-sm-6 col-lg-8 mt-10">
+        <div class="media-body">
+          <p class="mt-0">{{overview.title}}</p>
+        <p class="m-2  p-1 "><b class="text-warning">4.6</b> <i class="fa fa-star text-warning "></i>
+            <i class="fa fa-star text-warning"></i>
+            <i class="fa fa-star text-warning"></i>
+            <i class="fa fa-star text-warning"></i>
+            <i class="fa fa-star-o text-warning"></i> (10)| 5 Reviews</p>
+            <p>
+                <h1>
+                   <i class="fa fa-inr ">{{overview.price}}</i>
+                   <i>         17% off</i>
+                </h1>
+                   <i class="fa fa-inr p-2">              
+                        <s>10,999</s></i> 
+                        <p><i class="fa fa-diamond">Extra Dusa offers Only on VIP club. <a href="">JOIN NOW</a></i></p>
+                                      
+                        <p>
+                            <li>Display Size:6.2 inches</li>
+                            <li>OS name:Android</li>
+                            <li>Internal Storage:32GB</li>
+                      
+                        </p>
+                        <h1 > inStock:{{overview.instock}}</h1>
+                        <span style="font-weight: bold; font-size: x-large;">
+                          <button class="btn" (click)="incQnt(overview)"> <i class="fas fa-plus"></i></button>
+                          {{overview.qnt}} 
+                          <button class="btn" (click)="decQnt(overview)"><i class="fas fa-minus"></i></button>
+                        </span>
+                <p  class="text-warning p-2">
+                    <button class="  bg-info   " style="width: 120px; height: 40px; border-radius: 5px;" (click)="addTocart(overview)">Add to cart</button>
+               
+                        &nbsp;
+               <button class="text-White   bg-success  " style="width: 120px; height: 40px; border-radius: 5px;">Buy Now</button>
+                </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <div class="col-sm-12">
+        <div class="tabs3">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Specifications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Product Descripation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">More Details</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                   <br>
+                  <ul><li>Brand	:   Coolpad</li>
+                    <li>2GB RAM With 16GB ROM </li>
+                   
+                    <li>Display Size	:   5.7 inches(14.48 cm)</li>
+                    <li>Dual SIM</li>
+                    <li>Operating System	:   Android</li>
+                    <li>OS Name	:   Android 8.1 (Oreo)</li>
+                    <li>4G VoLTE</li>
+                    <li>Internal Storage	:   16 GB</li>
+                    <li>RAM	:   2 GB</li>
+                    <li>Warranty Available	:   Manufacturer Warranty</li>
+                  <li>Device Warranty	:   1 Year</li>
+                <li>Box Accessories Warranty	:   6 Months</li>
+                </ul>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <h6>Highlights</h6>
+                    <br>
+                  <ul><li>1.3GHz Octa-Core Processor</li>
+                    <li>2GB RAM With 16GB ROM </li>
+                   
+                    <li>5.71 Inch HD+ Display</li>
+                    <li>Dual SIM</li>
+                    <li>8MP + 0.3MP Dual Rear Camera With LED Flash</li>
+                    <li>5MP Front Facing Camera</li>
+                    <li>4G VoLTE</li>
+                    <li>Fingerprint Sensor</li>
+                    <li>Bluetooth 4.1</li>
+                    <li>GPS + GLONASS</li>
+                  <li>3000 MAh Battery</li></ul>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <p><li>  Maximum retail price(inclusive of all taxs: <b>RS 8999</b></li></p>
+                </div>
+              </div>
+     
+    </div>
+  </div>
+  
+  <br>
+  
+<app-category-typelist></app-category-typelist>
+  
+    
+    

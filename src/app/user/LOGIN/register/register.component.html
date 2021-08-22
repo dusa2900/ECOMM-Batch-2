@@ -1,88 +1,144 @@
-<div class="container">
+<h1 style="color:black;text-align:center">REGISTER Form</h1>
 
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6 jumbotron bg-dark text-white mt-3">
-            <h1 class="text-center">
-                Create Account
-            </h1>
-            <form #ref="ngForm" (ngSubmit)="onSubmit(ref.value)">
+<div class="row">
+   
+    <div class="col-md-1"></div>
+<div class="col-md-4">
+    <div class="card ">
 
-                <!-- //firstName -->
-                <div class="row mt-3">
-                    <div class="col-sm-4 form-group text-center" style="margin: auto">
-                        <label title="FirstName" for="firstname">First Name:</label>
+        <img style="width:650px;height:590px" src="../../../../assets//images//register-1.png">
+    </div>
+    </div>
+
+    <div class="col-md-4">
+
+    <div class="card jumbotron bg-dark text-white">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+            <!-- <div class="form-row " > -->
+
+       <!-- ////Name/// -->
+                <div class="form-group">
+                    <br>
+          <div class="row">
+
+                    <div class="col-md-4 form-group text-center" >
+                        <label  for="firstname"> Name:</label>
                     </div>
-                    <div class="col-sm-8 form-group" style="margin: auto">
-                        <input type="text" id="firstname" name="firstName" class="form-control"
-                            placeholder="Enter First Name..." ngModel>
+                    <div class="col-md-8 form-group">
+                    <input type="text" formControlName="firstname" id="firstname" class="form-control" 
+                    minlength="3"[ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
+                    <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstname.errors.required"> Name is required</div>
+                        <div *ngIf="f.firstname.errors.minlength"> Name should have minimum 3 characters</div>
+                        <div *ngIf="f.firstname.errors.pattern"> Name should have only characters</div>
+            
+                    </div>
                     </div>
                 </div>
-
-                <!-- //email--id -->
-                <div class="row mt-3">
-                    <div class="col-sm-4 form-group text-center" style="margin: auto">
-                        <label title="Email" for="email"> Email Id:</label>
-                    </div>
-                    <div class="col-sm-8 form-group" style="margin: auto">
-                        <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email..."
-                            ngModel>
-                    </div>
                 </div>
-                <!-- //Mobilenumber -->
-                <div class="row mt-3">
-                    <div class="col-sm-4 form-group text-center" style="margin: auto">
-                        <label title="Mobile" for="mobile">Mobile Number:</label>
-                    </div>
-                    <div class="col-sm-8 form-group" style="margin: auto">
-                        <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Enter Mobile..."
-                            ngModel>
-                    </div>
-                </div>
-
-                <!-- //password  -->
-                <div class="row mt-3">
-                    <div class="col-sm-4 form-group text-center" style="margin: auto">
-                        <label for="Password">Password:</label>
-                    </div>
-                    <div class="col-sm-8 form-group" style="margin: auto">
-                        <input type="Password" id="Password" name="Password" class="form-control"
-                            placeholder=" Password" ngModel>
-                    </div>
-                </div>
-        
-                  <!-- //cf-password -->
-                <div class="row mt-3">
-                    <div class="col-sm-4 form-group text-center" style="margin: auto">
-                        <label for="cfpassword">confirm password:</label>
-                    </div>
-                    <div class="col-sm-8 form-group" style="margin: auto">
-                        <input type="password" id="cfpassword" name="cfpassword" class="form-control"
-                            placeholder="confirm Password..." ngModel>
-                    </div>
-                </div>
-        
-
-    
-
-              
-                <div class="row">
-                    <div class="col-sm-12 mt-3 text-center">
-                        <button type="submit" class="btn btn-warning pt-1">
-                            Register
-                        </button>
-                    </div>
-                </div>
-
              
-            </form>
+            <!-- </div> -->
+            <!-- ////email// -->
+            <div class="form-group ">
+                <div class="row">
+                    <div class="col-md-4 form-group text-center" >
+                        <label  for="email"> Email:</label>
+                    </div>
+                    <div class="col-md-8 form-group">
+                <input type="email" formControlName="email" id="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.pattern">Email must be a valid email address@</div>
+                </div>
+            </div>
+                </div>
+            </div>
+<!-- ////Mobilenumber/// -->
+            <div class="form-group ">
+                <div class="row">
+                    <div class="col-md-4 form-group text-center" >
+                        <label  for="mobile"> Mobilenumber:</label>
+                    </div>
+                    <div class="col-md-8 form-group">
+                <input type="text" formControlName="mobile" id="mobile" class="form-control" 
+                minlength="10" maxlength="10" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                    <div *ngIf="f.mobile.errors.required">mobile number required</div>
+                    <div *ngIf="f.mobile.errors.pattern">mobile number must be valid(6-9)</div>
+                </div>
+                    </div>
+                </div>
+            </div>
 
-        </div>
+            <!-- ///password// -->
+        
+          
+                <div class="form-group ">
+                    <div class="row">
+                        <div class="col-md-4 form-group text-center" >
+                            <label for="Password"> Password:</label>
+                        </div>
+                        <div class="col-md-8 form-group">
+                    <input type="password" formControlName="password" id="Password" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" [type]="hide? 'password':'text'" />
+                    <i class="material-icons" (click)="hide= !hide">{{hide ? 'visibility':'visibility_off'}}</i>
+       
+                       
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors?.PasswordStrengthValidator">Password must be one special character,one small and one capital letter</div>
+                    </div>
+                    <div class="errors" style="color:rgb(241, 55, 55)" *ngIf="registerForm.get('password').invalid && (registerForm.get('password').touched || registerForm.get('password').dirty)">
+
+                        <div *ngIf="registerForm.get('password').hasError('required')">
+                            password is required
+                        </div>
+                
+                        <div *ngIf="registerForm.get('password').errors.minlength">
+                            Password must be at least 8 characters
+                        </div>
+                
+                        <div class="error-text" *ngIf="registerForm.get('password').hasError('passwordStrength')">
+                            {{registerForm.get('password').errors['passwordStrength']}}
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                
+<!--          
+                <div class="form-group ">
+                    <div class="row">
+                        <div class="col-md-4 form-group text-center" >
+                            <label for="confirmPassword"> Confirm Password:</label>
+                        </div>
+                        <div class="col-md-8 form-group">
+                    <input type="password" formControlName="confirmPassword" id="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                        <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                        <div *ngIf="f.confirmPassword.errors.PasswordStrengthValidator">confirmPassword must match with password</div>
+                    </div>
+                        </div>
+                    </div>
+                </div> -->
+           
+          
+            
+            <div class="form-group form-check" style="text-align: center;">
+                <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+                <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary mr-1" [disabled]="!registerForm.valid">Register</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+            </div>
+        </form>
     </div>
 </div>
 
-<div class="col-md-3"></div>
+</div>
 
 
 
-<!-- </div> -->
+<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->

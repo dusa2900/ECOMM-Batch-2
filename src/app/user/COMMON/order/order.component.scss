@@ -1,0 +1,39 @@
+.container
+{
+    margin-top: 20px;
+}
+ul li{
+    margin-right: 80px;
+}
+ul li a
+{
+    color: White;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    background-color:none;
+}
+ul li a.active
+{
+    background-color: #74bcdb;
+    color: black;
+}
+.card ul li
+{
+    list-style-type:none;
+}
+button.active
+{
+    background-color: green;
+    color: white;
+}
+button
+{
+    margin: 10px 0;
+}
+@media screen and (min-width:560px)
+{
+   .container .card .row
+   {
+       padding: 30px;
+   } 
+}

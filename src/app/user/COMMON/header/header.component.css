@@ -3,6 +3,15 @@ nav a{
   font-size: large;
   font-weight: bold;
 }
+
+.secondNavbar ul li
+{
+  float: left;
+list-style-type: none;
+font-weight: bold;
+margin:10px 70px 0px 70px;
+cursor: pointer;
+}
 @media screen and (min-width:980px  )
 {
   .collapse
@@ -16,7 +25,7 @@ nav a{
   }
   nav ul li
   {
-    padding:0 100px;
+    padding:0 80px;
   }
   form
   {
@@ -242,7 +251,6 @@ form.example button:hover {
 {
   .dropdown:hover .dropdown-content {display: block; margin-left: 50px;}
 }
-
 
 
 

@@ -1,24 +1,70 @@
-
-<div class="container-fluid" style="margin-top: 10px;">
+<br>
+<br>
+<div class="container-fluid">
     <div class="row">
         <div class="col-sm-4 "></div>
         
         <div class="col-sm-4 mt-5">
             <div class="jumbotron bg-dark text-white">
               <h1 class="text-center">Login</h1>
-                <form #ref="ngForm"  (ngSubmit)="onSubmit(ref.value)">
+              <form [formGroup]="LoginForm" (ngSubmit)="onSubmit(LoginForm.value)">
                  
-                  <div class="form-group mt-2">
-                    <label for="Mobilenumber" class="text-left">Mobilenumber:</label>
-                    <input type="text" name="Mobilenumber" id="Mobilenumber" class="form-control" ngModel>
-                  </div>
-                  <div class="form-group">
-                    <label for="password" class="text-left">Password:</label>
-                    <input type="password" name="password" id="password" class="form-control" ngModel>
-                  </div>
+               
+                  <div class="form-group ">
+                    <div class="row">
+                        <div class="col-md-4 form-group text-center" >
+                            <label  for="mobile"> Mobilenumber:</label>
+                        </div>
+                        <div class="col-md-8 form-group">
+                    <input type="text" formControlName="mobile" id="mobile" class="form-control" 
+                     minlength="10" maxlength="10" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                    <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                        <div *ngIf="f.mobile.errors.required">mobile number required</div>
+                        <div *ngIf="f.mobile.errors.pattern">mobile number must be valid(6-9)</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                  <div class="form-group ">
+                    <div class="row">
+                        <div class="col-md-4 form-group text-center" >
+                            <label for="Password"> Password:</label>
+                        </div>
+                        <div class="col-md-8 form-group">
+                    <input type="password" formControlName="password" id="Password" class="form-control" 
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" [type]="hide? 'password':'text'" />
+                  
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.PasswordStrengthValidator">Password must be one special character,one small and one capital letter</div>
+                    </div>
+                    <div class="errors" style="color:rgb(241, 55, 55)" *ngIf="LoginForm.get('password').invalid && (LoginForm.get('password').touched || LoginForm.get('password').dirty)">
+
+                        <div *ngIf="LoginForm.get('password').hasError('required')">
+                            password is required
+                        </div>
+                
+                        <div *ngIf="LoginForm.get('password').errors.minlength">
+                            Password must be at least 8 characters
+                        </div>
+                
+                        <div class="error-text" *ngIf="LoginForm.get('password').hasError('passwordStrength')">
+                            {{LoginForm.get('password').errors['passwordStrength']}}
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+
+
                   <div class="form-group text-center">
-                    <button type="submit" class="btn btn-warning">login</button>
+                    <button type="submit"  class="btn btn-warning">login</button>
                   </div>
+
+
                   </form>
                   <div class="row">
                     
@@ -29,9 +75,38 @@
                 <div class="text-center">
                     New User?<a routerLink="/register"> Sign up</a>
                 </div>
-                
+               
             </div>
         </div>
         <div class="col-sm-4 "></div>
     </div>
   </div>
+
+
+
+<!--
+  <main class="form-signin" style="text-align: center;">
+    <form>
+      <img class="mb-4" src="../../../../assets/images/logo1.png" alt="" style="width: 100px; height: 100px; ">
+      <h1 class="h3 mb-3 fw-normal"> Sign in</h1>
+  
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <br>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+  
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+    </form>
+  </main>
+-->
