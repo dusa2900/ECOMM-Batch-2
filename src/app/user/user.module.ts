@@ -28,6 +28,7 @@ import { ProductCategoryTypeComponent } from './PRODUCTS/RE-USABLE/product-categ
 import { MensWearComponent } from './PRODUCTS/APPEARELS/mens-wear/mens-wear.component';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { NgxImgZoomModule } from 'ngx-img-zoom';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import { NgxImgZoomModule } from 'ngx-img-zoom';
  MensWearComponent
   ],
   imports: [
-    CommonModule,HttpClientModule, ToastrModule.forRoot(),
+    CommonModule,HttpClientModule, ToastrModule.forRoot(),NgxPaginationModule,
     USERRoutingModule,AngmaterialModule,Ng2SearchPipeModule,
 MatToolbarModule,FormsModule,ReactiveFormsModule ,NgxImageZoomModule,NgxImgZoomModule
 

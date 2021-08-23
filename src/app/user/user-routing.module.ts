@@ -40,6 +40,8 @@ children: [
            {​​​path:'return', component:ReturnComponent}​​​,
 ////reusable-common/////
 
+{ path: 'totalproducts/:category', component:ProductCategoryTypeComponent },
+
            {​​​​​​​​ path:'products/:category', component:ProductCategoryTypeComponent }​​​​​​​​,
            {​​​​​​​​ path:'product/:category/:id', component:ProductDescriptionComponent }​​​​​​​​,
 

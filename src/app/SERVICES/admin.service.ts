@@ -13,4 +13,24 @@ export class AdminService {
   {
     return this.hc.get("http://localhost:4000/admin");
   }
+  coupons(value:any):Observable<any>{
+    return this.hc.post("http://localhost:4000/coupons",value)
+  }
+  getcoupons():Observable<any>{
+    return this.hc.get("http://localhost:4000/coupons")
+  }
+
+  getlistusers():Observable<any>{
+    return this.hc.get("http://localhost:4000/listusers")
+  }
+
+  forgotpassword():Observable<any>{
+    return this.hc.get("http://localhost:4000/forgotpasswordusers")
+  }
+  transactions():Observable<any>{
+    return this.hc.get("http://localhost:4000/transactions")
+  }
+  getorders():Observable<any>{
+    return this.hc.get("http://localhost:4000/Return")
+  }
 }

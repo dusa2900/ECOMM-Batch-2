@@ -1,13 +1,20 @@
 <div class="container" >
-    <div class="row"> 
+    <div class="row">
         <ng-container *ngFor="let item of selected">
        
             <div class="card col-md-3" routerLink="/product/{{item.category}}/{{item.id}}" >
-                <img src="{{item.image}}" alt="">
-                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
-                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
-                <p><strong>Price:</strong> ${{item.price}}</p>
-                <!-- <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button> -->
+
+                <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <h5 class="card-title" style="font-weight: bold;">{{item.category}}</h5>
+                <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p> -->
+          
+                <h5 class="card-title" style="font-weight: bold;"><strong>Price:</strong> ${{item.price}}</h5>
+                
+              </div>
+              
+              <button class="btn btn-info " >Add to cart</button>
             </div>
           
         </ng-container>

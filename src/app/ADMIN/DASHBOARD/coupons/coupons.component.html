@@ -1,1 +1,163 @@
-<p>coupons works!</p>
+<ng-template #noData>
+  <h3 style="margin-left: 320px;">No Data Available!!!</h3> 
+ </ng-template>
+ <h1 style="text-align: center;color:rgb(241, 45, 10)"><img src="../../../../assets/images/discount.png" style="width:50px;height:50px">Coupons Available:{{coupon.length}}</h1>
+
+ <ng-container *ngIf="coupon.length>0;else noData">
+<div class="container">
+<h1>COUPONS</h1>
+<!-- modal -->
+    <div class="col text-right">
+  
+        <a  class="btn btn-success" data-toggle="modal"  data-target="#largeModal">Add Coupons</a>
+      </div>
+      <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <br>
+    <form [formGroup]="couponsForm" (ngSubmit)="onSubmit(couponsForm.value)">
+           <!-- ////coupon/// -->
+           <br>
+           <div class="row">
+
+                      
+    
+                        <div class="col-md-2 form-group text-center" >
+                            <label  for="couponCode"> coupon Code :</label>
+                        </div>
+                        <div class="col-md-4 form-group">
+                        <input type="text" formControlName="couponCode" id="couponCode " class="form-control" 
+                       [ngClass]="{ 'is-invalid': submitted && f.couponCode .errors }" />
+                        <div *ngIf="submitted && f.couponCode .errors" class="invalid-feedback">
+                            <div *ngIf="f.couponCode .errors.required"> coupon Code  is required</div>
+                            <div *ngIf="f.couponCode .errors.minlength"> minimun 8 Letters</div>
+
+                
+                        </div>
+                    </div>
+                
+                 
+          
+                <!-- ////CouponDescription// -->
+                        <div class="col-md-2 form-group text-center" >
+                            <label  for="CouponDescription"> CouponDescription:</label>
+                        </div>
+                        <div class="col-md-4 form-group">
+                    <input type="CouponDescription" formControlName="CouponDescription" id="CouponDescription" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CouponDescription.errors }" />
+                    <div *ngIf="submitted && f.CouponDescription.errors" class="invalid-feedback">
+                        <div *ngIf="f.CouponDescription.errors.required">CouponDescription is required</div>
+                    </div>
+                </div>
+
+            </div>
+    <!-- ////CouponType/// -->
+              
+                    <div class="row">
+                        <div class="col-md-2 form-group text-center" >
+                            <label  for="CouponType"> CouponType:</label>
+                        </div>
+                        <div class="col-md-4 form-group">
+                      <select class="custom-select"  formControlName="CouponType" [ngClass]="{ 'is-invalid': submitted && f.CouponType.errors }">
+                        <option value="">CouponType</option>
+                        <option *ngFor="let CouponType of type" [ngValue]="CouponType">{{CouponType}}</option>
+                      </select>
+                    <div *ngIf="submitted && f.CouponType.errors" class="invalid-feedback">
+                        <div *ngIf="f.CouponType.errors.required">CouponType  required</div>
+                    </div>
+                        </div>
+               
+          
+                    <!-- ////CouponValue///// -->
+             
+                        <div class="col-md-2 form-group text-center" >
+                            <label  for="CouponValue"> CouponValue:</label>
+                        </div>
+                        <div class="col-md-4 form-group">
+                    <input type="text" formControlName="CouponValue" id="CouponValue" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CouponValue.errors }" />
+                    <div *ngIf="submitted && f.CouponValue.errors" class="invalid-feedback">
+                        <div *ngIf="f.CouponValue.errors.required">CouponValue is required</div>
+                    </div>
+                </div>
+               
+            </div>
+             
+
+           
+            
+<!-- /StartDate//////////// -->
+                    <div class="row">
+                        <div class="col-md-2 form-group text-right" >
+                            <label  for="StartDate"> StartDate:</label>
+                        </div>
+                        <div class="col-md-4 form-group">
+                    <input type="date" formControlName="StartDate" id="StartDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.StartDate.errors }" />
+                    <div *ngIf="submitted && f.StartDate.errors" class="invalid-feedback">
+                        <div *ngIf="f.StartDate.errors.required">StartDate is required</div>
+                    </div>
+                </div>
+
+<!-- /////EndDate///// -->
+           
+                        <div class="col-md-2 form-group text-right" >
+                            <label  for="EndDate"> EndDate:</label>
+                        </div>
+                        <div class="col-md-4 form-group">
+                    <input type="date" formControlName="EndDate" id="EndDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.EndDate.errors }" />
+                    <div *ngIf="submitted && f.EndDate.errors" class="invalid-feedback">
+                        <div *ngIf="f.EndDate.errors.required">EndDate is required</div>
+                    </div>
+                </div>
+                </div>
+                
+            <!-- //////////////// -->
+                <div class="text-center">
+                    <button class="btn btn-primary mr-1" type="submit" >Save Coupon</button>
+                    <button class="btn btn-secondary" type="reset" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+         
+        
+          </div>
+        </div>
+      </div>
+
+      <!-- //////////////// -->
+
+
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+                <th scope="col">S.no</th>
+              <th scope="col">coupon Code</th>
+              <th scope="col">Coupon Description</th>
+              <th scope="col">Coupon Type</th>
+              <th scope="col">Coupon Value</th>
+              <th scope="col">Start Date </th>
+              <th scope="col">End Date </th>
+              <th scope="col">Actions </th>
+            </tr>
+          </thead>
+
+          <tbody *ngFor="let data of coupon"> 
+            <tr >
+              <th scope="row">{{data.id}}</th>
+              <td>{{data.couponCode}}</td>
+              <td>{{data.CouponDescription}}</td>
+              <td>{{data.CouponType}}</td>
+              <td>{{data.CouponValue}}</td>
+              <td>{{data.StartDate}}</td>
+              <td>{{data.EndDate}}</td>
+              <td>
+                <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>
+              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+              </td>
+            </tr>
+          
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </ng-container>

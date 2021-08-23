@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { CouponsComponent } from './DASHBOARD/coupons/coupons.component';
-import { PaymentsComponent } from './DASHBOARD/payments/payments.component';
 import { ViewUserComponent } from './DASHBOARD/view-user/view-user.component';
 import { TrackerComponent } from './DASHBOARD/tracker/tracker.component';
 import { FooterComponent } from './COMMON/footer/footer.component';
@@ -12,12 +11,13 @@ import { ForgotpasswordUserComponent } from './DASHBOARD/forgotpassword-user/for
 import { ProductlistStatusComponent } from './DASHBOARD/productlist-status/productlist-status.component';
 import { SidenavComponent } from './COMMON/sidenav/sidenav.component';
 import { HomeComponent } from './COMMON/home/home.component';
-
+import { TransactionsComponent } from './DASHBOARD/transactions/transactions.component';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     CouponsComponent,
-    PaymentsComponent,
     ViewUserComponent,
     TrackerComponent,
     FooterComponent,
@@ -25,10 +25,12 @@ import { HomeComponent } from './COMMON/home/home.component';
     ReturnorderComponent,
     SidenavComponent,
     ForgotpasswordUserComponent,
-    HomeComponent
+    HomeComponent,
+    TransactionsComponent
   ],
   imports: [
-    CommonModule,
+    CommonModule, FormsModule,NgxPaginationModule,
+    ReactiveFormsModule,
     AdminRoutingModule
   ]
 })

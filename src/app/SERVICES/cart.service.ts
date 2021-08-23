@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,41 +8,78 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
 
 
-  public cartItemList : any =[]
-  public productList = new BehaviorSubject<any>([]);
+ // public apiUrl:string="http://localhost:4000/cartItems/"
+ public cartItem:any=[];
+ public productList=new BehaviorSubject<any>([]);
 
-  constructor() { }
+  constructor(private hc:HttpClient) { }
+  setproduct(product:any){
+    this.cartItem.push(...product);
+    this.productList.next(product);
+      }
   getProducts(){
     return this.productList.asObservable();
-  }
+   }
+  getCartItems(): Observable<any> {
 
-  setProduct(product : any){
-    this.cartItemList.push(...product);
-    this.productList.next(product);
+       return this.hc.get<any>("http://localhost:4000/cartItems")
   }
-  addtoCart(product : any){
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
-    this.getTotalPrice();
-    console.log(this.cartItemList)
-  }
-  getTotalPrice() : number{
-    let grandTotal = 0;
-    this.cartItemList.map((a:any)=>{
-      grandTotal += a.total;
-    })
-    return grandTotal;
-  }
-  removeCartItem(product: any){
-    this.cartItemList.map((a:any, index:any)=>{
-      if(product.id=== a.id){
-        this.cartItemList.splice(index,1);
-      }
-    })
-    this.productList.next(this.cartItemList);
-  }
-  removeAllCart(){
-    this.cartItemList = []
-    this.productList.next(this.cartItemList);
-  }
+   
+
+
+
+
+addToCart(item:any):Observable<any>
+{ this.cartItem.push(item);
+  this.productList.next(this.cartItem);
+ return this.hc.post("http://localhost:4000/cartItems",item);
+
+}
+
+removeCartItem(product:any): Observable<any>{
+  console.log("remove",this.cartItem)
+  this.cartItem.map((a:any,index:any)=>{
+    if(product.id===a.id){
+      this.cartItem.splice(index,1);
+   
+    }
+  })
+  this.productList.next(this.cartItem);
+  
+  return this.hc.delete(`http://localhost:4000/cartItems/${product.id}`)
+}
+
+removeAllcart(): Observable<any>{
+  this.cartItem=[]
+  this.productList.next(this.cartItem);
+  return this.hc.delete<any>("http://localhost:4000/cartItems");
+}
+
+
+///Return Order function////
+
+// checkout payment Data
+CheckOutData(item:any):Observable<any>
+{
+  return this.hc.post("http://localhost:4000/Orders",item);
+}
+
+Orders():Observable<any>
+{
+  return this.hc.get(" http://localhost:4000/Orders");
+}
+
+CancelOrder(item:any):Observable<any>
+{
+  //console.log("cancelorder",item);
+  return this.hc.delete(`http://localhost:4000/Orders/${item.id}`);
+}
+// PostOrder(item:any):Observable<any>
+// {
+//   return this.hc.post("http://localhost:4000/History",item)
+// }
+// History():Observable<any>
+// {
+//   return this.hc.get("http://localhost:4000/History")
+// }
 }

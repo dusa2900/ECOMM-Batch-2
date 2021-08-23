@@ -22,6 +22,6 @@ export class MensWearComponent implements OnInit {
     })
   }
   addtocart(item: any){
-    this.cartService.addtoCart(item);
+    this.cartService.addToCart(item);
   }
 }

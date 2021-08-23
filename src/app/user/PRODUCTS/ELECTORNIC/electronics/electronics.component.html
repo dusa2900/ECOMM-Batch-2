@@ -1,46 +1,63 @@
 <div class="container" >
-  <div class="row"> <h1>Mens Wear:</h1>
-      <ng-container *ngFor="let item of mensList">
+    <div class="row"> <h1>Mens Wear:</h1>
+        <ng-container *ngFor="let item of mensList">
+            <!-- <div class="card col-md-3" (click)="onClick(item.category)"> -->
+          
+              <div class="card col-md-3" routerLink="/products/{{item.category}}">
+              
+                  <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">{{item.title}}</h5>
+                      <h5 class="card-title" style="font-weight: bold;">{{item.category}}</h5>
+                   
+                    </div>
+                  <!-- <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5> -->
+                  <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                  <p><strong>Price:</strong> ${{item.price}}</p> -->
+                  <!-- <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button> -->
+              </div>
+         
+        </ng-container>
+  
+    </div>
+    <br>
+    <div class="row"> <h1>Womens Wear:</h1>
+      <ng-container *ngFor="let item of womensList">
           <!-- <div class="card col-md-3" (click)="onClick(item.category)"> -->
-        
-            <div class="card col-md-3" routerLink="/products/{{item.category}}">
-                <img src="{{item.image}}" alt="">
-                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
-                <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
-                <p><strong>Price:</strong> ${{item.price}}</p> -->
-                <!-- <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button> -->
-            </div>
-       
+              <div class="card col-md-3" routerLink="/products/{{item.category}}" >
+                  <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+                  <div class="card-body">
+                      <h5 class="card-title">{{item.title}}</h5>
+                      <h5 class="card-title" style="font-weight: bold;">{{item.category}}</h5>
+                    </div>
+              <!-- <img src="{{item.image}}" alt="">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5> -->
+              <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+              <p><strong>Price:</strong> ${{item.price}}</p> -->
+              <!-- <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button> -->
+          </div>
       </ng-container>
-
+  
   </div>
   <br>
-  <div class="row"> <h1>Womens Wear:</h1>
-    <ng-container *ngFor="let item of womensList">
+  <div class="row"> <h1>Kids Wear:</h1>
+    <ng-container *ngFor="let item of kidsList">
         <!-- <div class="card col-md-3" (click)="onClick(item.category)"> -->
             <div class="card col-md-3" routerLink="/products/{{item.category}}" >
-            <img src="{{item.image}}" alt="">
-            <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+              <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+              <div class="card-body">
+                  <h5 class="card-title">{{item.title}}</h5>
+                  <h5 class="card-title" style="font-weight: bold;">{{item.category}}</h5>
+  
+                </div>
+            <!-- <img src="{{item.image}}" alt="">
+            <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5> -->
             <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
             <p><strong>Price:</strong> ${{item.price}}</p> -->
             <!-- <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button> -->
         </div>
     </ng-container>
-
-</div>
-<br>
-<div class="row"> <h1>Kids Wear:</h1>
-  <ng-container *ngFor="let item of kidsList">
-      <!-- <div class="card col-md-3" (click)="onClick(item.category)"> -->
-          <div class="card col-md-3" routerLink="/products/{{item.category}}" >
-          <img src="{{item.image}}" alt="">
-          <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
-          <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
-          <p><strong>Price:</strong> ${{item.price}}</p> -->
-          <!-- <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button> -->
-      </div>
-  </ng-container>
-
-</div>
-</div>
-
+  
+  </div>
+  </div>
+  

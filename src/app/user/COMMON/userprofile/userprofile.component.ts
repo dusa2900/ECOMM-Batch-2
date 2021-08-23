@@ -12,7 +12,7 @@ export class UserprofileComponent implements OnInit {
   submitted = false;
   profileForm=new FormGroup(
     {  
-      Name:new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z ]*$')]),
+      firstname:new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z ]*$')]),
      email:new FormControl('',[Validators.required, Validators.pattern('[^@]+@[^@]+\.[a-zA-Z]{2,6}')]),
      mobile:new FormControl('',[Validators.required, Validators.pattern('[6-9]\\d{9}')]),
      address_line1:new FormControl(''),

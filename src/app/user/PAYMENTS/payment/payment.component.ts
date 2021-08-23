@@ -19,7 +19,7 @@ export class PaymentComponent implements OnInit {
     this.cs.getProducts()
     .subscribe(res=>{
       this.products = res;
-      this.grandTotal = this.cs.getTotalPrice();
+      // this.grandTotal = this.cs.getTotalPrice();
     })
   }
   makePayment(amount: any) {
@@ -50,7 +50,7 @@ export class PaymentComponent implements OnInit {
     }
   }
   emptycart(){
-    this.cs.removeAllCart();
+    // this.cs.removeAllCart();
   }
 
 }

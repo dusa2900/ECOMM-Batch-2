@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/SERVICES/admin.service';
 
 @Component({
   selector: 'app-forgotpassword-user',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forgotpassword-user.component.scss']
 })
 export class ForgotpasswordUserComponent implements OnInit {
-
-  constructor() { }
+  forgotpassword:any[]=[]
+  constructor(private admin:AdminService) { }
 
   ngOnInit(): void {
+    this.getforgotpassword()
   }
-
+  getforgotpassword() {
+    this.admin.forgotpassword().subscribe((res: any)=>  {
+      this.forgotpassword = res
+console.log("listusers", this.forgotpassword)
+    }
+    )}
 }

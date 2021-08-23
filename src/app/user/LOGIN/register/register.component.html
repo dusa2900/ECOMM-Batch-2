@@ -87,6 +87,8 @@
        
                        
                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+
+                
                         <div *ngIf="f.password.errors.required">Password is required</div>
                         <div *ngIf="f.password.errors?.PasswordStrengthValidator">Password must be one special character,one small and one capital letter</div>
                     </div>
@@ -118,7 +120,7 @@
                     <input type="password" formControlName="confirmPassword" id="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
                     <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
                         <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-                        <div *ngIf="f.confirmPassword.errors.PasswordStrengthValidator">confirmPassword must match with password</div>
+                        <div *ngIf="registerForm.hasError('notSame')">confirmPassword must match with password</div>
                     </div>
                         </div>
                     </div>

@@ -185,7 +185,7 @@ label:hover span:after {
 
 .bar {
   color: white;
-  background-color: #4a4e54;
+  background-color:rgba(8, 7, 7, 0.849);
   line-height: 4rem;
   border: 1px solid grey;
 }
@@ -199,6 +199,7 @@ nav {
   transform: translateX(-100%) scale(1, 0.1);
   transform-origin: top left;
   transition: all 0.3s ease-out;
+height: 800px;
 }
 nav ul {
   margin: 0;
@@ -210,6 +211,7 @@ nav ul li {
   opacity: 0;
   transform: translateX(-100%);
   transition: all 0.6s ease-out;
+  padding: 20px 0px;
 }
 nav ul li a {
   transition: all 0.3s ease-out;
@@ -224,7 +226,7 @@ nav ul li:first-child {
 }
 nav ul li:hover a {
   color: white;
-  background-color: #6d747e;
+  background-color:black;
   transition: all 0.3s ease-out;
 }
 nav ul li:hover a i {
@@ -244,12 +246,7 @@ nav ul li:hover a i {
 
 .navBtn {
   display: none;
-}
+} 
 
 
-
-/* ////////////////// */
-
-
-/* /////////33/////////// */
 

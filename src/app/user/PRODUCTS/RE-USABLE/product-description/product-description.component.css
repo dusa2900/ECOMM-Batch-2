@@ -1,0 +1,16 @@
+.card
+{
+  margin: 0 auto;
+}
+
+@media(max-width:360px)
+{
+  .card .container-fluid .media .row{
+    width: 360px;
+  }
+  
+}
+.media-body
+{
+  margin-top: 50px;
+}

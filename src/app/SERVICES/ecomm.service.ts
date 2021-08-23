@@ -41,10 +41,14 @@ return !!localStorage.getItem('user');
 //register//
 register(value:any):Observable<any>{
   console.log("register service",value);
-  return this.hc.post<any>("http://shoppingapp-env.eba-itwffxiz.ap-south-1.elasticbeanstalk.com/registration/register",value,this.httpOptions)
+  return this.hc.post<any>("http://localhost:4000/register",value,this.httpOptions)
   
 }
-
+////SecondNavbar List function////
+getSecondNavbar():Observable<any>
+{​​​​​​​​
+return this.hc.get("http://localhost:4000/secondNavbar")
+}​​​​​​​​
 ////profile///////////////////////////////////
 ////Get-profile/////
 public getprofile():Observable<any>{   
@@ -59,4 +63,6 @@ public getprofile():Observable<any>{
       return this.hc.put(this.profile,res);
     
     }
+
+
 }

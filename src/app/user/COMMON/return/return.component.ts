@@ -1,7 +1,7 @@
 
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductsService } from 'src/app/SERVICES/products.service';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-return',
   templateUrl: './return.component.html',
@@ -25,8 +25,47 @@ export class ReturnComponent implements OnInit {
   }
 
 
+  public color:number=50;
+  public width:any;
+  public bgcolor1:any="#3268ff";
+  public bgcolor2:any;
+  public bgcolor3:any;
+  public bgcolor4:any;
+
+ 
+
+fun()
+
+{
+  if(this.color == 0)
+  {
+    this.width="5%";
+    this.bgcolor1="#3268ff"
+  }
+ else if (this.color >= 0 && this.color < 40) {
+this.width="34%";
+  this.bgcolor2="#3268ff"
+  }
+  else if (this.color >= 40 && this.color < 80) {
+    this.width="66%";
+    this.bgcolor2="#3268ff";
+    this.bgcolor3="#3268ff"
+  }
+  
+  else if (this.color >= 80) {
+    this.width="100%";
+    this.bgcolor2="#3268ff";
+    this.bgcolor3="#3268ff";
+    this.bgcolor4="#3268ff"
+  }
+  else {
+    console.log("No color");
+  }
+
+}
 
   ngOnInit(){
+    this.fun()
     this.ps.getOrder().subscribe(res=>
       {
         this.order=res;

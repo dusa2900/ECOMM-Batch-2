@@ -2,6 +2,9 @@
     <li class="nav-item">
       <a class="nav-link active" id="orders-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="true">Orders</a>
     </li>
+
+  
+
     <li class="nav-item">
       <a class="nav-link" id="History-tab" data-toggle="tab" href="#History" role="tab" aria-controls="History" aria-selected="false">History</a>
     </li>
@@ -46,13 +49,15 @@
                     <tr  *ngFor="let x of orders">
                       <td><img [src]="x.image" style="max-width: 40px; max-height: 35px;">
                             {{x.productName}}</td>
-                      <td>{{x.status}}</td>
+                      <td>{{x.status}}success</td>
                       <td><button type="button" class="btn btn-success">Re-order</button></td>
                     </tr>
                   </tbody>
             </table>
           </div>
     </div>
+
+
 
     <!-- //return-order// -->
 

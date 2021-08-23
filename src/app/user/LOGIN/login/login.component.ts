@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
 
           this.toastr.success('Admin Logined successfully')
           this.router.navigate(['/admin']);
+          localStorage.setItem('accesstoken', res.access_token);
 
         }
 
@@ -46,6 +47,7 @@ export class LoginComponent implements OnInit {
      
           this.toastr.success('User Logined successfully')
           this.router.navigate(['']);
+          localStorage.setItem('accesstoken', res.access_token);
   
          
         }

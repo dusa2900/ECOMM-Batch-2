@@ -1,36 +1,264 @@
 {
   "profile": {
-    "mobile": "8897806798",
-    "password": "Prabhakar7890?"
+    "mobile": "99999999",
+    "password": "Tech@123"
   },
-  "Order": [
+  "register": [
     {
-      "productName": "I Kall K500 Smartphone (4Gb Ram, 64Gb Internal Memory, Dual Sim 4G Volte) (Flame Red)",
-      "image": "../../assets/images/Orders/mobile.jpg",
-      "productId": 148464435,
-      "rating": 2.5,
-      "price": 7000,
-      "description": " 4GB Ram and 64GB Internal Storage || 3000 mAh Battery || Expandable Memory 64GB with Memory Card 8MP Rear Camera and 5MP Front Camera || 3.5 MM Audio Jack 1 Year manufacturing warranty for Mobile and 6 Months for box accessories   2000 Plus Service Centre All Over India || Customer Care No - 0120-4731048 or reach us at helpdesk@ikall.in"
+      "firstname": "pavan",
+      "mobile": "9603342374",
+      "email": "pavan@gmail.com",
+      "password": "Pavan@123",
+      "confirmPassword": "Pavan@123",
+      "acceptTerms": true,
+      "id": 1
+    }
+  ],
+  "coupons": [
+    {
+      "couponCode": "Tech0005",
+      "CouponType": "Percentage Discount",
+      "CouponDescription": "five",
+      "CouponValue": "5",
+      "StartDate": "2021-08-27",
+      "EndDate": "2021-08-27",
+      "id": 1
+    },
+    {
+      "couponCode": "Tech0005",
+      "CouponType": "Amount Discount",
+      "CouponDescription": "five",
+      "CouponValue": "5",
+      "StartDate": "2021-08-27",
+      "EndDate": "2021-08-27",
+      "id": 2
+    },
+    {
+      "couponCode": "Tech0005",
+      "CouponType": "Percentage Discount",
+      "CouponDescription": "five",
+      "CouponValue": "5",
+      "StartDate": "2021-08-13",
+      "EndDate": "2021-08-27",
+      "id": 3
+    },
+    {
+      "couponCode": "Tech0005",
+      "CouponType": "Percentage Discount",
+      "CouponDescription": "five",
+      "CouponValue": "5",
+      "StartDate": "2021-08-21",
+      "EndDate": "2021-08-27",
+      "id": 4
+    },
+    {
+      "couponCode": "Tech0025",
+      "CouponType": "Amount Discount",
+      "CouponDescription": "twentyfive",
+      "CouponValue": "25",
+      "StartDate": "2021-08-27",
+      "EndDate": "2021-09-03",
+      "id": 5
+    },
+    {
+      "couponCode": "Tech0050",
+      "CouponType": "Percentage Discount",
+      "CouponDescription": "f50",
+      "CouponValue": "50",
+      "StartDate": "2021-08-25",
+      "EndDate": "2021-08-28",
+      "id": 6
+    }
+  ],
+  "listusers": [
+    {
+      "sno": "1",
+      "username": "pavan",
+      "email": "pavan@gmail.com",
+      "mobile": "999999999"
+    },
+    {
+      "sno": "2",
+      "username": "kalyan",
+      "email": "kalyan@gmail.com",
+      "mobile": "8888899999"
+    }
+  ],
+  "forgotpasswordusers": [
+    {
+      "sno": "1",
+      "username": "ramu",
+      "email": "ramu@gmail.com",
+      "mobile": "999999999"
+    },
+    {
+      "sno": "2",
+      "username": "kalyan",
+      "email": "kalyan@gmail.com",
+      "mobile": "8888899999"
+    }
+  ],
+  "transactions": [
+    {
+      "orderid": "TECH-2021000001",
+      "name": "pavan",
+      "productimage": "../../assets/images/Orders/mobile.jpg",
+      "productdescription": "8GB Ram and 25GB Internal Storage",
+      "quantity": "1",
+      "price": "20000",
+      "coupon": "1000",
+      "total": "19000",
+      "transactiontype": "card",
+      "status": "success"
+    },
+    {
+      "orderid": "TECH-2021000002",
+      "name": "kalyan",
+      "productimage": "../../assets/images/Orders/mobile.jpg",
+      "productdescription": "4GB Ram and 64GB Internal Storage",
+      "quantity": "2",
+      "price": "10000",
+      "coupon": "1000",
+      "total": "9000",
+      "transactiontype": "card",
+      "status": "success"
     }
   ],
   "Orders": [
     {
-      "productName": "I Kall K500 Smartphone (4Gb Ram, 64Gb Internal Memory, Dual Sim 4G Volte) (Flame Red)",
-      "image": "mobile.jpg",
-      "productId": 148464435,
-      "rating": 2.5,
-      "Price": 7000,
-      "description": " 4GB Ram and 64GB Internal Storage || 3000 mAh Battery || Expandable Memory 64GB with Memory Card 8MP Rear Camera and 5MP Front Camera || 3.5 MM Audio Jack 1 Year manufacturing warranty for Mobile and 6 Months for box accessories   2000 Plus Service Centre All Over India || Customer Care No - 0120-4731048 or reach us at helpdesk@ikall.in"
+      "id": 27,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "kid-shirt",
+      "type": "kidswear",
+      "instock": 5,
+      "qnt": 1,
+      "image": "../../assets/images/Products/Appearels/kshirt.jpg"
     },
     {
-      "productName": "Dia A Dia Men's Poly Viscose V-Shape Tuxedo Style Black Regular Fit Waistcoat",
-      "image": "shirt.jpg",
-      "productId": 143453347,
-      "rating": 4.1,
-      "Price": 800,
-      "description": "Fit Type Slim Fit  Size guide  waist coat/blazer size should be (6)  inch over your jeans waist size (for eg : if you wear a  (36) size jeans your waist coat size should be This waist coat can be worn both casually and formally as a substitute to blazer in Summers, Also can be used in contrast with different colour blazers as a 3 piece suit Slim fit and solid pattern party wear waist coat            Do not wash, dry clean only"
+      "id": 1,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "shirt",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
+      "image": "../../assets/images/Products/Appearels/hp.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "saree",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
+      "image": "../../assets/images/Products/Appearels/sarees.jpg"
+    },
+    [
+      {
+        "id": 6,
+        "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "price": 109.95,
+        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        "category": "T-shirt",
+        "type": "menswear",
+        "instock": 5,
+        "qnt": 3,
+        "image": "../../assets/images/Products/Appearels/Tshirt1.jpg"
+      }
+    ],
+    [
+      {
+        "id": 6,
+        "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "price": 109.95,
+        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        "category": "T-shirt",
+        "type": "menswear",
+        "instock": 5,
+        "qnt": 3,
+        "image": "../../assets/images/Products/Appearels/Tshirt1.jpg"
+      }
+    ]
+  ],
+  "History": [],
+  "Return": [
+    {
+      "id": 1,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "kid-shirt",
+      "type": "kidswear",
+      "instock": 5,
+      "reason": "color changed",
+      "image": "../../assets/images/Products/Appearels/kshirt.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 209.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "kid-shirt",
+      "type": "kidswear",
+      "instock": 5,
+      "reason": "size too small",
+      "image": "../../assets/images/Products/Appearels/kshirt.jpg"
     }
   ],
+  "Trackorder": [],
+  "secondNavbar": [
+    {
+      "title": "Menswear",
+      "type": "menswear"
+    },
+    {
+      "title": "Womenswear",
+      "type": "womenswear"
+    },
+    {
+      "title": "Kidswear",
+      "type": "kidswear"
+    },
+    {
+      "title": "Mobiles",
+      "type": "mobiles"
+    },
+    {
+      "title": "Laptops",
+      "type": "laptops"
+    },
+    {
+      "title": "Home Appliances",
+      "type": "home-appliances"
+    },
+    {
+      "title": "Home-Kitchen",
+      "type": "home-kitchen"
+    },
+    {
+      "title": "Home-Furniture",
+      "type": "home-furniture"
+    }
+  ],
+  "cartItems": [
+    {
+      "id": 13,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "jacket",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
+      "image": "../../assets/images/Products/Appearels/jacket1.jpg"
+    }
+  ],
+  "postreturnorder": [],
   "products": {
     "apparels": {
       "menswear": [
@@ -108,6 +336,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "shirt",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/hp.jpg"
     },
     {
@@ -116,6 +347,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "T-shirt",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/Tshirt.jpg"
     },
     {
@@ -124,6 +358,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "shirt",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/Shirt.jpg"
     },
     {
@@ -132,6 +369,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "shirt",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/shirt1.jpg"
     },
     {
@@ -140,6 +380,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "shirt",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/shirt2.jpg"
     },
     {
@@ -148,6 +391,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "T-shirt",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/Tshirt1.jpg"
     },
     {
@@ -156,6 +402,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "T-shirt",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/Tshirt2.jpg"
     },
     {
@@ -164,6 +413,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "T-shirt",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/Tshirt3.jpg"
     },
     {
@@ -172,6 +424,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "jeans",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/jeans1.jpg"
     },
     {
@@ -180,6 +435,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "jeans",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/jeans2.jpg"
     },
     {
@@ -188,6 +446,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "jeans",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/jeans3.jpg"
     },
     {
@@ -196,6 +457,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "jacket",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/jacket3.jpg"
     },
     {
@@ -204,6 +468,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "jacket",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/jacket1.jpg"
     },
     {
@@ -212,6 +479,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "jacket",
+      "type": "menswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/jacket.jpg"
     },
     {
@@ -220,6 +490,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "saree",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/sarees.jpg"
     },
     {
@@ -228,6 +501,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "saree",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/saree1.jpg"
     },
     {
@@ -236,6 +512,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "saree",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/saree2.jpg"
     },
     {
@@ -244,6 +523,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "kurta",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/kurtas.jpg"
     },
     {
@@ -252,6 +534,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "kurta",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/kurta3.jpg"
     },
     {
@@ -260,6 +545,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "kurta",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/kurta2.jpg"
     },
     {
@@ -268,6 +556,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "kurta",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/kurta1.jpg"
     },
     {
@@ -276,6 +567,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "women-jacket",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/wjacket.jpg"
     },
     {
@@ -284,6 +578,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "women-jacket",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/wjacket2.jpg"
     },
     {
@@ -292,6 +589,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "women-jacket",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/wjacket1.jpg"
     },
     {
@@ -300,6 +600,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "women-jacket",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/wjacket3.jpg"
     },
     {
@@ -308,6 +611,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "kid-shirt",
+      "type": "kidswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/kshirt.jpg"
     },
     {
@@ -316,6 +622,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "kid-shirt",
+      "type": "kidswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/kshirt1.jpg"
     },
     {
@@ -324,6 +633,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "kid-shirt",
+      "type": "kidswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/kshirt2.jpg"
     },
     {
@@ -332,6 +644,9 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "kid-shirt",
+      "type": "kidswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/kshirt3.jpg"
     },
     {
@@ -340,10 +655,12 @@
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "saree",
+      "type": "womenswear",
+      "instock": 5,
+      "qnt": 1,
       "image": "../../assets/images/Products/Appearels/dress.jpg"
     }
   ],
-  "postreturnorder": {},
   "admin": {
     "productstatus": {
       "menswear": [

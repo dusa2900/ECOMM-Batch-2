@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PasswordStrengthValidator } from "./password-req"
-import { MustMatch } from './must-watch';
+// import { MustMatch } from './must-watch';
 import { EcommService } from 'src/app/SERVICES/ecomm.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -28,9 +28,9 @@ export class RegisterComponent implements OnInit {
       password: [null, Validators.compose([
         Validators.required, Validators.minLength(8), PasswordStrengthValidator])],
 
-      // confirmPassword: [null, Validators.compose([
-      //   Validators.required, Validators.minLength(8), PasswordStrengthValidator])],
-
+      confirmPassword: [null,  Validators.compose([
+        Validators.required, Validators.minLength(8)] ),{ validator: this.checkPasswords }],
+    
       acceptTerms: [false, Validators.requiredTrue]
     }, {
       // validator: MustMatch('password', 'confirmPassword')
@@ -39,24 +39,32 @@ export class RegisterComponent implements OnInit {
 
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
+  checkPasswords(group: FormGroup) { // here we have the 'passwords' group
+    let pass = group.controls.password.value;
+    let confirmPass = group.controls.confirmPassword.value;
+
+    return pass === confirmPass ? null : { notSame: true }
+  }
 
   onSubmit(value: any) {
     
     this.ecomm.register(value).subscribe((res: any)=>      {
-    //  console.log("res",res);
        
-      if (res=="Done") {
-     
-        this.toastr.success('User created  successfully')
+console.log("reg",res);
         this.router.navigate(['/login']);
 
-       
-      }
-else{
-        this.toastr.error('User Already Exists')
 
-}
-    //  this.toastr.error('User Already Exists')
+//       if (res=="Done") {
+     
+//         this.toastr.success('User created  successfully')
+//         this.router.navigate(['/login']);
+
+       
+//       }
+// else{
+//         this.toastr.error('User Already Exists')
+
+// }
 
     }
  

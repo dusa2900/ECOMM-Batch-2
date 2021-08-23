@@ -57,4 +57,19 @@ postreturnorder(value:any):Observable<any>{
   return this.hc.post<any>("http://localhost:4000/postreturnorder",value)
   
 }
+//addd-to-cart///
+    addcart(data:any):Observable<any>{
+      console.log("add service",data);
+      
+      return this.hc.post("http://localhost:4000/Addtocart",data)
+    }
+  
+      
+    ////SecondNavbar List function////
+    getSecondNavbar():Observable<any>
+    {
+      return this.hc.get("http://localhost:4000/secondNavbar/")
+    }
+    
+ 
 }
