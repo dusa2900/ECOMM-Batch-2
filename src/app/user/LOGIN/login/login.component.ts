@@ -30,33 +30,46 @@ export class LoginComponent implements OnInit {
     this.ecomm.login(value).subscribe(res=>
 
        {​​​
+       sessionStorage.setItem("mobilenumber",value.mobile)
+       sessionStorage.getItem("regusername")
         console.log("login",res)
 
-         if(res=="admin"){ 
-        console.log("admin",res)
-
-          this.toastr.success('Admin Logined successfully')
-          this.router.navigate(['/admin']);
-          localStorage.setItem('accesstoken', res.access_token);
-
-        }
+        //  if(res=="token"){ 
+// let user=JSON.parse(atob(res.token?.split('.')[1]));
+// console.log("user-token",user)
+// console.log("user-email",user.email)
 
 
-        else if (res=="user") {
-          console.log("user",res)
+// localStorage.setItem('current user',user)
+// localStorage.setItem('token',res.token)
+// if(user.role=="User"){ 
+//   this.toastr.success('Admin Logined successfully')
+
+//   this.router.navigate(['']);
+
+// }
+//          else{
+//           this.toastr.error('Invalid  Details')
+
+//   this.router.navigate(['/admin']);
+
+  
+//   }
+
+        // }
+
+
+  //       else if (res=="user") {
+  //         console.log("user",res)
      
-          this.toastr.success('User Logined successfully')
-          this.router.navigate(['']);
-          localStorage.setItem('accesstoken', res.access_token);
+  //         this.toastr.success('User Logined successfully')
+  //         this.router.navigate(['']);
   
          
-        }
+  //       }
 
       
-  else{
-          this.toastr.error('Invalid  Details')
-  
-  }
+
  } )
 }
 // localStorage.setItem('user',JSON.stringify(res));

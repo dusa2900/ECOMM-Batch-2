@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -22,7 +22,8 @@ export class EcommService {
  
     //login
 login(value:any):Observable<any>{​​​
-return this.hc.post<any>("http://shoppingapp-env.eba-itwffxiz.ap-south-1.elasticbeanstalk.com/login/user",value,this.httpOptions)
+// return this.hc.post<any>("http://shoppingapp-env.eba-itwffxiz.ap-south-1.elasticbeanstalk.com/login/user",value,this.httpOptions)
+return this.hc.post<any>("http://localhost:4000/login",value)
 }​​​
 ///login for token get
 
@@ -34,14 +35,18 @@ return !!localStorage.getItem('user');
 //forgotpassword//
   forgotpassword(value:any):Observable<any>{
     console.log("forgotpassword service",value);
+    const userPhoneNumber:any = sessionStorage.getItem('mobilenumber');
+    console.log("forgotpassword user-number",userPhoneNumber);
+
+    const params = new HttpParams().append('mobilenumber', userPhoneNumber );
     
-    return this.hc.get('h')
+    return this.hc.get("http://shoppingapp-env.eba-itwffxiz.ap-south-1.elasticbeanstalk.com/login/user",{params})
   }
 
 //register//
 register(value:any):Observable<any>{
   console.log("register service",value);
-  return this.hc.post<any>("http://localhost:4000/register",value,this.httpOptions)
+  return this.hc.post<any>("http://shoppingapp-env.eba-itwffxiz.ap-south-1.elasticbeanstalk.com/registration/register",value,this.httpOptions)
   
 }
 ////SecondNavbar List function////
