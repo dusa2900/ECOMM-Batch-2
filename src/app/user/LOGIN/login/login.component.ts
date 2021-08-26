@@ -40,26 +40,20 @@ export class LoginComponent implements OnInit {
 // console.log("user-email",user.email)
 
 
-// localStorage.setItem('current user',user)
+// localStorage.setItem('current user',user.role)
 // localStorage.setItem('token',res.token)
-// if(user.role=="User"){ 
+// if(user.role=="Admin"){ 
 //   this.toastr.success('Admin Logined successfully')
 
 //   this.router.navigate(['']);
 
 // }
-//          else{
-//           this.toastr.error('Invalid  Details')
 
-//   this.router.navigate(['/admin']);
-
-  
-//   }
 
         // }
 
 
-  //       else if (res=="user") {
+  //       else if (user.role=="user") {
   //         console.log("user",res)
      
   //         this.toastr.success('User Logined successfully')
@@ -67,7 +61,13 @@ export class LoginComponent implements OnInit {
   
          
   //       }
+//          else{
+//           this.toastr.error('Invalid  Details')
 
+//   this.router.navigate(['/admin']);
+
+  
+//   }
       
 
  } )

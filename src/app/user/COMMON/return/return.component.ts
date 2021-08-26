@@ -34,34 +34,34 @@ export class ReturnComponent implements OnInit {
 
  
 
-fun()
+  fun()
 
-{
-  if(this.color == 0)
   {
-    this.width="5%";
-    this.bgcolor1="#3268ff"
-  }
- else if (this.color >= 0 && this.color < 40) {
-this.width="34%";
-  this.bgcolor2="#3268ff"
-  }
-  else if (this.color >= 40 && this.color < 80) {
-    this.width="66%";
-    this.bgcolor2="#3268ff";
-    this.bgcolor3="#3268ff"
-  }
+    if(this.color == 0)
+    {
+      this.width="5%";
+      this.bgcolor1="#3268ff"
+    }
+   else if (this.color >= 0 && this.color < 40) {
+  this.width="34%";
+    this.bgcolor2="#3268ff"
+    }
+    else if (this.color >= 40 && this.color < 80) {
+      this.width="66%";
+      this.bgcolor2="#3268ff";
+      this.bgcolor3="#3268ff"
+    }
+    
+    else if (this.color >= 80) {
+      this.width="100%";
+      this.bgcolor2="#3268ff";
+      this.bgcolor3="#3268ff";
+      this.bgcolor4="#3268ff"
+    }
+    else {
+      console.log("No color");
+    }
   
-  else if (this.color >= 80) {
-    this.width="100%";
-    this.bgcolor2="#3268ff";
-    this.bgcolor3="#3268ff";
-    this.bgcolor4="#3268ff"
-  }
-  else {
-    console.log("No color");
-  }
-
 }
 
   ngOnInit(){

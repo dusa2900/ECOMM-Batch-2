@@ -21,7 +21,7 @@ export class JwtheaderComponent implements OnInit {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const currentJWT = localStorage.getItem('accesstoken');
+    const currentJWT = localStorage.getItem('token');
     //  const currentUserId = localStorage.getItem('userid');
     console.log('jwtheader', currentJWT);
     // console.log("userid",currentUserId)

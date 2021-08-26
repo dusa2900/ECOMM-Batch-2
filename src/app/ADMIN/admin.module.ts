@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { CouponsComponent } from './DASHBOARD/coupons/coupons.component';
 import { ViewUserComponent } from './DASHBOARD/view-user/view-user.component';
-import { TrackerComponent } from './DASHBOARD/tracker/tracker.component';
 import { FooterComponent } from './COMMON/footer/footer.component';
 import { ReturnorderComponent } from './DASHBOARD/returnorder/returnorder.component';
 import { ForgotpasswordUserComponent } from './DASHBOARD/forgotpassword-user/forgotpassword-user.component';
@@ -19,7 +18,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
   declarations: [
     CouponsComponent,
     ViewUserComponent,
-    TrackerComponent,
     FooterComponent,
     ProductlistStatusComponent,
     ReturnorderComponent,

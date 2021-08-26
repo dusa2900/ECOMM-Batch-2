@@ -49,7 +49,7 @@ console.log("reg",res);
 console.log("reg-username",value.firstname);
 
 sessionStorage.setItem("regusername",value.firstname);
-
+// sessionStorage.setItem("Token",res);
 
 
       if (res=="Done") {

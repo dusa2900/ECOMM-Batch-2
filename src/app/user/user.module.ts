@@ -26,9 +26,9 @@ import { ReturnComponent } from './COMMON/return/return.component';
 import { ProductDescriptionComponent } from './PRODUCTS/RE-USABLE/product-description/product-description.component';
 import { ProductCategoryTypeComponent } from './PRODUCTS/RE-USABLE/product-category-type/product-category-type.component';
 import { MensWearComponent } from './PRODUCTS/APPEARELS/mens-wear/mens-wear.component';
-import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { NgxImgZoomModule } from 'ngx-img-zoom';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 
 @NgModule({
@@ -56,7 +56,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
   imports: [
     CommonModule,HttpClientModule, ToastrModule.forRoot(),NgxPaginationModule,
     USERRoutingModule,AngmaterialModule,Ng2SearchPipeModule,
-MatToolbarModule,FormsModule,ReactiveFormsModule ,NgxImageZoomModule,NgxImgZoomModule
+MatToolbarModule,FormsModule,ReactiveFormsModule ,NgxImgZoomModule,NgxImageZoomModule
 
   ]
 })

@@ -46,8 +46,7 @@ return !!localStorage.getItem('user');
 //register//
 register(value:any):Observable<any>{
   console.log("register service",value);
-  return this.hc.post<any>("http://shoppingapp-env.eba-itwffxiz.ap-south-1.elasticbeanstalk.com/registration/register",value,this.httpOptions)
-  
+  return this.hc.post<any>("ec2-52-66-249-149.ap-south-1.compute.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/auth/signup",value,this.httpOptions)
 }
 ////SecondNavbar List function////
 getSecondNavbar():Observable<any>
