@@ -11,77 +11,82 @@ import { PasswordStrengthValidator } from "./password-req"
 })
 export class LoginComponent implements OnInit {
   LoginForm: FormGroup | any;
+  roler:any;
   submitted = false;
-  hide:boolean=true;
-  constructor(private formBuilder: FormBuilder,private router: Router,private ecomm:EcommService,private toastr:ToastrService) { }
+  hide: boolean = true;
+  constructor(private formBuilder: FormBuilder, private router: Router, private ecomm: EcommService, private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.onSubmit
+    this.onSubmitLogin
     this.LoginForm = this.formBuilder.group({
-      mobile: ['', Validators.compose([Validators.required, Validators.pattern('[6-9]\\d{9}')])],
-      password: [null, Validators.compose([
+      username: ['', Validators.compose([Validators.required, Validators.pattern('[6-9]\\d{9}')])],
+      password: ['', Validators.compose([
         Validators.required, Validators.minLength(8), PasswordStrengthValidator])],
+    }
+    )
   }
-    )}
-    get f() { return this.LoginForm.controls; }
+  get f() { return this.LoginForm.controls; }
 
-  onSubmit(value:any){
+  onSubmitLogin(value: any) {
     this.ngOnInit()
-    this.ecomm.login(value).subscribe(res=>
+    
+    this.ecomm.login(value).subscribe(res => {
+      //  sessionStorage.setItem("username",value.username)
+      // sessionStorage.getItem("regusername")
+      const obj = JSON.parse(res);
+      console.log("login-objjj", obj)
+      console.log("username", obj.username)
 
-       {​​​
-       sessionStorage.setItem("mobilenumber",value.mobile)
-       sessionStorage.getItem("regusername")
-        console.log("login",res)
+      localStorage.setItem("usermail",obj.email)
 
-        //  if(res=="token"){ 
-// let user=JSON.parse(atob(res.token?.split('.')[1]));
-// console.log("user-token",user)
-// console.log("user-email",user.email)
-
-
-// localStorage.setItem('current user',user.role)
-// localStorage.setItem('token',res.token)
-// if(user.role=="Admin"){ 
-//   this.toastr.success('Admin Logined successfully')
-
-//   this.router.navigate(['']);
-
-// }
-
-
-        // }
-
-
-  //       else if (user.role=="user") {
-  //         console.log("user",res)
-     
-  //         this.toastr.success('User Logined successfully')
-  //         this.router.navigate(['']);
-  
-         
-  //       }
-//          else{
-//           this.toastr.error('Invalid  Details')
-
-//   this.router.navigate(['/admin']);
-
-  
-//   }
+      obj.roles.forEach((item:any) => {
+        console.log("array",item);
+        this.roler = item;
+        
+      });
+      console.log("token",obj.accessToken);
       
+      
+      // let user = JSON.parse(atob(res.token?.split('.')[1]));
+      sessionStorage.setItem('accessToken', obj.accessToken)
 
- } )
+      if (this.roler == "USER") {
+
+          this.toastr.success('user Logined successfully')
+
+          this.router.navigate(['']);
+
+        }
+
+
+      else if (this.roler == "ADMIN") {
+        console.log("admin", res.role)
+
+        this.toastr.success('admin Logined successfully')
+        this.router.navigate(['/admin']);
+
+
+      }
+      else {
+        this.toastr.error('Invalid  Details')
+
+
+
+      }
+
+      this.submitted = true;
+    },
+      err =>
+        console.log(err)
+    )
+    if (this.LoginForm.invalid) {
+      return;
+    }
+
+
+  }
 }
-// localStorage.setItem('user',JSON.stringify(res));
-// this.submitted = true;
 
-//         }​​​,
-// err=>
-// console.log(err)
-    // )
-    // if (this.LoginForm.invalid) {
-      // return;
-    // }
- 
 
-}
+
+

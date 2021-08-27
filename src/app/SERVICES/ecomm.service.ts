@@ -21,10 +21,11 @@ export class EcommService {
 
  
     //login
-login(value:any):Observable<any>{​​​
-// return this.hc.post<any>("http://shoppingapp-env.eba-itwffxiz.ap-south-1.elasticbeanstalk.com/login/user",value,this.httpOptions)
-return this.hc.post<any>("http://localhost:4000/login",value)
-}​​​
+    login(value:any):Observable<any>{​​​
+      console.log("login service",value);
+      
+    return this.hc.post<any>("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/auth/signin",value,this.httpOptions)
+    }​​​
 ///login for token get
 
 loggedIn()
@@ -43,10 +44,12 @@ return !!localStorage.getItem('user');
     return this.hc.get("http://shoppingapp-env.eba-itwffxiz.ap-south-1.elasticbeanstalk.com/login/user",{params})
   }
 
+
 //register//
 register(value:any):Observable<any>{
   console.log("register service",value);
-  return this.hc.post<any>("ec2-52-66-249-149.ap-south-1.compute.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/auth/signup",value,this.httpOptions)
+  return this.hc.post<any>("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/auth/signup",value,this.httpOptions)
+  
 }
 ////SecondNavbar List function////
 getSecondNavbar():Observable<any>

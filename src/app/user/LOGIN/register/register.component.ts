@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PasswordStrengthValidator } from "./password-req"
-import { MustMatch } from './must-watch';
+import { PasswordStrengthValidator } from "./password-req";
 import { EcommService } from 'src/app/SERVICES/ecomm.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ConfirmPasswordValidator } from './must-watch';
+// import { ConfirmedValidator } from './confirm';
 
 @Component({
   selector: 'app-register',
@@ -17,42 +18,45 @@ export class RegisterComponent implements OnInit {
   submitted = false;
   hide:boolean=true;
   register: any;
+  msg: any;
   constructor(private formBuilder: FormBuilder,private ecomm:EcommService,private router: Router,private toastr:ToastrService) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      firstname: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*$')]],
-      mobile: ['', Validators.compose([Validators.required, Validators.pattern('[6-9]\\d{9}')])],
+      firstname: [null, [Validators.required, Validators.pattern('[a-zA-Z ]*$')]],
+      username: [null, Validators.compose([Validators.required])],
 
-      email: ['', [Validators.required, Validators.pattern('[^@]+@[^@]+\.[a-zA-Z]{2,6}')]],
+      email: [null, [Validators.required, Validators.pattern('[^@]+@[^@]+\.[a-zA-Z]{2,6}')]],
       password: [null, Validators.compose([
         Validators.required, Validators.minLength(8), PasswordStrengthValidator])],
-
-      confirmPassword: [null, Validators.compose([
-        Validators.required, Validators.minLength(8), PasswordStrengthValidator])],
-
+ 
+      confirmPassword: [null,
+       Validators.required],
+    
       acceptTerms: [false, Validators.requiredTrue]
     }, {
-      validator: MustMatch('password', 'confirmPassword')
+      validator: ConfirmPasswordValidator("password", "confirmPassword")
     });
   }
 
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
  
-
   onSubmit(value: any) {
-    
+    sessionStorage.setItem("username",value.firstname)
     this.ecomm.register(value).subscribe((res: any)=>      {
-       
-console.log("reg",res);
-console.log("reg-username",value.firstname);
+     
+console.log("regmsgggggggggg",res);
 
-sessionStorage.setItem("regusername",value.firstname);
-// sessionStorage.setItem("Token",res);
+const obj = JSON.parse(res);
+console.log("reg-mail",obj.email);
 
 
-      if (res=="Done") {
+console.log("messgae",obj.message);
+this.msg=obj.message
+
+
+            if (this.msg=="User registered successfully!") {
      
         this.toastr.success('User created  successfully')
         this.router.navigate(['/login']);
