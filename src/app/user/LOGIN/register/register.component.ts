@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
         Validators.required, Validators.minLength(8), PasswordStrengthValidator])],
  
       confirmPassword: [null,
-       Validators.required],
+       Validators.required,Validators.minLength(8),],
     
       acceptTerms: [false, Validators.requiredTrue]
     }, {
@@ -63,7 +63,7 @@ this.msg=obj.message
 
        
       }
-else{
+else if(this.msg=="User"){
         this.toastr.error('User Already Exists')
 
 }

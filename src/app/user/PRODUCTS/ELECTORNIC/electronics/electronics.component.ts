@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/SERVICES/products.service';
-
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-electronics',
   templateUrl: './electronics.component.html',
@@ -14,69 +14,62 @@ export class ElectronicsComponent implements OnInit {
   mensList:any=[];
   womensList:any=[];
   kidsList:any=[];
+  Image: any;
   // selectedItem:any=[];
 
   // isCategoryTypeList:boolean=true;
 
-  constructor(private ps:ProductsService,private _route:Router) { }
+  constructor(private ps:ProductsService,private _route:Router,  public _DomSanitizationService: DomSanitizer) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+ 
+    
 
-    this.ps.getAppearelssList().subscribe(
+    this.ps.getProductsList().subscribe(
       res=>
       {
+res.forEach((item:any) => {
+  if(item.mCategoryName="appearels"){
+    item.categories.forEach((category:any) => {
 
-        this.mensList=res.apparels.menswear;
-        this.womensList=res.apparels.womenswear;
-        this.kidsList=res.apparels.kidswear;
-        console.log(this.mensList);
-        console.log(this.womensList);
-        console.log(this.kidsList);
+      if(category.categoryName=="menswear"){
+          this.mensList=category.products
+
+    //           this.Image = this._DomSanitizationService.bypassSecurityTrustUrl(
+    //   `data:image/svg;base64,${this.mensList[0].image}`
+
+    // );
+
+//     const reader = new FileReader();
+// reader.onload = (e) => this.Image =  this.mensList.image;
+// reader.readAsDataURL(new Blob([data]));
+
+
+
+
+          console.log("mens",this.mensList);
       }
+      if(category.categoryName=="womenswear"){
+        this.mensList=category.products
+        console.log("womens",this.mensList);
+    }
+    if(category.categoryName=="kidswear"){
+      this.mensList=category.products
+      console.log("kids",this.mensList);
+  }
+    })
+
+  }
+
+})
+     
+}
               
 
       )
 
   }
 
-
-
-// onClick(value:any)
-// {
-//   this._product.getAppearelssList().subscribe(
-
-//     res=>
-//     {
-//       this.appearels1=res.apparels.menswear;
-//       this.appearels2=res.apparels.womenswear;
-//       this.appearels1.forEach( (item:any)=>
-//       {
-//         if(value == item.category)
-//         {
-//           this.selectedItem.push(item);
-//           this.isCategoryTypeList=false;
-       
-//           console.log("Selected Men Items:", this.selectedItem);
-//         }
-//       }
-      
-//       )
-//       this.appearels2.forEach( (item:any)=>
-//       {
-//         if(value == item.category)
-//         {
-//           this.selectedItem.push(item);
-        
-//            this.isCategoryTypeList=false;
-//           console.log("Selected Women Items:", this.selectedItem);
-//         }
-//       }
-      
-//       )
-
-//     }
-//   )
-// }
 
 
 

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './COMMON/home/home.component';
 import { SidenavComponent } from './COMMON/sidenav/sidenav.component';
 import { CouponsComponent } from './DASHBOARD/coupons/coupons.component';
+import { DashboardComponent } from './DASHBOARD/dashboard/dashboard.component';
 import { ForgotpasswordUserComponent } from './DASHBOARD/forgotpassword-user/forgotpassword-user.component';
 import { ProductlistStatusComponent } from './DASHBOARD/productlist-status/productlist-status.component';
 import { ReturnorderComponent } from './DASHBOARD/returnorder/returnorder.component';
@@ -19,6 +20,9 @@ const routes: Routes = [
     {path: 'forgotpassword',component:ForgotpasswordUserComponent},
     {path: 'Transactions',component:TransactionsComponent},
     {path: 'returnorder',component:ReturnorderComponent},
+    {path: 'dashboard',component:DashboardComponent},
+
+
 
 
   ]},

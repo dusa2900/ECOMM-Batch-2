@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
+import {AuthGuard} from '../../Auth/auth.guard'
 import {
   HttpRequest,
   HttpHandler,
@@ -14,35 +15,30 @@ import { Observable } from 'rxjs';
 export class JwtheaderComponent implements OnInit {
 
   constructor() { }
+ngOnInit(){
 
-  ngOnInit(): void {
-  }
+}
   intercept(
-    request: HttpRequest<any>,
-    next: HttpHandler
+    request: HttpRequest<any>,next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const currentJWT = localStorage.getItem('token');
-    //  const currentUserId = localStorage.getItem('userid');
-    console.log('jwtheader', currentJWT);
-    // console.log("userid",currentUserId)
+    const currentJWT= localStorage.getItem('accessToken');
+
+    console.log('accessToken', currentJWT);
 
     if (currentJWT) {
       request = request.clone({
         setHeaders: {
           Authorization: `Bearer ${currentJWT}`,
-          // UserId: currentJWT
+       
         },
       });
     }
 
-    request = request.clone({
-      setHeaders: {
-        'Content-Type': 'application/json',
-      },
-    });
+  return next.handle(request);
+
 
  
 
-    return next.handle(request);
   }
 }
+

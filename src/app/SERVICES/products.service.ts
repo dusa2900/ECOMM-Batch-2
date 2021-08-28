@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders,HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
@@ -19,14 +19,15 @@ export class ProductsService {
 ////product List function////
 getCategoryList():Observable<any>
 {
-  return this.hc.get("http://localhost:4000/TotalProducts")
+  return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/produtslist/display")
 }
 
 
 ////get-products////
-  getAppearelssList():Observable<any>
+  getProductsList():Observable<any>
   {
-    return this.hc.get("http://localhost:4000/products");
+
+    return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/lists/productlistcategoryt");
   }
 
 

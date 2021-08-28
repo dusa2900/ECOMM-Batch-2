@@ -19,7 +19,6 @@ import { ProductCategoryTypeComponent } from './PRODUCTS/RE-USABLE/product-categ
 import { ProductDescriptionComponent } from './PRODUCTS/RE-USABLE/product-description/product-description.component';
 
 const routes: Routes = [
- 
   {​​​
 path:'main',   component:MainComponent ,    canActivate:[AuthGuard],
 children: [

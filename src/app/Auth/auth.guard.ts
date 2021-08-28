@@ -8,9 +8,10 @@ import { EcommService } from '../SERVICES/ecomm.service';
 export class AuthGuard implements CanActivate {
  
   constructor(private ecomm:EcommService, private router:Router){ }
-  
+
   canActivate():boolean
   {
+    
     if(this.ecomm.loggedIn())
     {
       return true
@@ -19,5 +20,5 @@ export class AuthGuard implements CanActivate {
       return false;
     }
   }
-  
+
 }

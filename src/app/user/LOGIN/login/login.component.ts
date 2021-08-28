@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
       
       
       // let user = JSON.parse(atob(res.token?.split('.')[1]));
-      sessionStorage.setItem('accessToken', obj.accessToken)
+      localStorage.setItem('accessToken', obj.accessToken)
 
       if (this.roler == "USER") {
 

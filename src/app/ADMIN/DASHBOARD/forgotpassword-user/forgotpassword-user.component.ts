@@ -8,6 +8,7 @@ import { AdminService } from 'src/app/SERVICES/admin.service';
 })
 export class ForgotpasswordUserComponent implements OnInit {
   forgotpassword:any[]=[]
+  p:number=1
   constructor(private admin:AdminService) { }
 
   ngOnInit(): void {

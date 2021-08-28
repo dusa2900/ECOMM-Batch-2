@@ -13,6 +13,7 @@ import { HomeComponent } from './COMMON/home/home.component';
 import { TransactionsComponent } from './DASHBOARD/transactions/transactions.component';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { DashboardComponent } from './DASHBOARD/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SidenavComponent,
     ForgotpasswordUserComponent,
     HomeComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule, FormsModule,NgxPaginationModule,
