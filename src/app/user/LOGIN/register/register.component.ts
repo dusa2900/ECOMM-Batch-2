@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
   get f() { return this.registerForm.controls; }
  
   onSubmit(value: any) {
-    sessionStorage.setItem("username",value.firstname)
+    sessionStorage.setItem("firstname",value.firstname)
     this.ecomm.register(value).subscribe((res: any)=>      {
      
 console.log("regmsgggggggggg",res);

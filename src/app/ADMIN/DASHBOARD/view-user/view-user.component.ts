@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { AdminService } from 'src/app/SERVICES/admin.service';
 
 @Component({
@@ -8,8 +9,9 @@ import { AdminService } from 'src/app/SERVICES/admin.service';
 })
 export class ViewUserComponent implements OnInit {
   listusers: any[]=[];
+  retrievedImage: any;
 
-  constructor(private admin:AdminService) { }
+  constructor(private admin:AdminService,public _DomSanitizationService: DomSanitizer) { }
 
   ngOnInit(): void {
     this.getlistusers()
@@ -18,6 +20,11 @@ export class ViewUserComponent implements OnInit {
     this.admin.getlistusers().subscribe((res: any)=>  {
       this.listusers = res
 console.log("listusers", this.listusers)
+
+this.retrievedImage = this._DomSanitizationService.bypassSecurityTrustUrl(
+  ` data:image/jpeg;base64,${res.image}`
+  
+);
     }
     )}
 }

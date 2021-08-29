@@ -1,11 +1,25 @@
 <div class="container" >
+
+    <img class="card-img-top" src="data:image/jpeg;base64,{{imagedata}}" alt="Card image cap">
+    <img class="card-img-top" [src]='retrievedImage' alt="Card image cap">
+    <img class="card-img-top" src={{imagedata}} alt="Card image cap">
+
+    <img class="card-img-top" [src]='base64Data' alt="Card image cap">
+    <img class="card-img-top" src={{base64Data}} alt="Card image cap">
+
+    <!-- <img class="card-img-top" src={{url}} alt="Card image cap"> -->
+
+
+
     <div class="row"> <h1>Mens Wear:</h1>
         <ng-container *ngFor="let item of mensList">
             <!-- <div class="card col-md-3" (click)="onClick(item.category)"> -->
           
               <div class="card col-md-3" routerLink="/products/{{item.category}}">
-              
-                  <img class="card-img-top" src="{{item.Image}}" alt="Card image cap">
+                  <!-- <div *ngIf=retrievedImage>
+            <img src={{retrievedImage}}>
+        </div> -->
+                  <img class="card-img-top" [src]="base64Data" alt="Card image cap">
                   <div class="card-body">
                       <h5 class="card-title">{{item.title}}</h5>
                       <h5 class="card-title" style="font-weight: bold;">{{item.category}}</h5>

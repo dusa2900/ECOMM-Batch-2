@@ -17,17 +17,22 @@ import { UserprofileComponent } from '../userprofile/userprofile.component';
 export class HeaderComponent implements OnInit {
   title:string="Sign in";
   authorised:boolean=false;
+
   // cartCount:number=0;
   @ViewChild('userInput') userInput!:ElementRef;
   searchInput:any;
   
   secondNavbar:any=[];
   public totalItem : number = 0;
+  name: any;
   constructor(private cartService : CartService,public dialog: MatDialog,private ecomm:EcommService,private hc:HttpClient, private route:Router) {
     
    }
   
   ngOnInit() {
+ 
+    this. name=localStorage.getItem("usermail")
+    console.log("name",this.name);
     this.cartService.getProducts()
     .subscribe((res:any)=>{
       console.log(res);

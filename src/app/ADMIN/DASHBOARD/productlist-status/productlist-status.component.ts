@@ -23,7 +23,7 @@ noOfProducts() {
       this.totalProductswomens =res.productstatus.womenswear;
       this.totalProductskids =res.productstatus.kidswear;
 
-      
+    
     }
             
     )}

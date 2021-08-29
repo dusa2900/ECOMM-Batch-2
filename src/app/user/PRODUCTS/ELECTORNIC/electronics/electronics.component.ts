@@ -15,6 +15,11 @@ export class ElectronicsComponent implements OnInit {
   womensList:any=[];
   kidsList:any=[];
   Image: any;
+  retrieveResonse: any;
+  base64Data: any;
+  retrievedImage: any;
+  imagedata: any;
+
   // selectedItem:any=[];
 
   // isCategoryTypeList:boolean=true;
@@ -28,17 +33,51 @@ export class ElectronicsComponent implements OnInit {
     this.ps.getProductsList().subscribe(
       res=>
       {
+        console.log("dataaaa",res);
+        
 res.forEach((item:any) => {
   if(item.mCategoryName="appearels"){
     item.categories.forEach((category:any) => {
 
       if(category.categoryName=="menswear"){
           this.mensList=category.products
+          this.mensList.forEach((img:any)=>{
+            this.imagedata=img.image
+            console.log("check-img-byte",this.imagedata);
+            
+          })
 
-    //           this.Image = this._DomSanitizationService.bypassSecurityTrustUrl(
-    //   `data:image/svg;base64,${this.mensList[0].image}`
+///4//
+          let objectURL = 'data:image/png;base64,' + this.imagedata;
+          this.base64Data = this._DomSanitizationService.bypassSecurityTrustUrl(objectURL);
+    console.log("base-64-string",this.base64Data);
 
-    // );
+          ///0/////
+     this.retrievedImage = this._DomSanitizationService.bypassSecurityTrustUrl(
+      `data:image/jpeg;base64,${this.imagedata}`
+      
+    );
+    console.log("base-642222-string",this.retrievedImage);
+
+////111///
+ 
+          // this.retrieveResonse = this.imagedata.image;
+    
+          // this.retrievedImage = 'data:image/jpeg;base64,' + this.retrieveResonse;
+          // console.log("img",this.retrievedImage);
+///2222///
+
+      //     let objectURL = 'data:image/png;base64,' + this.imagedata.image;
+      // console.log("image2222",objectURL);
+
+      //     this.base64Data = this._DomSanitizationService.bypassSecurityTrustUrl(objectURL);
+      // console.log("imageeeee",this.base64Data);
+      
+    
+//   }
+// }
+
+///555///
 
 //     const reader = new FileReader();
 // reader.onload = (e) => this.Image =  this.mensList.image;
@@ -49,13 +88,13 @@ res.forEach((item:any) => {
 
           console.log("mens",this.mensList);
       }
-      if(category.categoryName=="womenswear"){
-        this.mensList=category.products
-        console.log("womens",this.mensList);
+     else if (category.categoryName=="womenswear"){
+        this.womensList=category.products
+        console.log("womens",this.womensList);
     }
-    if(category.categoryName=="kidswear"){
-      this.mensList=category.products
-      console.log("kids",this.mensList);
+  else if(category.categoryName=="kidswear"){
+      this.kidsList=category.products
+      console.log("kids",this.kidsList);
   }
     })
 

@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   roler:any;
   submitted = false;
   hide: boolean = true;
+name:any
   constructor(private formBuilder: FormBuilder, private router: Router, private ecomm: EcommService, private toastr: ToastrService) { }
 
   ngOnInit() {
@@ -29,15 +30,15 @@ export class LoginComponent implements OnInit {
 
   onSubmitLogin(value: any) {
     this.ngOnInit()
-    
     this.ecomm.login(value).subscribe(res => {
-      //  sessionStorage.setItem("username",value.username)
-      // sessionStorage.getItem("regusername")
+
       const obj = JSON.parse(res);
       console.log("login-objjj", obj)
       console.log("username", obj.username)
 
-      localStorage.setItem("usermail",obj.email)
+     localStorage.setItem("usermail",obj.email)
+     this. name=localStorage.getItem("usermail")
+console.log("name",this.name);
 
       obj.roles.forEach((item:any) => {
         console.log("array",item);
