@@ -6,3 +6,11 @@ i{
     justify-content: center;
     background-color: blanchedalmond;
 }
+
+.btn1
+{
+  border-radius: 50%;
+  background-color: firebrick;
+  margin: 0 4px;
+  cursor: pointer;
+}

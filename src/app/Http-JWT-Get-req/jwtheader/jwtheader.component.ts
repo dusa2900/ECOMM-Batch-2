@@ -46,6 +46,7 @@ token:any
           catchError(
               (err:HttpErrorResponse) => {
                   console.log(err.status);
+                  
                   if(err.status === 401) {
                       this.router.navigate(['/login']);
                   } else if(err.status === 403) {

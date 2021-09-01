@@ -22,6 +22,16 @@ export class LoginAuthService {
   // public getUsername() {
   //  return  sessionStorage.getItem('username');
   // }
+  public setCartLength(length:any) {
+    sessionStorage.setItem('cartlength', length);
+  }
+
+
+  public getCartLength() {
+    return sessionStorage.getItem('cartlength');
+  }
+
+
   public setEmail(email:any) {
     sessionStorage.setItem('userEmail', email);
   }
@@ -43,7 +53,9 @@ export class LoginAuthService {
   }
 
   public isLoggedIn() {
-    return this.getEmail() && this.getRoles()  && this.getToken();
+    
+    return this.getEmail() && this.getRoles()  && this.getToken() 
+
   }
 
 }

@@ -21,8 +21,9 @@ export class CartService {
     return this.productList.asObservable();
    }
   getCartItems(): Observable<any> {
+    const userPhoneNumber:any = sessionStorage.getItem('username');
+       return this.hc.get<any>(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/cart/cart/all/${userPhoneNumber}`);
 
-       return this.hc.get<any>("http://localhost:4000/cartItems")
   }
    
 
@@ -33,9 +34,10 @@ addToCart(item:any):Observable<any>
 { 
   this.cartItem.push(item);
   this.productList.next(this.cartItem);
+  
   const userPhoneNumber:any = sessionStorage.getItem('username');
   // console.log("usernumber",userPhoneNumber);
-  // console.log("add-service",item);
+  console.log("add-service",item);
 
 //   const params = new HttpParams().append('username', userPhoneNumber );
 // console.log("ser-number",params);
@@ -54,7 +56,7 @@ removeCartItem(product:any): Observable<any>{
   })
   this.productList.next(this.cartItem);
   
-  return this.hc.delete(`http://localhost:4000/cartItems/${product.id}`)
+  return this.hc.delete(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/cart/cart/delete/${product}`)
 }
 
 removeAllcart(): Observable<any>{

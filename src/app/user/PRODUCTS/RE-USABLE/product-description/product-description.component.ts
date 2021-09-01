@@ -80,13 +80,13 @@ decQnt(value:any){
 //     let product = item.productid
 // this.data.products= item.productid
 
-// console.log("product",product);
+console.log("product",item.productid);
 
   this.cart.addToCart(item.productid).subscribe( ()=>{ 
 
     console.log("addtocartDataaaaa:",item.productid)
 
-    //this.msg.sendMsg(item);
+this._route.navigate(['/cart'])
   }
   )
   }

@@ -24,25 +24,30 @@ export class HeaderComponent implements OnInit {
   searchInput:any;
   
   secondNavbar:any=[];
-  public totalItem : number = 0;
+  public totalItem :any;
   name: any;
   constructor(private cartService : CartService,public loginauth:LoginAuthService ,public dialog: MatDialog,private ecomm:EcommService,private hc:HttpClient, private route:Router) {
     
    }
   
   ngOnInit() {
+    // this.totalItem=sessionStorage.getItem('cartlength')
+
+    // console.log("check-length",this.totalItem);
+
+    // this.cartService.getProducts()
+    // .subscribe((res:any)=>{
+    //   console.log(res);
+    //   this.totalItem = res.length;
+    // })
+    // this.cartService.getCartItems().subscribe((res:any)=>{
+    //   this.totalItem=res.length
+    //   console.log("length",res.length);
+      
+    // })
+  
  
     
-
-    this.cartService.getProducts()
-    .subscribe((res:any)=>{
-      console.log(res);
-      this.totalItem = res.length;
-    })
-    this.cartService.getCartItems().subscribe((res:any)=>{
-      this.totalItem=res.length
-    })
-   
 
     this.ecomm.getSecondNavbar().subscribe(
       res=>this.secondNavbar=res
@@ -55,6 +60,14 @@ export class HeaderComponent implements OnInit {
   //console.log("userName",this.userAuth.getEmail())
 }
  
+
+public cartlength()
+{
+ return this.totalItem=this.loginauth.getCartLength()
+  console.log("cartlength",this.totalItem)
+}
+
+
 public isLoggedIn() {
   this.userName();
   return this.loginauth.isLoggedIn();
@@ -116,8 +129,7 @@ public isLoggedIn() {
     {
       this.title="";
       this.loginauth.clear();
-      this.route.navigate(['/main']);
+      this.route.navigate(['/login']);
       
     }
-  
 }

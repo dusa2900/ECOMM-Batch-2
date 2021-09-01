@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/SERVICES/cart.service';
+import { LoginAuthService } from 'src/app/SERVICES/login.auth.service';
 
 @Component({
   selector: 'app-add-cart',
@@ -14,11 +15,11 @@ export class AddCartComponent implements OnInit {
 
 
   public products:any;
-  constructor(private cart:CartService) { }
+  constructor(private cart:CartService,private login:LoginAuthService) { }
 
   
   ngOnInit() {
-    this.invokeStripe();
+ 
     this.loadCartItems()
     }
    
@@ -27,14 +28,15 @@ export class AddCartComponent implements OnInit {
 
         loadCartItems() {
 
-          this.cart.getProducts().subscribe(  (res:any[])=>{
-              // console.log("addcart:",res);
-                this.products = res;
-                this.calcCartTotal();
-                })
+          // this.cart.getProducts().subscribe(  (res:any[])=>{
+              // console.log("addprodulength:",res);
+              //   this.products = res;
+              //   this.calcCartTotal();
+              //   })
           this.cart.getCartItems().subscribe(  (res:any)=>{
-            //console.log("addcart:",res);
+            console.log("addcart:",res);
              this.products = res;
+            this.login.setCartLength(res.length);
              this.calcCartTotal();
              })
          
@@ -47,7 +49,7 @@ export class AddCartComponent implements OnInit {
           this.products.forEach((item:any) => {
             
            
-            this.grandTotal += Math.round(item.qnt * item.price)
+            this.grandTotal += Math.round(item.product.quantity *item.product.price )
           })
         }
 
@@ -55,9 +57,9 @@ export class AddCartComponent implements OnInit {
 //////increment & decrement function////////
         incQnt(value:any){
           
-          if(value.qnt != value.instock)
+          if(value.quantity != value.instock)
           {
-            value.qnt +=1;
+            value.quantity +=1;
             this.calcCartTotal() ;
           
           }
@@ -65,19 +67,21 @@ export class AddCartComponent implements OnInit {
      
         decQnt(value:any){
        
-          if(value.qnt != 1)
+          if(value.quantity != 1)
           {
-            value.qnt -=1;
+            value.quantity -=1;
             this.calcCartTotal() 
            
           }
         }
 /////removeitem Function////////
         removeItem(item:any){
+          console.log("remove",item);
           this.cart.removeCartItem(item).subscribe(
             (res:any)=>{
-                //console.log(res)
-               // this.loadCartItems();
+          this.loadCartItems()
+             
+                console.log("deleteeeeee",res)
             }
           )
             }
@@ -91,41 +95,19 @@ export class AddCartComponent implements OnInit {
               )
         }       
 
-///
+///payment//
 checkout(item:any)
 {
-  this.cart.CheckOutData(item).subscribe(res=>console.log(res));
-}
+  this.cart.CheckOutData(item).subscribe(res=>
+    console.log(res)
+    );
+    }
 
-////payment/////
-        makePayment(amount: any) {
-          const paymentHandler = (<any>window).StripeCheckout.configure({
-            key:
-              'pk_test_51HqKNkG7HcjhSjrfbDoLC6M1Ud7DFTpJkX9LKS98utMFAehGlVXa8qsEXYRV3mAKPKYwrJuZYemdpPYvxie3xPdg00TGxu9y0t',
-      
-            locale: 'auto',
-            token: function (stripeToken: any) {
-              console.log(stripeToken.card);
-              alert('Stripe token generated!');
-            },
-          });
-      
-          paymentHandler.open({
-            name: 'TechWave Batch-II',
-           // description: '4 Products Added',
-            amount: amount * 100,
-          });
-        }
-        invokeStripe() {
-          if (!window.document.getElementById('stripe-script')) {
-            const script = window.document.createElement('script');
-            script.id = 'stripe-script';
-            script.type = 'text/javascript';
-            script.src = 'https://checkout.stripe.com/checkout.js';
-            window.document.body.appendChild(script);
-          }
+
+   
+
         }
         
 
-}
+
 

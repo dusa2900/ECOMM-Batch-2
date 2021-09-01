@@ -18,21 +18,21 @@
                     <tbody>
                          <tr *ngFor="let item of products; let i= index">
                              <td>{{i+1}}</td> 
-                            <td>{{item.title}}</td>
-                            <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
-                            <td style="width: 25%;">{{item.description}}</td>
-                            <th style="width: 12%;">{{item.price | currency:'INR' }}</th> 
+                            <td>{{item.product.title}}</td>
+                            <td><img style="width: 120px;" src="{{item.product.image}}" alt=""></td>
+                            <td style="width: 25%;">{{item.product.description}}</td>
+                            <th style="width: 12%;">{{item.product.price | currency:'INR' }}</th> 
                             <td style="width: 12%;">
-                                <button class="btn1" (click)="incQnt(item)"> <i class="fas fa-plus"></i></button>
-                                {{item.qnt }}
-                                <button class="btn1" (click)="decQnt(item)"><i class="fas fa-minus"></i></button>
+                                <button class="btn1" (click)="incQnt(item.product)"> <i class="fas fa-plus"></i></button>
+                                {{item.product.quantity }}
+                                <button class="btn1" (click)="decQnt(item.product)"><i class="fas fa-minus"></i></button>
                                
                             </td>
                             
                          
-                            <td style="width: 12%;"><strong> {{item.qnt* item.price | currency:'INR' }}</strong> </td> 
+                            <td style="width: 12%;"><strong> {{item.product.quantity* item.product.price  | currency:'INR' }}</strong> </td> 
                             <td>
-                                 <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                 <button (click)="removeItem(item.cartid)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                                 <!-- <button  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> -->
                             </td>
                         <!-- </tr> -->
