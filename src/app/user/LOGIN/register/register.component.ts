@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       firstname: [null, [Validators.required, Validators.pattern('[a-zA-Z ]*$')]],
-      username: [null, Validators.compose([Validators.required])],
+      username: ['', Validators.compose([Validators.required, Validators.pattern('[6-9]\\d{9}')])],
 
       email: [null, [Validators.required, Validators.pattern('[^@]+@[^@]+\.[a-zA-Z]{2,6}')]],
       password: [null, Validators.compose([
@@ -43,7 +43,6 @@ export class RegisterComponent implements OnInit {
   get f() { return this.registerForm.controls; }
  
   onSubmit(value: any) {
-    sessionStorage.setItem("firstname",value.firstname)
     this.ecomm.register(value).subscribe((res: any)=>      {
      
 console.log("regmsgggggggggg",res);
@@ -63,13 +62,16 @@ this.msg=obj.message
 
        
       }
-else if(this.msg=="User"){
-        this.toastr.error('User Already Exists')
+//  else if(res.status==401){
+//         this.toastr.error('User Already Exists')
+// alert("dfgrdgfg")
+// }
 
-}
-
+    },
+    err =>{
+      console.log(err)
+      this.toastr.error('Invalid  Details')
     }
- 
  )
     this.submitted = true;
     // stop here if form is invalid

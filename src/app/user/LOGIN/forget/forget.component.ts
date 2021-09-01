@@ -22,15 +22,18 @@ export class ForgetComponent implements OnInit {
     console.log("forgot",value);
     this.ecomm.forgotpassword(value).subscribe((res: any)=>{
       this.forgotpassword=res
-if(res=="success"){
-  this.toastr.success('Send link to email successfully')
-  this.router.navigate(['/reset'])
+      console.log("for",res);
+      
+  this.router.navigate(['/reset']);
+// if(res=="success"){
+//   this.toastr.success('Send link to email successfully')
+//   this.router.navigate(['/reset'])
 
-}
-else { 
-  this.toastr.error('Invalid mobile number')
+// }
+// else { 
+//   this.toastr.error('Invalid mobile number')
 
-}
+// }
  })
  this.submitted = true;
     // stop here if form is invalid

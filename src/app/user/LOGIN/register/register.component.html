@@ -47,14 +47,12 @@
                      
                       <i class="fas fa-mobile-alt fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
-                        <input type="number" formControlName="username" id="username" class="form-control" placeholder="Your  Mobile number"
-                        minlength="3" maxlength="10" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                            
-                            <div *ngIf="f.username.errors.required">Mobile number required</div>
-                            <div *ngIf="f.username.errors.pattern">Mobile number must be valid(6-9)</div>
-                
-                        </div>
+                        <input type="text" formControlName="username" id="username" class="form-control" placeholder="Mobile Number"
+                        minlength="10" maxlength="10" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                       <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                           <div *ngIf="f.username.errors.required">mobile number required</div>
+                           <div *ngIf="f.username.errors.pattern">mobile number must be valid(6-9)& 10 numbers</div>
+                       </div>
                        
                       </div>
                     </div>

@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JwtheaderComponent } from './Http-JWT-Get-req/jwtheader/jwtheader.component';
+import { ForbiddenComponent } from './unauth-forbidden/forbidden/forbidden.component';
+import { PagenotfoundComponent } from './unauth-forbidden/pagenotfound/pagenotfound.component';
+
+
 
 const routes: Routes = [
-  {path:"jwt",component:JwtheaderComponent},
+
   {
     path:'',
     loadChildren:()=>import('./USER/user.module').then( m=>m.USERModule)
   },
+
   {
     path:'admin',
     loadChildren:()=>import('./ADMIN/admin.module').then( m=>m.AdminModule)
-  }
+  },
+  {path:"forbidden",component: ForbiddenComponent},
+  { path: '**', component: PagenotfoundComponent }
 ];
 
 @NgModule({

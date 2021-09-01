@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { EcommService } from 'src/app/SERVICES/ecomm.service';
+import { LoginAuthService } from 'src/app/SERVICES/login.auth.service';
 import { PasswordStrengthValidator } from "./password-req"
 @Component({
   selector: 'app-login',
@@ -11,11 +12,11 @@ import { PasswordStrengthValidator } from "./password-req"
 })
 export class LoginComponent implements OnInit {
   LoginForm: FormGroup | any;
-  roler:any;
+  roles:any;
   submitted = false;
   hide: boolean = true;
 name:any
-  constructor(private formBuilder: FormBuilder, private router: Router, private ecomm: EcommService, private toastr: ToastrService) { }
+  constructor(private formBuilder: FormBuilder,private loginauth:LoginAuthService ,private router: Router, private ecomm: EcommService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.onSubmitLogin
@@ -31,27 +32,33 @@ name:any
   onSubmitLogin(value: any) {
     this.ngOnInit()
     this.ecomm.login(value).subscribe(res => {
+console.log("login",res);
 
       const obj = JSON.parse(res);
       console.log("login-objjj", obj)
       console.log("username", obj.username)
+      this.loginauth.setUsername(obj.username)
+   
 
-     localStorage.setItem("usermail",obj.email)
-     this. name=localStorage.getItem("usermail")
-console.log("name",this.name);
 
       obj.roles.forEach((item:any) => {
         console.log("array",item);
-        this.roler = item;
-        
+        this.roles = item;
+        this.loginauth.setRoles(this.roles)
       });
       console.log("token",obj.accessToken);
       
-      
-      // let user = JSON.parse(atob(res.token?.split('.')[1]));
-      localStorage.setItem('accessToken', obj.accessToken)
+   
+    
 
-      if (this.roler == "USER") {
+this.loginauth.setEmail(obj.email);
+this.loginauth.setToken(obj.accessToken);
+
+
+      // let user = JSON.parse(atob(res.token?.split('.')[1]));
+
+
+      if (this.roles == "USER") {
 
           this.toastr.success('user Logined successfully')
 
@@ -60,7 +67,7 @@ console.log("name",this.name);
         }
 
 
-      else if (this.roler == "ADMIN") {
+      else if (this.roles == "ADMIN") {
         console.log("admin", res.role)
 
         this.toastr.success('admin Logined successfully')
@@ -68,17 +75,18 @@ console.log("name",this.name);
 
 
       }
-      else {
-        this.toastr.error('Invalid  Details')
+//       else if(this.err=="Some thing is wrong") {
+//         this.toastr.error('Invalid  Details')
+//  alert("error")
 
-
-
-      }
+//       }
 
       this.submitted = true;
     },
-      err =>
+      err =>{
         console.log(err)
+        this.toastr.error('Invalid  Details')
+      }
     )
     if (this.LoginForm.invalid) {
       return;

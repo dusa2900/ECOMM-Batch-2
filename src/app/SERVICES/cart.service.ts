@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -30,9 +30,17 @@ export class CartService {
 
 
 addToCart(item:any):Observable<any>
-{ this.cartItem.push(item);
+{ 
+  this.cartItem.push(item);
   this.productList.next(this.cartItem);
- return this.hc.post("http://localhost:4000/cartItems",item);
+  const userPhoneNumber:any = sessionStorage.getItem('username');
+  // console.log("usernumber",userPhoneNumber);
+  // console.log("add-service",item);
+
+//   const params = new HttpParams().append('username', userPhoneNumber );
+// console.log("ser-number",params);
+
+  return this.hc.post(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/cart/cart/add/${userPhoneNumber}/${item}`,item)
 
 }
 

@@ -1,56 +1,83 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/SERVICES/products.service';
-
+import { SortPipe } from '../../../../PIPES/sort.pipe';
+import { product } from '../../../../MODEL/model';
 @Component({
   selector: 'app-product-category-type',
   templateUrl: './product-category-type.component.html',
   styleUrls: ['./product-category-type.component.css']
 })
 export class ProductCategoryTypeComponent implements OnInit {
-  category:any;
+  categorys:any;
   selected:any=[];
+  pricetype: string="All";
     constructor(private route:ActivatedRoute, private ps:ProductsService) {
     
       this.route.params.subscribe( params =>
        {
-        //console.log("data:",params)
-       //console.log("DTA:", this.category=params['category'])
-       this.category=params['category']
+
+       console.log("DTA-cata:", this.categorys=params['categorys'])
+       this.categorys=params['categorys']
+       
        }
         
         );
       
-       this.ps.getCategoryList().subscribe(
-       res=>
-      {
-        res.forEach( (item:any)=>
-              {
-                ///console.log("item function value:",item.category);
-                if(this.category == item.category )
-                {
-                  this.selected.push(item);
-                
-               
-                  //console.log("Selected Men shirt Items:", this.selected);
-                }else if(this.category== item.type)
-                {
-                  this.selected.push(item);
-                }
-                }
-        )
-              }
-              
-              )
+//        this.ps.getCategoryList().subscribe(
+//        res=>
+//       {
+//         console.log("total-products",res)
+
+// res.forEach((item:any)=>{
+//   console.log("data-check",this.categorys===item.categorys);
+//   if(this.categorys === item.categorys )
+//   {
+
+//     this.selected.push(item);
+ 
   
-  
-  
+
+//    }
+// })
+
              
+       
+//                 }
+   
+//        )
       
-        
-     }
-    ngOnInit(): void {
-    
+      }
+  
+
+       filterall(value:any){
+        if(value.target.value==="All"){
+          this.selected = []
+          this.getitemlist()
+        }
+        console.log(value.target.value)
+      }
+
+      getitemlist(){
+        this.ps.getCategoryList().subscribe(
+          res => {
+            res.forEach((item:any)=>{
+              console.log("data-check",this.categorys===item.categorys);
+              if(this.categorys === item.categorys )
+              {
+            
+                this.selected.push(item);
+             
+              
+            
+               }
+            })
+          }
+     
+        )
+      }
+    ngOnInit() {
+    this.getitemlist()
     }
   
 

@@ -9,64 +9,50 @@ import { CartService } from 'src/app/SERVICES/cart.service';
   styleUrls: ['./product-description.component.css']
 })
 export class ProductDescriptionComponent implements OnInit {
-  id:any;
+  productid:any;
   overview:any;
+  // data={products:null};
 
-
- 
 
     constructor(private route:ActivatedRoute, private _route:Router,private ps:ProductsService,private cart:CartService) {
-      // console.log(route.params.subscribe(params=>this.id=params['id']))
-      // console.log(this._route)
+
       this.route.params.subscribe(
-        params=>this.id=params['id']);
+        params=>this.productid=params['productid']);
+  console.log("id",this.productid);
   
         this.ps.getCategoryList().subscribe(
           res=>
          {
            res.forEach( (item:any)=>
                  {
-                   console.log("item",item.id);
-                   if(this.id == item.id )
+                   console.log("id-check",this.productid==item.productid);
+                   
+                  //  console.log("item",item.productid);
+                   if(this.productid == item.productid )
                    {
                      this.overview=item;
-                   
+                   console.log("des",this.overview);
+           
+      
+               
                   
                      
                    }
+          
                    }
            )
+
                  }
                  
                  )
 
-    
+              
         
      }
 
 
   ngOnInit(): void {
-    this.route.params.subscribe(
-      params=>this.id=params['id']);
-
-      this.ps.getCategoryList().subscribe(
-        res=>
-       {
-         res.forEach( (item:any)=>
-               {
-                 console.log("item",item.id);
-                 if(this.id == item.id )
-                 {
-                   this.overview=item;
-                 
-                
-                   
-                 }
-                 }
-         )
-               }
-               
-               )
+this.addToCart
   }
 
 
@@ -88,21 +74,22 @@ decQnt(value:any){
 }
 
 
-
-
-
-  
-
   ///addTocart function//
-  addTocart(item:any)
+  addToCart(item:any)
   {  
-  this.cart.addToCart(item).subscribe( ()=>{ 
-     console.log("Data:",item)
+//     let product = item.productid
+// this.data.products= item.productid
+
+// console.log("product",product);
+
+  this.cart.addToCart(item.productid).subscribe( ()=>{ 
+
+    console.log("addtocartDataaaaa:",item.productid)
+
     //this.msg.sendMsg(item);
   }
   )
   }
-  myThumbnail="https://wittlock.github.io/ngx-image-zoom/assets/thumb.jpg";
-  myFullresImage="https://wittlock.github.io/ngx-image-zoom/assets/fullres.jpg";
+
 
 }

@@ -14,7 +14,7 @@ export class UserprofileComponent implements OnInit {
     {  
       firstname:new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z ]*$')]),
      email:new FormControl('',[Validators.required, Validators.pattern('[^@]+@[^@]+\.[a-zA-Z]{2,6}')]),
-     mobile:new FormControl('',[Validators.required, Validators.pattern('[6-9]\\d{9}')]),
+     username:new FormControl('',[Validators.required, Validators.pattern('[6-9]\\d{9}')]),
      address_line1:new FormControl(''),
      address_line2:new FormControl(''),
      city:new FormControl(''),
@@ -48,14 +48,14 @@ export class UserprofileComponent implements OnInit {
  {
    this.ecomm.getprofile().subscribe( res=>
    {
-     console.log('get profile ', res);
+     console.log('get profileeee ', res);
      console.log('get profile  city:-', res.city);
  
       this.profileForm.patchValue(
        {
-        Name:res.Name,
+        firstname:res.firstname,
         email:res.email,
-         mobile:res.mobile,
+        username:res.username,
          address_line1:res.address_line1,
          address_line2:res.address_line2,
          city:res.city,

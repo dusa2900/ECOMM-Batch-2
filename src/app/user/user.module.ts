@@ -29,10 +29,11 @@ import { MensWearComponent } from './PRODUCTS/APPEARELS/mens-wear/mens-wear.comp
 import { NgxImgZoomModule } from 'ngx-img-zoom';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
+import{SortPipe} from'../PIPES/sort.pipe';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
+    HeaderComponent,SortPipe,
     FooterComponent,
     RegisterComponent,
     LoginComponent,

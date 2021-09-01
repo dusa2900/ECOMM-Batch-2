@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../Auth/auth.guard';
+
 import { HomeComponent } from './COMMON/home/home.component';
 import { SidenavComponent } from './COMMON/sidenav/sidenav.component';
 import { CouponsComponent } from './DASHBOARD/coupons/coupons.component';
@@ -11,16 +13,18 @@ import { TransactionsComponent } from './DASHBOARD/transactions/transactions.com
 import { ViewUserComponent } from './DASHBOARD/view-user/view-user.component';
 
 const routes: Routes = [
-  {path: '',component:HomeComponent,
+
+  {path: '',component:HomeComponent,canActivate:[AuthGuard], data:{roles:['Admin']},
 
   children: [
+    {path: 'dashboard',component:DashboardComponent} ,
     {path: 'coupons',component:CouponsComponent},
     {path: 'productlist',component:ProductlistStatusComponent},
     {path: 'viewusers',component:ViewUserComponent},
     {path: 'forgotpassword',component:ForgotpasswordUserComponent},
     {path: 'Transactions',component:TransactionsComponent},
     {path: 'returnorder',component:ReturnorderComponent},
-    {path: 'dashboard',component:DashboardComponent},
+    // {path: 'dashboard',component:DashboardComponent},
 
 
 

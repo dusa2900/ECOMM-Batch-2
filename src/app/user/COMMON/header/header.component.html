@@ -3,7 +3,7 @@
     <a class="navbar-brand" href="#" ><img src="/assets/images/logo.png" style="width: 60px;height: 60px;" > <span>Batch-II</span></a>
     <form class="d-flex example">
       <input class="form-control"  type="text" placeholder="What is on your mind today? " aria-label="Search" #userInput>
-      <button type="submit" (click)="onSearch()"><i class="fa fa-search"></i></button>
+      <button type="submit"><i class="fa fa-search"></i></button>
     </form>
     <button class="navbar-toggler" type="button" style="background-color: #74bcdb;"  data-bs-toggle="collapse" 
     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,14 +21,14 @@
       <a class="nav-link dropdown-toggle" style="color:white;" id="navbarDropdown" role="button" 
       data-bs-toggle="dropdown" aria-expanded="false">
         <span >
-        Hello,{{this.name|slice:0:5}}  <i class="fas fa-user-circle" style="color: #22b9f0;font-size: 25px;"></i>  <br>
+        Hello,{{this.title|slice:0:5}}  <i class="fas fa-user-circle" style="color: #22b9f0;font-size: 25px;"></i>  <br>
         Accounts &Lists
         
         </span></a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="color:white;">
-          <li><a class="dropdown-item" routerLink="/login" style="color: black;"  *ngIf="!authorised">Sign  In</a></li>
-          <li><a class="dropdown-item" (click)="openDialog()" style="color: black;" *ngIf="authorised">User Profile</a></li>
-          <li><a class="dropdown-item"  style="color: black;" (click)="logout()"  *ngIf="authorised">Sign Out</a></li>
+          <li><a class="dropdown-item" routerLink="/login" style="color: black;" *ngIf="! isLoggedIn()" >Sign  In</a></li>
+          <li><a class="dropdown-item" (click)="openDialog()" style="color: black;" *ngIf="isLoggedIn()">User Profile</a></li>
+          <li><a class="dropdown-item"  style="color: black;" (click)="logout()"  *ngIf="isLoggedIn()">Sign Out</a></li>
           <li><hr class="dropdown-divider"></li>
           <!-- <li><a class="dropdown-item"  routerLink="/main"  >Sign Out</a></li> -->
         </ul>

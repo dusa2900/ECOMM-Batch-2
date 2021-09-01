@@ -1,20 +1,35 @@
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+    </div>
+
 <div class="container" >
+<br>
+    <select (change)="filterall($event)" [(ngModel)]="pricetype">
+        <option>All</option>
+        <option>Low to High</option>
+        <option>High to Low</option>
+        
+    </select>
+    <br>
+    <br>
     <div class="row">
-        <ng-container *ngFor="let item of selected">
+
+        <ng-container *ngFor="let item of selected |sort:pricetype">
        
-            <div class="card col-md-3" routerLink="/product/{{item.category}}/{{item.id}}" >
+            <div class="card col-md-3" routerLink="/products/{{item.categorys}}/{{item.productid}}" >
 
                 <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{item.title}}</h5>
-                <h5 class="card-title" style="font-weight: bold;">{{item.category}}</h5>
-                <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p> -->
+                <h5 class="card-title" style="font-weight: bold;">{{item.categorys}}</h5>
           
-                <h5 class="card-title" style="font-weight: bold;"><strong>Price:</strong> ${{item.price}}</h5>
+                <h5 class="card-title" style="font-weight: bold;"><strong>Price:</strong> {{item.price|currency:'INR' }}</h5>
                 
               </div>
               
-              <button class="btn btn-info " >Add to cart</button>
+       
             </div>
           
         </ng-container>
@@ -22,3 +37,7 @@
     </div>
   
   </div>
+
+  <br>
+  <br>
+  <br>

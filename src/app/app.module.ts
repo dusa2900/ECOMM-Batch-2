@@ -10,17 +10,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './Auth/auth.guard';
 import { EcommService } from './SERVICES/ecomm.service';
 import { JwtheaderComponent } from './Http-JWT-Get-req/jwtheader/jwtheader.component';
+import { ForbiddenComponent } from './unauth-forbidden/forbidden/forbidden.component';
+import { UserGuard } from './Auth/user.guard';
+import { LoginAuthService } from './SERVICES/login.auth.service';
+import { PagenotfoundComponent } from './unauth-forbidden/pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    JwtheaderComponent
+    JwtheaderComponent,
+    ForbiddenComponent,
+    PagenotfoundComponent,
   ],
   imports: [
     BrowserModule,ToastrModule.forRoot(),NgxPaginationModule,
     AppRoutingModule,HttpClientModule,AngmaterialModule, BrowserAnimationsModule
   ],
-  providers: [AuthGuard,EcommService,   {provide: HTTP_INTERCEPTORS, useClass: JwtheaderComponent, multi: true},],
+  providers: [AuthGuard,EcommService,  UserGuard,LoginAuthService, {provide: HTTP_INTERCEPTORS, useClass: JwtheaderComponent, multi: true},],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

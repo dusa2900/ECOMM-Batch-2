@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 
 import { CartService } from 'src/app/SERVICES/cart.service';
 import { EcommService } from 'src/app/SERVICES/ecomm.service';
+import { LoginAuthService } from 'src/app/SERVICES/login.auth.service';
 import { ProductsService } from 'src/app/SERVICES/products.service';
 import { UserprofileComponent } from '../userprofile/userprofile.component';
 
@@ -15,7 +16,7 @@ import { UserprofileComponent } from '../userprofile/userprofile.component';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title:string="Sign in";
+  title:any="signin";
   authorised:boolean=false;
 
   // cartCount:number=0;
@@ -25,14 +26,14 @@ export class HeaderComponent implements OnInit {
   secondNavbar:any=[];
   public totalItem : number = 0;
   name: any;
-  constructor(private cartService : CartService,public dialog: MatDialog,private ecomm:EcommService,private hc:HttpClient, private route:Router) {
+  constructor(private cartService : CartService,public loginauth:LoginAuthService ,public dialog: MatDialog,private ecomm:EcommService,private hc:HttpClient, private route:Router) {
     
    }
   
   ngOnInit() {
  
-    this. name=localStorage.getItem("usermail")
-    console.log("name",this.name);
+    
+
     this.cartService.getProducts()
     .subscribe((res:any)=>{
       console.log(res);
@@ -42,68 +43,66 @@ export class HeaderComponent implements OnInit {
       this.totalItem=res.length
     })
    
-    // calcTotal() {
-    //   return this.products.reduce((acc, pr) => acc+= pr.num , 0);
-    // }
-  
-    this.signin();
+
     this.ecomm.getSecondNavbar().subscribe(
       res=>this.secondNavbar=res
     )
   }
   
-  onSearch()
-  {
-      console.log(this.userInput.nativeElement.value);
-     if(this.userInput.nativeElement.value=='m' || this.userInput.nativeElement.value=='men'  || this.userInput.nativeElement.value=='mens')
-    {
-      this.route.navigate(['appearels/menswear'])
-    }
-    else if( this.userInput.nativeElement.value=='kid'  || this.userInput.nativeElement.value=='kids')
-    {
-      this.route.navigate(['appearels/kidswear'])
-    }
-    else if(this.userInput.nativeElement.value=='w' || this.userInput.nativeElement.value=='women'  || this.userInput.nativeElement.value=='womens')
-    {
-      this.route.navigate(['appearels/womenswear'])
-    }
-    else if(this.userInput.nativeElement.value=='h' || this.userInput.nativeElement.value=='home'  || this.userInput.nativeElement.value=='home appluances')
-    {
-      this.route.navigate(['electronics/homeappliances'])
-    }
-    else if(this.userInput.nativeElement.value=='l' || this.userInput.nativeElement.value=='laptop'  || this.userInput.nativeElement.value=='laptops')
-    {
-      this.route.navigate(['electronics/laptops'])
-    }
-    else if(this.userInput.nativeElement.value=='m' || this.userInput.nativeElement.value=='mobile'  || this.userInput.nativeElement.value=='mobiles')
-    {
-      this.route.navigate(['electronics/mobiles'])
-    }
-    else if(this.userInput.nativeElement.value=='home furn' || this.userInput.nativeElement.value=='home-furnituring'  )
-    {
-      this.route.navigate(['home-kitchen/home-furnituring'])
-    }
-    else if(this.userInput.nativeElement.value=='kitchen' || this.userInput.nativeElement.value=='kitchen items'  )
-    {
-      this.route.navigate(['home-kitchen/kitchen-items'])
-    }
-    else
-    {
-      this.route.navigate(['']);
-    }
+  public userName()
+{
+  this.title=this.loginauth.getEmail()
+  //console.log("userName",this.userAuth.getEmail())
+}
+ 
+public isLoggedIn() {
+  this.userName();
+  return this.loginauth.isLoggedIn();
+}
+  // onSearch()
+  // {
+  //     console.log(this.userInput.nativeElement.value);
+  //    if(this.userInput.nativeElement.value=='m' || this.userInput.nativeElement.value=='men'  || this.userInput.nativeElement.value=='mens')
+  //   {
+  //     this.route.navigate(['appearels/menswear'])
+  //   }
+  //   else if( this.userInput.nativeElement.value=='kid'  || this.userInput.nativeElement.value=='kids')
+  //   {
+  //     this.route.navigate(['appearels/kidswear'])
+  //   }
+  //   else if(this.userInput.nativeElement.value=='w' || this.userInput.nativeElement.value=='women'  || this.userInput.nativeElement.value=='womens')
+  //   {
+  //     this.route.navigate(['appearels/womenswear'])
+  //   }
+  //   else if(this.userInput.nativeElement.value=='h' || this.userInput.nativeElement.value=='home'  || this.userInput.nativeElement.value=='home appluances')
+  //   {
+  //     this.route.navigate(['electronics/homeappliances'])
+  //   }
+  //   else if(this.userInput.nativeElement.value=='l' || this.userInput.nativeElement.value=='laptop'  || this.userInput.nativeElement.value=='laptops')
+  //   {
+  //     this.route.navigate(['electronics/laptops'])
+  //   }
+  //   else if(this.userInput.nativeElement.value=='m' || this.userInput.nativeElement.value=='mobile'  || this.userInput.nativeElement.value=='mobiles')
+  //   {
+  //     this.route.navigate(['electronics/mobiles'])
+  //   }
+  //   else if(this.userInput.nativeElement.value=='home furn' || this.userInput.nativeElement.value=='home-furnituring'  )
+  //   {
+  //     this.route.navigate(['home-kitchen/home-furnituring'])
+  //   }
+  //   else if(this.userInput.nativeElement.value=='kitchen' || this.userInput.nativeElement.value=='kitchen items'  )
+  //   {
+  //     this.route.navigate(['home-kitchen/kitchen-items'])
+  //   }
+  //   else
+  //   {
+  //     this.route.navigate(['']);
+  //   }
      
   
-  }
+  // }
   
-  signin()
-  {
-    
-    this.ecomm.getprofile().subscribe( res=>{
-      console.log('username',res.Name)
-      this.title=`${res.Name}`;
-      this.authorised=true;
-    })
-  }
+
   
   openDialog() {​​​
   const dialogRef = this.dialog.open(UserprofileComponent);
@@ -113,13 +112,12 @@ export class HeaderComponent implements OnInit {
     }​​​
   
   
-  logout()
-  {
-    localStorage.clear();
-    this.authorised=false;
-    this.title='Sign In'
-    this.route.navigate(['/login']);
-    
-  }
+    logout()
+    {
+      this.title="";
+      this.loginauth.clear();
+      this.route.navigate(['/main']);
+      
+    }
   
 }

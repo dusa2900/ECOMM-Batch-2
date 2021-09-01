@@ -1,119 +1,50 @@
-<div class="container" >
-  <h2>Men's wear</h2>
-  <div class="row" routerLink="/appearels/menswear"> 
-      <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/Shirts.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Shirts</h5>
-          </div>
+<div class="container">
+  <div class="row">
+    <h1>Mens Wear:</h1>
+    <ng-container *ngFor="let item of mensList">
+      <div class="card col-md-3" routerLink="/products/{{item.categorys}}">
+        <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><b>{{item.categorys}}</b></h5>
+          <h5 class="card-title" style="font-weight: bold;">{{item.title}}</h5>
         </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/t-shirts.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">T-shirts</h5>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/Jeans.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Jeans</h5>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/tracks-min.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Track pants</h5>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/footwear.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Shoes</h5>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/sandals.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"> sandals</h5>
-          </div>
-        </div>           
+      </div>
+    </ng-container>
   </div>
-  <h2>Women's wear</h2>
-  <div class="row"> 
-      <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/sarees.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Sarees</h5>
-          </div>
+  <br>
+  <div class="row">
+    <h1>Womens Wear:</h1>
+    <ng-container *ngFor="let item of womensList">
+
+      <div class="card col-md-3" routerLink="/products/{{item.categorys}}">
+        <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><b>{{item.categorys}}</b></h5>
+          <h5 class="card-title" style="font-weight: bold;">{{item.title}}</h5>
+
+
         </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/dress.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Dresses</h5>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/kurtas.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Kurtas & kurta sets</h5>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/handbags.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">handbags</h5>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/nightdress.webp" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">nightdress</h5>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/wjacket.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">jacket</h5>
-          </div>
-        </div>           
+
+      </div>
+    </ng-container>
+
   </div>
-  <h2>Kid's wear</h2>
-  <div class="row"> 
-      <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/hp.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Product name</h5>
-          </div>
+  <br>
+  <div class="row">
+    <h1>Kids Wear:</h1>
+    <ng-container *ngFor="let item of kidsList">
+
+      <div class="card col-md-3" routerLink="/products/{{item.categorys}}">
+        <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><b>{{item.categorys}}</b></h5>
+          <h5 class="card-title" style="font-weight: bold;">{{item.title}}</h5>
+
+
         </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/hp2.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Product name</h5>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/homedeco.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Product name</h5>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/god.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Product name</h5>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/shoes.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Product name</h5>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2">
-          <img class="card-img-top" src="../../../../../assets/images/Products/Appearels/walldeco.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Product name</h5>
-          </div>
-        </div>           
+
+      </div>
+    </ng-container>
+
   </div>
 </div>

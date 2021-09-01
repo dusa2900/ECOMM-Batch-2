@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../Auth/auth.guard';
+import { UserGuard } from '../Auth/user.guard';
 import { AddCartComponent } from './COMMON/add-cart/add-cart.component';
 import { ReturnComponent } from './COMMON/return/return.component';
-import { UserprofileComponent } from './COMMON/userprofile/userprofile.component';
 import { HomeComponent } from './HOME/home/home.component';
 import { MainComponent } from './HOME/main/main.component';
 import { ForgetComponent } from './LOGIN/forget/forget.component';
@@ -19,30 +19,31 @@ import { ProductCategoryTypeComponent } from './PRODUCTS/RE-USABLE/product-categ
 import { ProductDescriptionComponent } from './PRODUCTS/RE-USABLE/product-description/product-description.component';
 
 const routes: Routes = [
-  {​​​
-path:'main',   component:MainComponent ,    canActivate:[AuthGuard],
-children: [
-   {​​​ path:'',component:HomeComponent }​​​
- ]
-}​​​,
+
+//   {​​​
+// path:'main',   component:MainComponent ,  
+// children: [
+//    {​​​ path:'',component:HomeComponent }​​​
+//  ]
+// }​​​,
+{path:"",redirectTo:"user",pathMatch:"full"},
 {​​​  path:'',  component:MainComponent,
 children: [
   {​​​ path:'payment',component:PaymentComponent }​​​,
            {​​​ path:'',component:HomeComponent  }​​​,    
-           {​​​ path:'user', component:UserprofileComponent ,canActivate:[AuthGuard] }​​​,
            {​​​ path:'forget',component:ForgetComponent}​​​,
-           {​​​ path:'login', component:LoginComponent   }​​​,
+           {​​​ path:'login', component:LoginComponent }​​​,
            {​​​ path:'register',component:RegisterComponent}​​​,
            {​​​ path:'reset', component:ResetComponent }​​​,
 
-           {​​​path:'cart', component:AddCartComponent}​​​,
-           {​​​path:'return', component:ReturnComponent}​​​,
+
+           {​​​path:'cart', component:AddCartComponent,canActivate:[UserGuard]}​​​,
+           {​​​path:'return', component:ReturnComponent,canActivate:[UserGuard]}​,
 ////reusable-common/////
 
-{ path: 'totalproducts/:category', component:ProductCategoryTypeComponent },
 
-           {​​​​​​​​ path:'products/:category', component:ProductCategoryTypeComponent }​​​​​​​​,
-           {​​​​​​​​ path:'product/:category/:id', component:ProductDescriptionComponent }​​​​​​​​,
+           {​​​​​​​​ path:'products/:categorys', component:ProductCategoryTypeComponent }​​​​​​​​,
+           {​​​​​​​​ path:'products/:categorys/:productid', component:ProductDescriptionComponent }​​​​​​​​,
 
 //APPEARELS
            {​​​ path:'appearels',component:AppearelsComponent}​​​,
@@ -57,7 +58,9 @@ children: [
 ///HOME AND KITCHEN
            {​​​ path:'home-kitchen', component:HomeKitchenComponent}​​​,
     ]
-     }​​​
+     }​​​,
+
+
  ]
 
     
