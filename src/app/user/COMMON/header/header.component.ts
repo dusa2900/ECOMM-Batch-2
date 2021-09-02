@@ -16,7 +16,7 @@ import { UserprofileComponent } from '../userprofile/userprofile.component';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title:any="signin";
+  title:any;
   authorised:boolean=false;
 
   // cartCount:number=0;
@@ -31,23 +31,6 @@ export class HeaderComponent implements OnInit {
    }
   
   ngOnInit() {
-    // this.totalItem=sessionStorage.getItem('cartlength')
-
-    // console.log("check-length",this.totalItem);
-
-    // this.cartService.getProducts()
-    // .subscribe((res:any)=>{
-    //   console.log(res);
-    //   this.totalItem = res.length;
-    // })
-    // this.cartService.getCartItems().subscribe((res:any)=>{
-    //   this.totalItem=res.length
-    //   console.log("length",res.length);
-      
-    // })
-  
- 
-    
 
     this.ecomm.getSecondNavbar().subscribe(
       res=>this.secondNavbar=res

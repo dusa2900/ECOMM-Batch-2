@@ -32,8 +32,8 @@ export class CartService {
 
 addToCart(item:any):Observable<any>
 { 
-  this.cartItem.push(item);
-  this.productList.next(this.cartItem);
+  // this.cartItem.push(item);
+  // this.productList.next(this.cartItem);
   
   const userPhoneNumber:any = sessionStorage.getItem('username');
   // console.log("usernumber",userPhoneNumber);
@@ -62,7 +62,8 @@ removeCartItem(product:any): Observable<any>{
 removeAllcart(): Observable<any>{
   this.cartItem=[]
   this.productList.next(this.cartItem);
-  return this.hc.delete<any>("http://localhost:4000/cartItems");
+  const userPhoneNumber:any = sessionStorage.getItem('username');
+  return this.hc.delete<any>(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/cart/cart/deleteall/${userPhoneNumber}`);
 }
 
 

@@ -5,7 +5,6 @@ import { EcommService } from 'src/app/SERVICES/ecomm.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmPasswordValidator } from './must-watch';
-// import { ConfirmedValidator } from './confirm';
 
 @Component({
   selector: 'app-register',
@@ -70,7 +69,7 @@ this.msg=obj.message
     },
     err =>{
       console.log(err)
-      this.toastr.error('Invalid  Details')
+      this.toastr.error('Email or Number is already exists')
     }
  )
     this.submitted = true;

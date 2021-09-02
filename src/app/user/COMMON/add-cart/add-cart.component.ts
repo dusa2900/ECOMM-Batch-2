@@ -19,7 +19,7 @@ export class AddCartComponent implements OnInit {
 
   
   ngOnInit() {
- 
+
     this.loadCartItems()
     }
    
@@ -28,13 +28,8 @@ export class AddCartComponent implements OnInit {
 
         loadCartItems() {
 
-          // this.cart.getProducts().subscribe(  (res:any[])=>{
-              // console.log("addprodulength:",res);
-              //   this.products = res;
-              //   this.calcCartTotal();
-              //   })
           this.cart.getCartItems().subscribe(  (res:any)=>{
-            console.log("addcart:",res);
+            console.log("addcarttttt:",res);
              this.products = res;
             this.login.setCartLength(res.length);
              this.calcCartTotal();
@@ -49,7 +44,7 @@ export class AddCartComponent implements OnInit {
           this.products.forEach((item:any) => {
             
            
-            this.grandTotal += Math.round(item.product.quantity *item.product.price )
+            this.grandTotal += Math.round(item.quantity *item.product.price )
           })
         }
 
@@ -89,8 +84,9 @@ export class AddCartComponent implements OnInit {
               this.cart.removeAllcart().subscribe(
                 (res:any)=>
                 {
-                  console.log(res);
-                  this.products={};
+                  this.loadCartItems()
+                  console.log("delete all",res);
+                  // this.products={};
                 }
               )
         }       

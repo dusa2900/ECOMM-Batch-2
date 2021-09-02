@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { EcommService } from 'src/app/SERVICES/ecomm.service';
 import { LoginAuthService } from 'src/app/SERVICES/login.auth.service';
-import { PasswordStrengthValidator } from "./password-req"
+import { PasswordStrengthValidator } from "../register/password-req"
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

@@ -52,7 +52,7 @@ export class ProductDescriptionComponent implements OnInit {
 
 
   ngOnInit(): void {
-this.addToCart
+
   }
 
 
@@ -80,15 +80,17 @@ decQnt(value:any){
 //     let product = item.productid
 // this.data.products= item.productid
 
-console.log("product",item.productid);
+
 
   this.cart.addToCart(item.productid).subscribe( ()=>{ 
 
-    console.log("addtocartDataaaaa:",item.productid)
+    // console.log("addtocartDataaaaa:",item.productid)
 
 this._route.navigate(['/cart'])
   }
   )
+
+
   }
 
 
