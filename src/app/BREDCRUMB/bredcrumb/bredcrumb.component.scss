@@ -1,0 +1,61 @@
+/* .breadcrumb {
+    background: none;
+    font-size: 0.8em;
+    margin: 0;
+    a,
+    span {
+      color: darkgrey;
+    }
+    a:hover,
+    span:hover {
+      color: dimgrey;
+      text-decoration: none;
+    }
+    li {
+      list-style: none;
+      float: left;
+      margin: 5px;
+    }
+    li:last-child {
+      margin-right: 20px;
+    }
+    li::after {
+      content: "->";
+      color: darkgrey;
+    }
+    li:last-child::after {
+      content: "";
+    }
+  }
+   */
+
+   .breadcrumb {
+    background: none;
+    font-size: 35px;
+    margin: 0;
+    background-color: rgb(186, 243, 245);
+   }
+   a,
+   span {
+    font-size: large;
+    color: black;
+   }
+ 
+   li {
+     list-style: none;
+     float: left;
+     margin: 5px;
+     font-size: large;
+     color: black;
+   }
+   li:last-child {
+     margin-right: 20px;
+   }
+   li::after {
+     content: "->";
+     font-size: large;
+     color: black;
+   }
+   li:last-child::after {
+     content: "";
+   }

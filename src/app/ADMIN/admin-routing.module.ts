@@ -14,9 +14,11 @@ import { ViewUserComponent } from './DASHBOARD/view-user/view-user.component';
 
 const routes: Routes = [
 
-  {path: '',component:HomeComponent,canActivate:[AuthGuard], data:{roles:['Admin']},
+  {path: '',component:HomeComponent,canActivate:[AuthGuard], data:{roles:['ADMIN']},
 
   children: [
+    {path: '',component:HomeComponent} ,
+
     {path: 'dashboard',component:DashboardComponent} ,
     {path: 'coupons',component:CouponsComponent},
     {path: 'productlist',component:ProductlistStatusComponent},

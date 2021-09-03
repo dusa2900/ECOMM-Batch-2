@@ -68,10 +68,10 @@ this.loginauth.setToken(obj.accessToken);
 
 
       else if (this.roles == "ADMIN") {
-        console.log("admin", res.role)
+        console.log("admin", this.roles)
+        this.router.navigate(['/admin']);
 
         this.toastr.success('admin Logined successfully')
-        this.router.navigate(['/admin']);
 
 
       }

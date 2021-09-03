@@ -34,24 +34,26 @@ export class EcommService {
 
 ///login for token get
 
-public roleMatch(allowedRoles:any): boolean|any {
-  let isMatch = false;
-  const userRoles: any = this.LoginAuthService.getRoles();
+// public roleMatch(allowedRoles:any): boolean|any {
+//   let isMatch = false;
+//   const userRoles: any = this.LoginAuthService.getRoles();
+//   console.log("user roless",userRoles);
 
-  if (userRoles != null && userRoles) {
-    for (let i = 0; i < userRoles.length; i++) {
-      for (let j = 0; j < allowedRoles.length; j++) {
-        if (userRoles[i] === allowedRoles[j]) {
-          console.log("check-roles",userRoles[i] === allowedRoles[j])
-          isMatch = true;
-          return isMatch;
-        } else {
-          return isMatch;
-        }
-      }
-    }
-  }
-}
+//   if (userRoles != null && userRoles) {
+//     for (let i = 0; i < userRoles.length; i++) {
+//       for (let j = 0; j < allowedRoles.length; j++) {
+//         if (userRoles[i] === allowedRoles[j]) {
+//           console.log("check-roles",userRoles[i] === allowedRoles[j])
+//           isMatch = true;
+//           return isMatch;
+//         } else {
+//           return isMatch;
+          
+//         }
+//       }
+//     }
+//   }
+// }
 
 
 //forgotpassword//

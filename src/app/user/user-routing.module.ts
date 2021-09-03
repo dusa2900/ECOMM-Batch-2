@@ -20,12 +20,6 @@ import { ProductDescriptionComponent } from './PRODUCTS/RE-USABLE/product-descri
 
 const routes: Routes = [
 
-//   {​​​
-// path:'main',   component:MainComponent ,  
-// children: [
-//    {​​​ path:'',component:HomeComponent }​​​
-//  ]
-// }​​​,
 {path:"",redirectTo:"user",pathMatch:"full"},
 {​​​  path:'',  component:MainComponent,
 children: [
