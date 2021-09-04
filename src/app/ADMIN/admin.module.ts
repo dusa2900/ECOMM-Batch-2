@@ -9,7 +9,6 @@ import { ReturnorderComponent } from './DASHBOARD/returnorder/returnorder.compon
 import { ForgotpasswordUserComponent } from './DASHBOARD/forgotpassword-user/forgotpassword-user.component';
 import { ProductlistStatusComponent } from './DASHBOARD/productlist-status/productlist-status.component';
 import { SidenavComponent } from './COMMON/sidenav/sidenav.component';
-import { HomeComponent } from './COMMON/home/home.component';
 import { TransactionsComponent } from './DASHBOARD/transactions/transactions.component';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -24,7 +23,7 @@ import { DashboardComponent } from './DASHBOARD/dashboard/dashboard.component';
     ReturnorderComponent,
     SidenavComponent,
     ForgotpasswordUserComponent,
-    HomeComponent,
+    
     TransactionsComponent,
     DashboardComponent
   ],

@@ -31,22 +31,19 @@ token:any
     intercept(
       req: HttpRequest<any>,
       next: HttpHandler
-    ): Observable<HttpEvent<any>> {
-      
+    ): Observable<HttpEvent<any>>  {
       if (req.headers.get('No-Auth') === 'True') {
         return next.handle(req.clone());
       }
   
-     this. token = this.loginauth.getToken();
-  console.log("jwt-token",this.token);
+      const token = this.loginauth.getToken();
   
-      req = this.addToken(req, this.token);
+      req = this.addToken(req, token);
   
       return next.handle(req).pipe(
           catchError(
               (err:HttpErrorResponse) => {
                   console.log(err.status);
-                  
                   if(err.status === 401) {
                       this.router.navigate(['/login']);
                   } else if(err.status === 403) {
@@ -56,7 +53,7 @@ token:any
               }
           )
       );
-            }
+    }
   
     private addToken(request:HttpRequest<any>, token:string) {
         return request.clone(

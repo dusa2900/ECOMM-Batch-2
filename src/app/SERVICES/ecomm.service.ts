@@ -8,7 +8,7 @@ import{LoginAuthService} from '../SERVICES/login.auth.service';
 
 /////main-service//////
 export class EcommService {
-
+  requestHeader = new HttpHeaders({ 'No-Auth': 'True' });
     
   httpOptions = {​​​​​​​​ headers: new HttpHeaders({​​​​​​​​ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*", }​​​​​​​​ ),responseType: 'text' as 'json' }​​​​​​​​;
  
@@ -24,7 +24,9 @@ export class EcommService {
     login(value:any):Observable<any>{​​​
       console.log("login service",value);
       
-    return this.hc.post<any>("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/auth/signin",value,this.httpOptions)
+    return this.hc.post<any>("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/auth/signin",value,{
+      headers: this.requestHeader,
+    })
     }​​​
 
 //     loggedIn()
@@ -34,40 +36,46 @@ export class EcommService {
 
 ///login for token get
 
-// public roleMatch(allowedRoles:any): boolean|any {
-//   let isMatch = false;
-//   const userRoles: any = this.LoginAuthService.getRoles();
-//   console.log("user roless",userRoles);
+public roleMatch(allowedRoles): boolean|any {
+  let isMatch = false;
+  const userRoles: any = this.LoginAuthService.getRoles();
 
-//   if (userRoles != null && userRoles) {
-//     for (let i = 0; i < userRoles.length; i++) {
-//       for (let j = 0; j < allowedRoles.length; j++) {
-//         if (userRoles[i] === allowedRoles[j]) {
-//           console.log("check-roles",userRoles[i] === allowedRoles[j])
-//           isMatch = true;
-//           return isMatch;
-//         } else {
-//           return isMatch;
-          
-//         }
-//       }
-//     }
-//   }
-// }
+  if (userRoles != null && userRoles) {
+    for (let i = 0; i < userRoles.length; i++) {
+      for (let j = 0; j < allowedRoles.length; j++) {
+        if (userRoles[i].roleName === allowedRoles[j]) {
+          isMatch = true;
+          return isMatch;
+        } else {
+          return isMatch;
+        }
+      }
+    }
+  }
+}
 
 
 //forgotpassword//
   forgotpassword(value:any):Observable<any>{
     console.log("forgotpassword service",value);
-    const userPhoneNumber:any = sessionStorage.getItem('mobilenumber');
+    const userPhoneNumber:any = localStorage.getItem('reset');
     console.log("forgotpassword user-number",userPhoneNumber);
 
-    const params = new HttpParams().append('mobilenumber', userPhoneNumber );
-    
-    return this.hc.get("http://shoppingapp-env.eba-itwffxiz.ap-south-1.elasticbeanstalk.com/login/user",{params})
+    const params = new HttpParams().append('reset', userPhoneNumber );
+    return this.hc.get(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/login/frgtPwd/${userPhoneNumber}`)
+   // headers:{Accept:'application/json','No-Auth':'True'}
 
   }
 
+   //resetpassword
+  resetpassword(value:any):Observable<any>{
+    console.log("resetpassword service",value);
+
+    return this.hc.post(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/login/saveNewPwd`,value)
+
+  }
+
+ 
 
 //register//
 register(value:any):Observable<any>{

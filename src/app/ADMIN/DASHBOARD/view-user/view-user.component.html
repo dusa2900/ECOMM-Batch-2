@@ -25,10 +25,10 @@
               </tr>
             </thead>
             <!-- | paginate: { itemsPerPage: 1,currentPage:p}; let i = index  -->
-            <tbody *ngFor="let data of listusers "> 
+            <tbody *ngFor="let data of listusers| paginate: { itemsPerPage: 5,currentPage:p}; let i = index  "> 
               <tr >
-                <th scope="row">{{data.sno}}</th>
-                <td>{{data.username}}</td>
+                <th scope="row">{{i+1}}</th>
+                <td>{{data.userName}}</td>
                 <td>{{data.email}}</td>
                 <td>{{data.mobile}}</td>
              
@@ -41,6 +41,6 @@
 
 </div>
 
-<!-- <pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls> -->
+<pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls>
 
 </ng-container>

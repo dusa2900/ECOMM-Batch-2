@@ -1,43 +1,46 @@
 
 
+
+
+
    
     <div class="container bar">
         <label class="floatLeft" for="navBtn"><span></span></label>
-        <span class="floatRight paddingRight2rem">
-            <b><h1 >Batch-2</h1></b>
+        <span class="floatRight padding Right 2rem" style="margin-top:12px">
+           <a href="/admin" style="text-decoration: none;color: white;"> <b><h1>Batch-2</h1></b></a>
         </span>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
        <div class="row">
-		<div class="col-md-2">
+		<div class="col-md-2 col-lg-2 col-sm-2 col-3">
 			<input type="checkbox" class="navBtn" id="navBtn" />
         <nav >
 
             <ul>
                 <li>
-                    <a routerLink="coupons"><img src="../../../../assets/images/discount.png" style="width:30px;height:30px">coupons</a>
+                    <a routerLink="coupons"><img src="../../../../assets/images/discount.png" style="width:30px;height:30px"> <span> coupons </span></a>
                 </li>
                 
                 <li>
-                    <a routerLink="productlist"><img src="../../../../assets/images/electric-appliance (1).png" style="width:30px;height:30px">Inventory</a>
+                    <a routerLink="productlist"><img src="../../../../assets/images/electric-appliance (1).png" style="width:30px;height:30px"> <span> Inventory</span></a>
                 </li>
-				<li class="nav-item"><a class="nav-link" routerLink="viewusers"><i class="fa fa-user fa-2x" aria-hidden="true"></i>View Users</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="forgotpassword"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Forgot password(user)</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="returnorder"><img src="../../../../assets/images/return-order.png" style="width:30px;height:30px">Return Orders</a></li>
+				<li class="nav-item"><a class="nav-link" routerLink="viewusers"> <img src="https://admin.spurtcart.com/assets/img/Customers.fw.png"  style="width:40px;height:40px"alt="img"> <span> View Users</span></a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="forgotpassword"> <img src="https://admin.spurtcart.com/assets/img/Customers.fw.png"  style="width:40px;height:40px"alt="img"><span> Forgot password(user)</span></a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="returnorder"><img src="../../../../assets/images/return-order.png" style="width:30px;height:30px"> <span>Return Orders </span></a></li>
                 <!-- <li class="nav-item"><a class="nav-link" routerLink="tracker">Tracker</a></li> -->
-                <li class="nav-item"><a class="nav-link" routerLink="Transactions" ><i class="fa fa-credit-card" style="font-size:36px"></i>Transactions</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="Transactions" > <img src="https://admin.spurtcart.com/assets/img/Payments.fw.png"  style="width:40px;height:40px" alt=""><span> Transactions </span></a></li>
             </ul>
         </nav>
 	</div>
-	<div class="col-md-9 " >
+	<div class="col-md-10  col-lg-10 col-sm-10 col-9" >
 		<router-outlet></router-outlet>
 	</div>
 </div>
     </div>
 
 
-
+    <app-footer></app-footer>
 
 
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './Auth/auth.guard';
 import { ForbiddenComponent } from './unauth-forbidden/forbidden/forbidden.component';
 import { PagenotfoundComponent } from './unauth-forbidden/pagenotfound/pagenotfound.component';
 

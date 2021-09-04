@@ -34,25 +34,25 @@ name:any
     this.ecomm.login(value).subscribe(res => {
 console.log("login",res);
 
-      const obj = JSON.parse(res);
-      console.log("login-objjj", obj)
-      console.log("username", obj.username)
-      this.loginauth.setUsername(obj.username)
+      // const obj = JSON.parse(res);
+      console.log("login-objjj", res)
+      console.log("username", res.username)
+      this.loginauth.setUsername(res.username)
    
 
 
-      obj.roles.forEach((item:any) => {
+      res.roles.forEach((item:any) => {
         console.log("array",item);
         this.roles = item;
         this.loginauth.setRoles(this.roles)
       });
-      console.log("token",obj.accessToken);
+      console.log("token",res.accessToken);
       
-   
+  //  localStorage.setItem('resettoken',res.accessToken);
     
 
-this.loginauth.setEmail(obj.email);
-this.loginauth.setToken(obj.accessToken);
+this.loginauth.setEmail(res.email);
+this.loginauth.setToken(res.accessToken);
 
 
       // let user = JSON.parse(atob(res.token?.split('.')[1]));
@@ -67,7 +67,7 @@ this.loginauth.setToken(obj.accessToken);
         }
 
 
-      else if (this.roles == "ADMIN") {
+      else if (this.roles === "ADMIN") {
         console.log("admin", this.roles)
         this.router.navigate(['/admin']);
 

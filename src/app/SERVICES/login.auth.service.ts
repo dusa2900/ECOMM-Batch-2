@@ -39,11 +39,11 @@ export class LoginAuthService {
   }
 
   public setToken(jwtToken: string) {
-    sessionStorage.setItem('jwtToken', jwtToken);
+    localStorage.setItem('jwtToken', jwtToken);
   }
 
   public getToken() {
-   return  sessionStorage.getItem('jwtToken');
+   return  localStorage.getItem('jwtToken');
   }
 
   public clear() {
@@ -66,14 +66,11 @@ export class LoginAuthService {
     allowedRoles.forEach((allow:any) => {
 console.log("allow",allow);
 
-
-
-
-    
-  
 if (userRoles== allow) {
   console.log("check-roles",userRoles == allow)
   isMatch = true;
+  console.log("matchhhh",isMatch);
+  
   return isMatch;
 } else {
   return isMatch;
@@ -81,17 +78,7 @@ if (userRoles== allow) {
 }
  })
 } 
-    // if (userRoles != null && userRoles) {
-      // for (let i = 0; i < userRoles.length; i++) {
-        // for (let j = 0; j < allowedRoles.length; j++) {
 
-          // console.log("check-roles111",userRoles[i] == allowedRoles[j])
-          // console.log("check-roles22",userRoles[i] === allowedRoles[j])
-
-        
-        // }
-      // }
-    // }
   }
 
 }

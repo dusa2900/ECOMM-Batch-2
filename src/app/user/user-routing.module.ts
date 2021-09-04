@@ -20,7 +20,7 @@ import { ProductDescriptionComponent } from './PRODUCTS/RE-USABLE/product-descri
 
 const routes: Routes = [
 
-{path:"",redirectTo:"user",pathMatch:"full"},
+// {path:"",redirectTo:"user",pathMatch:"full"},
 {​​​  path:'',  component:MainComponent,
 children: [
   {​​​ path:'payment',component:PaymentComponent }​​​,
@@ -31,8 +31,8 @@ children: [
            {​​​ path:'reset', component:ResetComponent }​​​,
 
 
-           {​​​path:'cart', component:AddCartComponent,canActivate:[UserGuard]}​​​,
-           {​​​path:'return', component:ReturnComponent,canActivate:[UserGuard]}​,
+           {​​​path:'cart', component:AddCartComponent}​​​,
+           {​​​path:'return', component:ReturnComponent}​,
 ////reusable-common/////
 
 

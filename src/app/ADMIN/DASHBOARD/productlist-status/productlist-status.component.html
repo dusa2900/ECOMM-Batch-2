@@ -1,51 +1,34 @@
-<div class="container-fluid" >
-    <div class="row"> <h1>Mens Wear:</h1>
-        <ng-container *ngFor="let item of totalProductsmens">
-      
-          
-              <div class="card col-md-3" >
-                  <img src="{{item.image}}" alt="">
-             <b><h1 style="text-align: center;">Category:{{item.category}}</h1></b> 
+<ng-template #noData>
+  <h3 style="margin-left: 320px;">No Data Available!!!</h3> 
+ </ng-template>
 
-                  <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
-                  <h1 style="text-align: center;color: aquamarine;">Total products:{{item.noofproducts}}</h1>
-                  <h3  style="text-align: center;color:green">Available:{{item.available}}</h3>
-                <h3 style="text-align: center;color:red">Sold:{{item.sold}}</h3>
-              </div>
-         
-        </ng-container>
+ <ng-container *ngIf="totalproducts.length>0;else noData">
+
+  <!-- <h1 style="text-align: center;color:rgba(236, 129, 129, 0.945)"><i class="fa fa-user fa-3x" aria-hidden="true"></i>Totalproducts:{{totalproducts.length}}</h1> -->
+<div class="container-fluid" >
+    <div class="row"> 
+ 
+      
+      <ng-container *ngFor="let item of totalproducts| paginate: { itemsPerPage: 8,currentPage:p}; let i = index">
+
+    
+        <div class="card col-md-3">
+          <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><b>{{item.category}}</b></h5>
+            <h2 class="card-title" style="text-align: center;color: rgb(1, 1, 2);">Total products:{{item.noofproducts}}</h2>
+            <h3 class="card-title"  style="text-align: center;color:green">Available:{{item.available}}</h3>
+            <h3  class="card-title" style="text-align: center;color:red">Sold:{{item.sold}}</h3>
+          </div>
+        </div>
+      </ng-container>
+      
+    
   
     </div>
     <br>
-    <div class="row"> <h1>Womens Wear:</h1>
-      <ng-container *ngFor="let item of totalProductswomens">
-              <div class="card col-md-3" >
-              <img src="{{item.image}}" alt="">
-              <b><h1 style="text-align: center;">Category:{{item.category}}</h1></b> 
-
-              <h1 style="text-align: center;color: aquamarine;">Total products:{{item.noofproducts}}</h1>
-              <h3  style="text-align: center;color:green">Available:{{item.available}}</h3>
-              <h3 style="text-align: center;color:red">Sold:{{item.sold}}</h3>
-       
-          </div>
-      </ng-container>
-  
+   
   </div>
-  <br>
-  <div class="row"> <h1>Kids Wear:</h1>
-    <ng-container *ngFor="let item of totalProductskids">
-            <div class="card col-md-3" >
-            <img src="{{item.image}}" alt="">
-            <b><h1 style="text-align: center;">Category:{{item.category}}</h1></b> 
-
-
-            <h1 style="text-align: center;color: aquamarine;">Total products:{{item.noofproducts}}</h1>
-            <h3  style="text-align: center;color:green">Available:{{item.available}}</h3>
-            <h3 style="text-align: center;color:red">Sold:{{item.sold}}</h3>
-        </div>
-    </ng-container>
-  
-  </div>
-  </div>
-  
+  <pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls>
+</ng-container>
   

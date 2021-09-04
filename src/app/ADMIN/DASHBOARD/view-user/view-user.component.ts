@@ -10,7 +10,7 @@ import { AdminService } from 'src/app/SERVICES/admin.service';
 export class ViewUserComponent implements OnInit {
   listusers: any[]=[];
   retrievedImage: any;
-
+  p:number=1
   constructor(private admin:AdminService,public _DomSanitizationService: DomSanitizer) { }
 
   ngOnInit(): void {
@@ -21,10 +21,10 @@ export class ViewUserComponent implements OnInit {
       this.listusers = res
 console.log("listusers", this.listusers)
 
-this.retrievedImage = this._DomSanitizationService.bypassSecurityTrustUrl(
-  ` data:image/jpeg;base64,${res.image}`
+// this.retrievedImage = this._DomSanitizationService.bypassSecurityTrustUrl(
+//   ` data:image/jpeg;base64,${res.image}`
   
-);
+// );
     }
     )}
 }

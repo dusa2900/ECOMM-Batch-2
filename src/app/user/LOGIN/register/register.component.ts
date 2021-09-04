@@ -42,6 +42,7 @@ export class RegisterComponent implements OnInit {
   get f() { return this.registerForm.controls; }
  
   onSubmit(value: any) {
+
     this.ecomm.register(value).subscribe((res: any)=>      {
      
 console.log("regmsgggggggggg",res);
@@ -53,6 +54,9 @@ console.log("reg-mail",obj.email);
 console.log("messgae",obj.message);
 this.msg=obj.message
 
+
+localStorage.setItem('reset',value.username)
+// localStorage.setItem('resetnumber',value.username)
 
             if (this.msg=="User registered successfully!") {
      

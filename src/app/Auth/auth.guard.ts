@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
   constructor(
     private loginauth: LoginAuthService,
     private router: Router,
-    // private ecomm: EcommService,
+    private ecomm: EcommService,
   ) {}
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -21,28 +21,24 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.loginauth.getToken() !== null) {
-      const role = route.data['roles'] as Array<string>;
-   
-      
-
-      if (role) {
-        const match = this.loginauth.roleMatch(role);
-
-        if (match) {
-
-          console.log("match",match);
-          
-          return true;
-        } else {
-          this.router.navigate(['/forbidden']);
-          return false;
+      if (this.loginauth.getToken() !== null) {
+        const role = route.data['roles'] as Array<string>;
+  console.log("roleeeee",role);
+  
+        if (role) {
+          const match = this.ecomm.roleMatch(role);
+  
+          if (match) {
+            return true;
+          } else {
+            this.router.navigate(['/forbidden']);
+            return false;
+          }
         }
       }
+  
+      this.router.navigate(['/login']);
+      return false;
     }
-
-    this.router.navigate(['/login']);
-    return false;
-  }
 
 }

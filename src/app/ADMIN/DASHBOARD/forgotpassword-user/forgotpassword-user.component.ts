@@ -17,7 +17,7 @@ export class ForgotpasswordUserComponent implements OnInit {
   getforgotpassword() {
     this.admin.forgotpassword().subscribe((res: any)=>  {
       this.forgotpassword = res
-console.log("listusers", this.forgotpassword)
+console.log("forgotpassword", this.forgotpassword)
     }
     )}
 }

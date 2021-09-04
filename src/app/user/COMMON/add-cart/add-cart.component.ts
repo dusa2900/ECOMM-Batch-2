@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/SERVICES/cart.service';
 import { LoginAuthService } from 'src/app/SERVICES/login.auth.service';
 
@@ -15,7 +16,7 @@ export class AddCartComponent implements OnInit {
 
 
   public products:any;
-  constructor(private cart:CartService,private login:LoginAuthService) { }
+  constructor(private cart:CartService,private login:LoginAuthService,private router: Router) { }
 
   
   ngOnInit() {
@@ -92,11 +93,18 @@ export class AddCartComponent implements OnInit {
         }       
 
 ///payment//
-checkout(item:any)
+checkout(products:any,grandTotal:any)
 {
-  this.cart.CheckOutData(item).subscribe(res=>
-    console.log(res)
-    );
+  // this.cart.CheckOutData(products).subscribe(res=>
+  //   console.log(res)
+  //   );
+
+
+  sessionStorage.setItem("addproducts",JSON.stringify(products))
+  sessionStorage.setItem("addgrandtotal",grandTotal)
+
+  this.router.navigate(['/payment'])
+
     }
 
 

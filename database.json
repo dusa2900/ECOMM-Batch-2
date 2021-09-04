@@ -104,6 +104,42 @@
       "StartDate": "2021-08-31",
       "EndDate": "2021-09-03",
       "id": 10
+    },
+    {
+      "couponCode": "Tech0005",
+      "CouponType": "Percentage Discount",
+      "CouponDescription": "five",
+      "CouponValue": "5",
+      "StartDate": "2021-09-04",
+      "EndDate": "2021-09-11",
+      "id": 11
+    },
+    {
+      "couponCode": "Tech0005",
+      "CouponType": "Percentage Discount",
+      "CouponDescription": "five",
+      "CouponValue": "5",
+      "StartDate": "2021-09-04",
+      "EndDate": "2021-09-11",
+      "id": 12
+    },
+    {
+      "couponCode": "Tech0050",
+      "CouponType": "Percentage Discount",
+      "CouponDescription": "diwali",
+      "CouponValue": "50",
+      "StartDate": "2021-09-12",
+      "EndDate": "2021-09-18",
+      "id": 13
+    },
+    {
+      "couponCode": "TECH39",
+      "CouponType": "Percentage Discount",
+      "CouponDescription": "special",
+      "CouponValue": "39",
+      "StartDate": "2021-09-05",
+      "EndDate": "2021-09-28",
+      "id": 14
     }
   ],
   "listusers": [
@@ -118,7 +154,6 @@
       "username": "kalyan",
       "email": "kalyan@gmail.com",
       "mobile": "8888899999"
- 
     }
   ],
   "forgotpasswordusers": [
@@ -287,7 +322,7 @@
       "id": 13,
       "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
       "price": 109,
-      "rating":3.8,
+      "rating": 3.8,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "jacket",
       "type": "menswear",

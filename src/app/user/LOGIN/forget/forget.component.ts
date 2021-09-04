@@ -9,33 +9,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./forget.component.css']
 })
 export class ForgetComponent implements OnInit {
-
-
-
-  constructor(private ecomm:EcommService,private toastr: ToastrService,private formBuilder: FormBuilder,private router: Router) { }
+  forgot: any;
   forgotpassword:any
   submitted = false;
+
+
+  constructor(private ecomm:EcommService,private toastr:ToastrService,private formBuilder: FormBuilder,private router: Router) { }
+ 
   ngOnInit() {
     this.forgotpassword = this.formBuilder.group({
-      mobile: ['', Validators.compose([Validators.required, Validators.pattern('[6-9]\\d{9}')])]
+      username: ['', Validators.compose([Validators.required, Validators.pattern('[6-9]\\d{9}')])]
     })
   }
   onForgotPassword(value:any){
     console.log("forgot",value);
     this.ecomm.forgotpassword(value).subscribe((res: any)=>{
-      this.forgotpassword=res
+      this.forgot=res
       console.log("for",res);
+      console.log("msg",res.message);
+
       
-  this.router.navigate(['/reset']);
-// if(res=="success"){
-//   this.toastr.success('Send link to email successfully')
-//   this.router.navigate(['/reset'])
+  // this.router.navigate(['/reset']);
+if(res.message='Mail Sent Succesully'){
+  this.toastr.success('Mail Sent Succesully')
+  // this.router.navigate(['/reset'])
 
-// }
-// else { 
-//   this.toastr.error('Invalid mobile number')
+}
 
-// }
+    err =>{
+      console.log(err)
+      this.toastr.error(' Number is already exists')
+    }
  })
  this.submitted = true;
     // stop here if form is invalid
@@ -52,15 +56,5 @@ export class ForgetComponent implements OnInit {
 
   get f() { return this.forgotpassword.controls; }
 
-//   showToaster(){
-//     this.toastr.success("Hello, I'm the toastr message.")
-// }
-  
-  // showSuccess(){
-  //   this.toastr.success('User logged in successfully')
-  // }
 
-  // showError(){
-  //   this.toastr.error('Invalid user name or pin')
-  // }
 }

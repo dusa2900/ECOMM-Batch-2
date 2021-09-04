@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/SERVICES/admin.service';
 // import { AdminService } from 'src/app/SERVICES/admin.service';
 import { ProductsService } from 'src/app/SERVICES/products.service';
 
@@ -8,24 +9,29 @@ import { ProductsService } from 'src/app/SERVICES/products.service';
   styleUrls: ['./productlist-status.component.scss']
 })
 export class ProductlistStatusComponent implements OnInit {
-  totalProductsmens: any;
-  totalProductswomens:any
-  totalProductskids:any
-  constructor(private ps:ProductsService) { }
+  p:number=1
+  totalproducts: any;
+  constructor(private admin:AdminService) { 
 
-  ngOnInit(): void {
+  
+  }
+
+  ngOnInit() {
     this.noOfProducts()
   }
 noOfProducts() {
-  this.ps.getProductList().subscribe(res=>
+
+  this.admin.getProductList().subscribe(res=>
     {
-      this.totalProductsmens =res.productstatus.menswear;
-      this.totalProductswomens =res.productstatus.womenswear;
-      this.totalProductskids =res.productstatus.kidswear;
+
+      this.totalproducts=res
+      console.log("products",res);
+
 
     
     }
             
-    )}
+    )
+ }
 
 }

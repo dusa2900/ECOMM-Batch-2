@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/SERVICES/admin.service';
 @Component({
@@ -12,9 +12,11 @@ export class CouponsComponent implements OnInit {
   submitted = false;
   hide:boolean=true;
   register: any;
+  p:number=1
+  dialog: any;
 type:any=['Percentage Discount','Amount Discount']
   coupon: any[]=[];
-
+  @ViewChild('closebutton') closebutton;
   constructor(private formBuilder: FormBuilder,private admin:AdminService){}
   ngOnInit() {
     this.couponsForm = this.formBuilder.group({
@@ -33,7 +35,14 @@ type:any=['Percentage Discount','Amount Discount']
 
   // convenience getter for easy access to form fields
   get f() { return this.couponsForm.controls; }
+  public close() {
+    this.closebutton.nativeElement.click();
+  }
+  onaddCus() {
+    510;
 
+    this.dialog.closeAll();
+  }
   onSubmit(value: any) {
     this.admin.coupons(value).subscribe((res: any)=>  {
     

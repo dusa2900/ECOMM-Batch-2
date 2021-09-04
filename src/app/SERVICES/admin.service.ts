@@ -11,7 +11,7 @@ export class AdminService {
   
   getProductList():Observable<any>
   {
-    return this.hc.get("http://localhost:4000/admin");
+    return this.hc.get<any>("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/inventory/getAllData");
   }
   coupons(value:any):Observable<any>{
     return this.hc.post("http://localhost:4000/coupons",value)
@@ -21,11 +21,11 @@ export class AdminService {
   }
 
   getlistusers():Observable<any>{
-    return this.hc.get("http://localhost:4000/listusers")
+    return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/userData/getallUserDetails")
   }
 
   forgotpassword():Observable<any>{
-    return this.hc.get("http://localhost:4000/forgotpasswordusers")
+    return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/userData/userRestPwdDetails")
   }
   transactions():Observable<any>{
     return this.hc.get("http://localhost:4000/transactions")

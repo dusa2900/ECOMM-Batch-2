@@ -1,10 +1,10 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EcommService } from 'src/app/SERVICES/ecomm.service';
 import { PasswordStrengthValidator } from '../register/password-req';
-import { ErrorStateMatcher } from '@angular/material/core'
 import { ConfirmPasswordValidator } from '../register/must-watch';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 
 
@@ -16,67 +16,57 @@ import { ConfirmPasswordValidator } from '../register/must-watch';
 })
  
 export class ResetComponent implements OnInit {
-  resetform: FormGroup | any;
-  // resetform=new FormGroup({
-  //   password:new FormControl(null,Validators.compose([
-  //     Validators.required, Validators.minLength(8), PasswordStrengthValidator])),
-  //   confirmpassword:new FormControl(null,Validators.compose([Validators.required, Validators.minLength(8), PasswordStrengthValidator])),
-    
-  // }
-  // , {
- 
-  //   validator: ConfirmPasswordValidator("password", "confirmPassword")
- 
-  // })
-    
-    
+  resetform:FormGroup | any;
+  resetpassword:any
+  submitted = false;
+  hide:boolean=true;
+  constructor(private  formBuilder: FormBuilder,private ecomm:EcommService,private toastr:ToastrService,private router:Router ) {  }
   
-  
+  ngOnInit() {
+    this.resetform = this.formBuilder.group({
+      mobileNo: ['', Validators.compose([Validators.required, Validators.pattern('[6-9]\\d{9}')])],
+
+      password: ['', Validators.compose([
+        Validators.required, Validators.minLength(8), PasswordStrengthValidator])],
  
-  // comparePassword = (control: AbstractControl): {[key: string]: boolean} => {
-  //   // get values
-  //   const password = control.get('password');
-  //   const repassword = control.get('repassword');
-  //   // if no values, validated as true
-  //   if (!password || !repassword) {
-  //     return null;
-  //   }
-  //   // if values match, return null, else nomatch: true
-  //   return password.value === repassword.value ? null : { nomatch: true };
-  // };
- 
-  get f(){
-    return this.resetform.controls;
-  }
-  submit(value:any){
-    console.log(this.resetform.value)
-  }
- 
-  constructor(private fb:FormBuilder,private ecomm:EcommService) { 
-   
+      //   confirmPassword: ['',
+      //  Validators.required,Validators.minLength(8),],
     
+    }, {
+      // validator: ConfirmPasswordValidator("password", "confirmPassword")
+    });
   }
-  
- 
-  ngOnInit(){
-    this.resetform=this.fb.group({
-      username: ['', Validators.compose([Validators.required, Validators.pattern('[6-9]\\d{9}')])],
-      password:new FormControl(null,Validators.compose([
-        Validators.required, Validators.minLength(8), PasswordStrengthValidator])),
-      confirmpassword:new FormControl(null,Validators.compose([Validators.required, Validators.minLength(8), PasswordStrengthValidator])),
+
+  // convenience getter for easy access to form fields
+  get f() { return this.resetform.controls; }
+
+  savepassword(value:any){
+    // value.mobilenumber=localStorage.getItem('reset');
+    console.log("forgot",value);
+    this.ecomm.resetpassword(value).subscribe((res: any)=>{
+      this.resetpassword=res
+      console.log("reseet",this.resetpassword);
       
-    }
-    , {
- 
-      validator: ConfirmPasswordValidator("password", "confirmpassword")
+if(res.message="Password Changed"){
+  this.toastr.success('password updated successfully')
+this.router.navigate(['/login'])
+}
+else { 
+  this.toastr.error('Invalid mobile number')
+
+}
+ })
+
+ this.submitted = true;
+ // stop here if form is invalid
+ if (this.resetform.invalid) {
+   return;
+ }
+
+}
+
   
-    })
-    
  
-    
-    
- 
- 
-  }
+
  
 }
