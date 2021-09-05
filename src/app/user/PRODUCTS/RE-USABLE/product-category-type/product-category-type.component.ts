@@ -29,7 +29,7 @@ export class ProductCategoryTypeComponent implements OnInit {
 //       {
 //         console.log("total-products",res)
 
-// res.forEach((item:any)=>{
+// res.map((item:any)=>{
 //   console.log("data-check",this.categorys===item.categorys);
 //   if(this.categorys === item.categorys )
 //   {
@@ -61,7 +61,7 @@ export class ProductCategoryTypeComponent implements OnInit {
       getitemlist(){
         this.ps.getCategoryList().subscribe(
           res => {
-            res.forEach((item:any)=>{
+            res.map((item:any)=>{
               console.log("data-check",this.categorys===item.categorys);
               if(this.categorys === item.categorys )
               {

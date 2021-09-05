@@ -31,8 +31,8 @@ children: [
            {​​​ path:'reset', component:ResetComponent }​​​,
 
 
-           {​​​path:'cart', component:AddCartComponent}​​​,
-           {​​​path:'return', component:ReturnComponent}​,
+           {​​​path:'cart', component:AddCartComponent, canActivate:[UserGuard]}​​​,
+           {​​​path:'return', component:ReturnComponent,canActivate:[UserGuard]}​,
 ////reusable-common/////
 
 

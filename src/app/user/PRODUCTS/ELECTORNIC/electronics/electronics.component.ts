@@ -30,9 +30,9 @@ export class ElectronicsComponent implements OnInit {
       {
         console.log("electronics",res);
         
-res.forEach((item:any) => {
+res.map((item:any) => {
   if(item.mCategoryName="electronics"){
-    item.categories.forEach((category:any) => {
+    item.categories.map((category:any) => {
 
       if(category.categoryName=="Laptops"){
           this.laptopList=category.products

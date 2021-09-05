@@ -19,9 +19,9 @@ export class AppearelsComponent implements OnInit {
     {
       console.log("dataaaa",res);
       
-res.forEach((item:any) => {
+res.map((item:any) => {
 if(item.mCategoryName="appearels"){
-  item.categories.forEach((category:any) => {
+  item.categories.map((category:any) => {
 
     if(category.categoryName=="menswear"){
         this.mensList=category.products

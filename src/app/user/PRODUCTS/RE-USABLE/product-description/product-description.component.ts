@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from 'src/app/SERVICES/products.service';
 import { NgxImgZoomService } from "ngx-img-zoom";
 import { CartService } from 'src/app/SERVICES/cart.service';
+import { LoginAuthService } from 'src/app/SERVICES/login.auth.service';
 @Component({
   selector: 'app-product-description',
   templateUrl: './product-description.component.html',
@@ -14,7 +15,7 @@ export class ProductDescriptionComponent implements OnInit {
   // data={products:null};
 
 
-    constructor(private route:ActivatedRoute, private _route:Router,private ps:ProductsService,private cart:CartService) {
+    constructor(private route:ActivatedRoute, private _route:Router,private ps:ProductsService,private cart:CartService, private loginauth:LoginAuthService) {
 
       this.route.params.subscribe(
         params=>this.productid=params['productid']);
@@ -23,7 +24,7 @@ export class ProductDescriptionComponent implements OnInit {
         this.ps.getCategoryList().subscribe(
           res=>
          {
-           res.forEach( (item:any)=>
+           res.map( (item:any)=>
                  {
                    console.log("id-check",this.productid==item.productid);
                    
@@ -55,23 +56,10 @@ export class ProductDescriptionComponent implements OnInit {
 
   }
 
+// addcartauth(){
+//   this.loginauth.isLoggedIn()
+// }
 
-//increment fun
-incQnt(value:any){
-  // console.log(value);
-  if(value.qnt != value.instock)
-  {
-    value.qnt +=1;
-  }
-}
-//decrement fun
-decQnt(value:any){
-  //console.log(value);
-  if(value.qnt != 1)
-  {
-    value.qnt -=1;
-  }
-}
 
 
   ///addTocart function//
@@ -80,8 +68,7 @@ decQnt(value:any){
 //     let product = item.productid
 // this.data.products= item.productid
 
-
-
+if(this.loginauth.isLoggedIn()){
   this.cart.addToCart(item.productid).subscribe( ()=>{ 
 
     // console.log("addtocartDataaaaa:",item.productid)
@@ -89,6 +76,13 @@ decQnt(value:any){
 this._route.navigate(['/cart'])
   }
   )
+}
+
+else{
+this._route.navigate(['/login'])
+}
+
+ 
 
 
   }

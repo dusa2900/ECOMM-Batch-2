@@ -52,6 +52,7 @@ export class AddCartComponent implements OnInit {
 
 //////increment & decrement function////////
         incQnt(value:any){
+          console.log("quantity",value.instock);
           
           if(value.quantity != value.instock)
           {

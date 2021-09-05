@@ -22,9 +22,9 @@ homefurnitureList:any=[];
       {
         console.log("electronics",res);
         
-res.forEach((item:any) => {
+res.map((item:any) => {
   if(item.mCategoryName="electronics"){
-    item.categories.forEach((category:any) => {
+    item.categories.map((category:any) => {
 
       if(category.categoryName=="Kitchen Items"){
           this.homekitchenList=category.products
