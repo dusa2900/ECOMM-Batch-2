@@ -38,6 +38,19 @@ getCategoryList():Observable<any>
       return res;
     }))
   }
+
+//reviews/////
+postComments(value:any):Observable<any>{​
+ const id:any=sessionStorage.getItem('productid')
+  console.log("comment service",value);
+  return this.hc.post(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/comments/addcoments/${id}`,value);
+  }​
+  getComments():Observable<any>{​
+ const id=sessionStorage.getItem('productid')
+
+  return this.hc.get(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/comments/toseecoments/${id}`)
+  }​
+  
   
 /////get -return-order////
    getOrder():Observable<any>{ 

@@ -15,6 +15,7 @@ import { UserGuard } from './Auth/user.guard';
 import { LoginAuthService } from './SERVICES/login.auth.service';
 import { PagenotfoundComponent } from './unauth-forbidden/pagenotfound/pagenotfound.component';
 import { BredcrumbComponent } from './BREDCRUMB/bredcrumb/bredcrumb.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { BredcrumbComponent } from './BREDCRUMB/bredcrumb/bredcrumb.component';
   ],
   imports: [
     BrowserModule,ToastrModule.forRoot(),NgxPaginationModule,
-    AppRoutingModule,HttpClientModule,AngmaterialModule, BrowserAnimationsModule
+    AppRoutingModule,HttpClientModule,AngmaterialModule, BrowserAnimationsModule, NgbModule
   ],
   providers: [AuthGuard,EcommService,  UserGuard,LoginAuthService, {provide: HTTP_INTERCEPTORS, useClass: JwtheaderComponent, multi: true},],
   bootstrap: [AppComponent]

@@ -2,7 +2,6 @@
  <div class="container">
   <br>
   <br>
-  <!-- <h1 style="margin-left:100px">{{overview.title}}</h1> -->
   <div class="row" style="margin-top: 35px;">
       <div class="col-6 col-md-4 col-lg-4 offset-md-lg-1">
         <lib-ngx-image-zoom
@@ -29,38 +28,8 @@
           <button type="button" class="btn btn-success" (click)="addToCart(overview)" >Add to cart</button>
           <button type="button" class="btn btn-warning">Buy now</button>
       </div>
-      <div class="col-6 col-md-2 col-lg-4">
-          <div class="card two" style="width: 18rem;">
-              <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><h3><i class="fa fa-gift" aria-hidden="true"></i>
-                      <strong>Offers</strong></h3></li>
-                  <li class="form-check list-group-item">
-                      <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault">
-                              5% off
-                          </label>
-                      </div>
-                  </li>
-                  <li class="form-check list-group-item">
-                      <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault">
-                              5% off
-                          </label>
-                      </div>
-                  </li>
-                  <li class="form-check list-group-item">
-                      <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault">
-                              5% off
-                          </label>
-                      </div>
-                  </li>
-              </ul>
-          </div>
-      </div>
+
+  
   </div>
   <div class="row">
       <div class="offset-md-4 offset-lg-4 col-md-4 col-6 col-lg-4">
@@ -68,6 +37,70 @@
           <p>{{overview.description}}</p>
       </div>
   </div>
+
+<!-- ///reviews/// -->
+
+<div class="row">
+
+<div  class="col-md-4">
+    <form [formGroup]="commentsForm" (ngSubmit)="saveComment(commentsForm.value)">
+      <div>
+        <label>Name:</label>
+        <input type="text" formControlName="personname" id="personname" class="form-control" 
+        minlength="3" />
+  
+          <div *ngIf='commentsForm.controls.personname.hasError("required")'>
+            Name is Required
+          </div>
+          <label>Comment:</label>
+          <input formControlName="comments" type="text">
+          <div *ngIf='commentsForm.controls.comments.hasError("required")'>
+            Comment is Required
+          </div>
+          <div *ngIf='commentsForm.controls.comments.hasError("minLength")'>
+            Minimum Charecters should be 20
+          </div>
+  
+          <div class="cont">
+            <div class="stars">
+
+              <ngx-star-rating formControlName="rating1" [id]="'rating1'" ></ngx-star-rating >
+            </div>
+            <div>Rating: {{ commentsForm.value.rating1 }}</div>
+          </div>
+          <button class="btn btn-primary" type="submit" [disabled]="!commentsForm.valid">Post</button>
+       
+      </div>
+  
+    </form>
+  </div>
+  
+  <div class="col-md-2"></div>
+ <!-- <div class="col-md-4">
+      <br>
+ 
+     <div class="container">
+        <div>
+          
+          <div class="card" style="width:400px">
+            <h2>Customer reviews</h2>
+            <img class="card-img-top" >
+            <div class="card-body" >
+              <h4 class="card-title">{{commentpost.personname}}</h4>
+              <p class="card-text">{{commentpost.comments}}</p>
+              <ngb-rating [max]="5" style="color:gold" [rate]="hint" disabled></ngb-rating>
+
+            </div>
+    
+      </div>
+
+  </div>
+
+</div> 
+</div>  -->
+
+
+</div>
 </div> 
 
 

@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgxStarRatingModule } from 'ngx-star-rating';
+import { NgxImgZoomModule } from 'ngx-img-zoom';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import{AngmaterialModule} from '../ANGMATERIAL/angmaterial.module';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
@@ -26,10 +30,9 @@ import { ReturnComponent } from './COMMON/return/return.component';
 import { ProductDescriptionComponent } from './PRODUCTS/RE-USABLE/product-description/product-description.component';
 import { ProductCategoryTypeComponent } from './PRODUCTS/RE-USABLE/product-category-type/product-category-type.component';
 import { MensWearComponent } from './PRODUCTS/APPEARELS/mens-wear/mens-wear.component';
-import { NgxImgZoomModule } from 'ngx-img-zoom';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { NgxImageZoomModule } from 'ngx-image-zoom';
+
 import{SortPipe} from'../PIPES/sort.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -54,9 +57,9 @@ import{SortPipe} from'../PIPES/sort.pipe';
  MensWearComponent
   ],
   imports: [
-    CommonModule,HttpClientModule, ToastrModule.forRoot(),NgxPaginationModule,
+    NgxStarRatingModule ,NgbModule,NgxImageZoomModule,  CommonModule,HttpClientModule, ToastrModule.forRoot(),NgxPaginationModule,
     USERRoutingModule,AngmaterialModule,Ng2SearchPipeModule,
-MatToolbarModule,FormsModule,ReactiveFormsModule ,NgxImgZoomModule,NgxImageZoomModule
+MatToolbarModule,FormsModule,ReactiveFormsModule ,NgxImgZoomModule
 
   ]
 })
