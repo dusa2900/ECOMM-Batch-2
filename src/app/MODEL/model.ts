@@ -5,5 +5,5 @@ export interface product{
     "description":string,
     "categorys": string,
     "image": string,
-    "rating":string
+    "rating":number
   }

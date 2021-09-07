@@ -4,6 +4,7 @@ import { AuthGuard } from '../Auth/auth.guard';
 import { UserGuard } from '../Auth/user.guard';
 import { AddCartComponent } from './COMMON/add-cart/add-cart.component';
 import { ReturnComponent } from './COMMON/return/return.component';
+import { UserprofileComponent } from './COMMON/userprofile/userprofile.component';
 import { HomeComponent } from './HOME/home/home.component';
 import { MainComponent } from './HOME/main/main.component';
 import { ForgetComponent } from './LOGIN/forget/forget.component';
@@ -24,6 +25,8 @@ const routes: Routes = [
 {​​​  path:'',  component:MainComponent,
 children: [
   {​​​ path:'payment',component:PaymentComponent }​​​,
+  {​​​ path:'userprofile',component:UserprofileComponent }​​​,
+
            {​​​ path:'',component:HomeComponent  }​​​,    
            {​​​ path:'forget',component:ForgetComponent}​​​,
            {​​​ path:'login', component:LoginComponent }​​​,

@@ -23,30 +23,7 @@ export class ProductCategoryTypeComponent implements OnInit {
        }
         
         );
-      
-//        this.ps.getCategoryList().subscribe(
-//        res=>
-//       {
-//         console.log("total-products",res)
 
-// res.map((item:any)=>{
-//   console.log("data-check",this.categorys===item.categorys);
-//   if(this.categorys === item.categorys )
-//   {
-
-//     this.selected.push(item);
- 
-  
-
-//    }
-// })
-
-             
-       
-//                 }
-   
-//        )
-      
       }
   
 

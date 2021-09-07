@@ -1,6 +1,7 @@
 .card
 {
   margin: 0 auto;
+  box-shadow: none;
 }
 
 @media(max-width:360px)
@@ -38,4 +39,9 @@ div.stars {
 #review{
   width:50px;
   height:50px
+}
+lib-ngx-image-zoom 
+{
+  width: 400px;
+  height: 400px;
 }

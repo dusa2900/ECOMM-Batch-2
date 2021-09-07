@@ -67,6 +67,15 @@ removeAllcart(): Observable<any>{
 }
 
 
+///payment
+payment(res:any):Observable<any>{
+  console.log("payment-serviceEEEEE",res);
+
+  return this.hc.post("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/order/add",res);
+  // return this.hc.post("",res);
+
+
+}
 ///Return Order function////
 
 // checkout payment Data

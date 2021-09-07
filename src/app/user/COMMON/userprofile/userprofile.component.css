@@ -8,6 +8,16 @@
 {
     margin-top: 40px;
 }
+.btn{
+    border: 2px solid black;
+    border-radius: 3%;
+}
+option{
+    border: 2px solid black;
+}
+html {
+    overflow: scroll;
+  }
 
 @media screen and (max-width:1200px)
 {

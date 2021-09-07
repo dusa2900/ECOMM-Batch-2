@@ -15,8 +15,18 @@ export class SortPipe implements PipeTransform {
  
     else if(type=="High to Low")
       return products.sort((x,y)=>y.price-x.price);
+
+
+    else if(type=="A-Z")
+    return products.sort((x,y)=>x.title.localeCompare(y.title));
+    else if(type=="Z-A")
+    return products.sort((x,y)=>y.title.localeCompare(x.title));
+    else if(type=="Higly Rated")
+    return products.sort((x,y)=>y.rating-x.rating);
     else
       return products;
+
+
   }
 
 }

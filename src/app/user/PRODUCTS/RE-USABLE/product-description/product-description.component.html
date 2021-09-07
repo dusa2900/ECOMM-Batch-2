@@ -3,8 +3,8 @@
   <br>
   <br>
   <div class="row" style="margin-top: 35px;">
-      <div class="col-6 col-md-4 col-lg-4 offset-md-lg-1">
-        <lib-ngx-image-zoom
+      <div class="col-6 col-md-4 col-lg-4 offset-md-lg-1" >
+        <lib-ngx-image-zoom 
 [thumbImage]=overview.image
    [fullImage]=overview.image
    [magnification]="1.5"
@@ -15,17 +15,17 @@
 ></lib-ngx-image-zoom>
          
       </div>
-      <div class="col-6 col-md-4 col-lg-4 ">
+      <div class="col-6 col-md-8 col-lg-8  ">
 
           <p><strong>Price: </strong>{{overview.price|currency:'INR' }} </p>
 
-          <p><strong>rating: </strong>{{overview.rating}} </p>
+          <p><strong>rating: </strong>{{rate}}  <ngb-rating [max]="5" style="color:gold" [readonly]="true" [rate]="star" disabled></ngb-rating></p>    
 
           <p><strong>Free delivery Aug 16-Aug22</strong> <a>Details</a></p>
           <!-- <p><strong>EMI starts at: </strong>{{x.emi}} ₹</p> -->
 
 
-          <button type="button" class="btn btn-success" (click)="addToCart(overview)" >Add to cart</button>
+          <button type="button" class="btn btn-success" (click)="addToCart(overview)" >Add to cart</button>&nbsp;
           <button type="button" class="btn btn-warning">Buy now</button>
       </div>
 
@@ -39,10 +39,10 @@
   </div>
 
 <!-- ///reviews/// -->
-
+<br><br><br>
 <div class="row">
 
-<div  class="col-md-4">
+<div  class=" card col-lg-6 col-md-6 col-sm-6 col-12"> <h2 style="text-decoration: underline;">Comment here:</h2>
     <form [formGroup]="commentsForm" (ngSubmit)="saveComment(commentsForm.value)">
       <div>
         <label>Name:</label>
@@ -53,7 +53,7 @@
             Name is Required
           </div>
           <label>Comment:</label>
-          <input formControlName="comments" type="text">
+          <input formControlName="comments" type="text"  class="form-control" >
           <div *ngIf='commentsForm.controls.comments.hasError("required")'>
             Comment is Required
           </div>
@@ -64,9 +64,9 @@
           <div class="cont">
             <div class="stars">
 
-              <ngx-star-rating formControlName="rating1" [id]="'rating1'" ></ngx-star-rating >
+              <ngx-star-rating formControlName="rating" [id]="'rating'" ></ngx-star-rating >
             </div>
-            <div>Rating: {{ commentsForm.value.rating1 }}</div>
+            <div>Rating: {{ commentsForm.value.rating }}</div>
           </div>
           <button class="btn btn-primary" type="submit" [disabled]="!commentsForm.valid">Post</button>
        
@@ -75,29 +75,29 @@
     </form>
   </div>
   
-  <div class="col-md-2"></div>
- <!-- <div class="col-md-4">
+
+ <div class=" card col-lg-6 col-md-6 col-sm-6 col-12 "><h2 style="text-decoration: underline;">Customer reviews:</h2>
       <br>
  
-     <div class="container">
-        <div>
+     <div class="container">   
+        <ng-container *ngFor="let x of commentpost">
           
           <div class="card" style="width:400px">
-            <h2>Customer reviews</h2>
+         
             <img class="card-img-top" >
             <div class="card-body" >
-              <h4 class="card-title">{{commentpost.personname}}</h4>
-              <p class="card-text">{{commentpost.comments}}</p>
-              <ngb-rating [max]="5" style="color:gold" [rate]="hint" disabled></ngb-rating>
+              <h4 class="card-title">{{x.personname}}</h4>
+              <p class="card-text">{{x.comments}}</p>
+              {{hint}}  <ngb-rating [max]="5" style="color:gold" [readonly]="true" [rate]="hint" disabled></ngb-rating>
 
             </div>
     
       </div>
 
-  </div>
+  </ng-container>
 
 </div> 
-</div>  -->
+</div> 
 
 
 </div>

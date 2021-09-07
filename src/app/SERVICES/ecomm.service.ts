@@ -92,18 +92,20 @@ return this.hc.get("http://localhost:4000/secondNavbar")
 
 ////profile///////////////////////////////////
 ////Get-profile/////
-
-
-public getprofile():Observable<any>{   
-  console.log(" get profile service");
-  return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/auth/signup");   
+getuser():Observable<any>{   
+  return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/shipping/username");   
     } 
 
-    ///Update-profile/////
-    updateprofile(res:any):Observable<any>{
-      console.log("update profile service",res);
+ getprofile():Observable<any>{   
+  console.log(" get profile service");
+  return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/shipping/getUserShippingList");   
+    } 
+
+    ///post-profile/////
+postprofile(res:any):Observable<any>{
+      console.log("profile-service",res);
     
-      return this.hc.put(this.profile,res);
+      return this.hc.post("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/shipping/add",res);
     
     }
 

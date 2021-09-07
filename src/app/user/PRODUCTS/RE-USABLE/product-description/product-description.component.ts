@@ -11,151 +11,158 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./product-description.component.css']
 })
 export class ProductDescriptionComponent implements OnInit {
-  productid:any;
-  overview:any;
+  productid: any;
+  overview: any;
+  star:any
   // data={products:null};
 
   // data={products:null};
-  id:any;
-currentrating:any;
-commentsForm:any;
-commentpost:any;
+  id: any;
+  currentrating: any;
+  commentsForm: any;
+  commentpost: any[]=[];
   desproductid: any;
 
-  form:any;
+  form: any;
   hint: any;
+  rate: number;
 
 
-    constructor(private route:ActivatedRoute,private fb:FormBuilder, private _route:Router,private ps:ProductsService,private cart:CartService, private loginauth:LoginAuthService) {
-
-
-
-      this.route.params.subscribe(
-        params=>this.productid=params['productid']);
-  console.log("id",this.productid);
-  
-        this.ps.getCategoryList().subscribe(
-          res=>
-         {
-           res.map( (item:any)=>
-                 {
-                   console.log("id-check",this.productid==item.productid);
-                   
-                  //  console.log("item",item.productid);
-                   if(this.productid == item.productid )
-                   {
-                     this.overview=item;
-                   console.log("descc",this.overview.image);
-           sessionStorage.setItem('productid',this.overview.productid)
-      
-               
-                  
-                     
-                   }
-          
-                   }
-           )
-
-                 }
-                 
-                 )
-
-              
-        
-     }
+  constructor(private route: ActivatedRoute, private fb: FormBuilder, private _route: Router, private ps: ProductsService, private cart: CartService, private loginauth: LoginAuthService) {
 
 
 
-     ngOnInit(): void {
-      this.getComments()
-      this.commentsForm=this.fb.group({
-        
-        personname:["",Validators.required],
-        comments:["",[Validators.required,Validators.minLength(10)]],
-        rating1: ['', Validators.required],
-        
-    
-      })
-    }
+    this.route.params.subscribe(
+      params => this.productid = params['productid']);
+    console.log("id", this.productid);
 
-  getComments(){
+    this.ps.getCategoryList().subscribe(
+      res => {
+        res.map((item: any) => {
+          console.log("id-check", this.productid == item.productid);
+
+          //  console.log("item",item.productid);
+          if (this.productid == item.productid) {
+            this.overview = item;
+            this.rate=Math.floor(this.overview.rating)
+            this.star=this.overview.rating
+            console.log("descc", this.overview.image);
+            sessionStorage.setItem('productid', this.overview.productid)
+
+
+
+
+          }
+
+        }
+        )
+
+      }
+
+    )
+
+
+
+  }
+
+
+
+  ngOnInit(): void {
+    this.getComments();
+    this.commentsForm = this.fb.group({
+
+      personname: ["", Validators.required],
+      comments: ["", [Validators.required, Validators.minLength(10)]],
+      rating: ['', Validators.required],
+
+
+    })
+  }
+
+  getComments() {
 
     this.ps.getComments().subscribe(
-      (res)=>{
-      
-        res.map((element:any) => {
+      (res) => {
 
-          
-          console.log("getresponse",res);
-  
-          if(this.productid ==element.commentsid )
-          {
-            console.log("comentsceckkkkk",this.productid ==element.id  );
-            this.commentpost=element;
-            console.log("tttttt",this.commentpost)
-            this.hint=element.rating1
+        res.map((element: any) => {
+
+
+
+          if (this.productid == element.product.productid) {
+           
+            this.commentpost.push(element);
+           // console.log("tttttt", this.commentpost)
+            this.commentpost.map( (star:any)=>
+            {
+            this.hint = star.rating
+
+             // console.log("star",star)
+            })
 
           }
         });
 
 
       },
-      (err)=>{
+      (err) => {
         // alert("server issue")
-  
+
       }
     )
   }
-  
-  saveComment(value:any){
-  
-    this.ps.postComments(value).subscribe(
-      
-      (res)=>{
-  
-        console.log("post dataaaaaaaaaa",res);
 
-        
-        
+  saveComment(value: any) {
+
+
+   // console.log("console comments",value)
+    this.ps.postComments(value).subscribe(
+
+      (res) => {
+          
+        console.log("post dataaaaaaaaaa", res);
         alert("comment posted successfully")
-  
-  },
-  err=>{
-    console.log("err",err);
-    
-  }
-  
+        this.getComments()
+      
+        
+        this.commentsForm.reset();
+
+      },
+      err => {
+        console.log("err", err);
+
+      }
+
     )
-    // alert ("comment posted succesfully")
+
   }
 
 
 
 
   ///addTocart function//
-  addToCart(item:any)
-  {  
-//     let product = item.productid
-// this.data.products= item.productid
+  addToCart(item: any) {
+    //     let product = item.productid
+    // this.data.products= item.productid
 
-if(this.loginauth.isLoggedIn()){
-  this.cart.addToCart(item.productid).subscribe( ()=>{ 
+    if (this.loginauth.isLoggedIn()) {
+      this.cart.addToCart(item.productid).subscribe(() => {
 
-    // console.log("addtocartDataaaaa:",item.productid)
+        // console.log("addtocartDataaaaa:",item.productid)
 
-this._route.navigate(['/cart'])
+        this._route.navigate(['/cart'])
+      }
+      )
+    }
+
+    else {
+      this._route.navigate(['/login'])
+    }
+
+
+
+
   }
-  )
-}
 
-else{
-this._route.navigate(['/login'])
-}
-
- 
-
-
-  }
 
 
 }

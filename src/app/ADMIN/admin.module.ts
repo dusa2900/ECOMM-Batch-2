@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DashboardComponent } from './DASHBOARD/dashboard/dashboard.component';
 
+import{AngmaterialModule} from '../ANGMATERIAL/angmaterial.module';
+
 @NgModule({
   declarations: [
     CouponsComponent,
@@ -29,7 +31,7 @@ import { DashboardComponent } from './DASHBOARD/dashboard/dashboard.component';
   ],
   imports: [
     CommonModule, FormsModule,NgxPaginationModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,AngmaterialModule,
     AdminRoutingModule
   ]
 })

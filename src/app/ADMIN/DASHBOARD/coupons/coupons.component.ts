@@ -17,8 +17,12 @@ export class CouponsComponent implements OnInit {
 type:any=['Percentage Discount','Amount Discount']
   coupon: any[]=[];
   @ViewChild('closebutton') closebutton;
-  constructor(private formBuilder: FormBuilder,private admin:AdminService){}
+  constructor(private formBuilder: FormBuilder,private admin:AdminService){
+
+    
+  }
   ngOnInit() {
+
     this.couponsForm = this.formBuilder.group({
       couponCode : ['', [Validators.required,Validators.minLength(8)]],
       CouponType: ['', [Validators.required]],
@@ -61,4 +65,8 @@ console.log("postcoupon",res)
 console.log("getcoupon", this.coupon)
     }
     )}
+
+
+    
+ 
 }

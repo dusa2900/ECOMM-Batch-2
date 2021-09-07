@@ -1,114 +1,128 @@
 <script>
- document.getElementById('methods').addEventListener('change', function () {
-    var style = this.value == 1 ? 'block' : 'none';
-    document.getElementById('debitCards').style.display = style;
-})
-</script>
-<div class="container">
-        <div class="row">
-            <div class="col-6 offset-md-1 offset-lg-1 col-md-6 col-lg-6">
-                <h1>Select a payment method</h1>
-            <div class="card">
-                  <ul class="list-group list-group-flush" id= "methods">
-                    <li class="list-group-item">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="debit">
-                            <label class="form-check-label" for="flexRadioDefault1" value=1>
-                              Debit card
-                              <span></span>
-                              <div class="input-group" id="debitCards">
-                                <table>
-                                  <thead>
-                                      <tr>
-                                        <th scope="col-md-6 col-lg-6">Your saved credit and debit cards</th>
-                                        <th scope="col-md-3 col-lg-3">Name on card</th>
-                                        <th scope="col-md-2 offset-md-1 offset-lg-1 col-lg-2">Expires on</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td> <div class="form-check">
-                                              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                              <label class="form-check-label" for="flexRadioDefault1">
-                                                  Axis Bank Debit Card ending in 4242
-                                              </label>
-                                            </div></td>
-                                            <td>Rengoku</td>
-                                            <td>12/2023</td>
-                                        </tr>
-                                        <tr>
-                                          <td> <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                SBI Debit Card ending in 5556
-                                            </label>
-                                          </div></td>
-                                          <td>Tanjiro Kamado</td>
-                                          <td>06/2023</td>
-                                      </tr>
-                                      <tr>
-                                          <td> <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                Axis Bank Debit Card ending in 8210
-                                            </label>
-                                          </div></td>
-                                          <td>Sasuke</td>
-                                          <td>08/2026</td>
-                                      </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            </label>
-                          </div>
-                    <li class="list-group-item">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1" value=1>
-                             Credit card
-                            </label>
-                          </div>
-                    <li class="list-group-item">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                              Net banking
-                            </label>
-                          </div>
-                    <li class="list-group-item">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                              Wallets
-                            </label>
-                          </div>
-                    <li class="list-group-item">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                              Cash on delivery(COD)
-                            </label>
-                          </div>
-                  </ul>
-    
-                 
-                  <span></span>
-    
+  document.getElementById('methods').addEventListener('change', function () {
+     var style = this.value == 1 ? 'block' : 'none';
+     document.getElementById('debitCards').style.display = style;
+ })
+ </script>
+ <div class="container">
+         <div class="row">
+             <div class="col-6 offset-md-1 offset-lg-1 col-md-6 col-lg-6">
+                 <h1>Select a payment method</h1>
+             <div class="card">
+                   <ul class="list-group list-group-flush" id= "methods">
+                     <li class="list-group-item">
+                         <div class="form-check">
+                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="debit">
+                             <label class="form-check-label" for="flexRadioDefault1" value=1>
+                               Debit card
+                               <span></span>
+                               <div class="input-group" id="debitCards">
+                                 <table>
+                                   <thead>
+                                       <tr>
+                                         <th scope="col-md-6 col-lg-6">Your saved credit and debit cards</th>
+                                         <th scope="col-md-3 col-lg-3">Name on card</th>
+                                         <th scope="col-md-2 offset-md-1 offset-lg-1 col-lg-2">Expires on</th>
+                                       </tr>
+                                     </thead>
+                                     <tbody>
+                                         <tr>
+                                             <td> <div class="form-check">
+                                               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                               <label class="form-check-label" for="flexRadioDefault1">
+                                                   Axis Bank Debit Card ending in 4242
+                                               </label>
+                                             </div></td>
+                                             <td>Rengoku</td>
+                                             <td>12/2023</td>
+                                         </tr>
+                                         <tr>
+                                           <td> <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                             <label class="form-check-label" for="flexRadioDefault1">
+                                                 SBI Debit Card ending in 5556
+                                             </label>
+                                           </div></td>
+                                           <td>Tanjiro Kamado</td>
+                                           <td>06/2023</td>
+                                       </tr>
+                                       <tr>
+                                           <td> <div class="form-check">
+                                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                             <label class="form-check-label" for="flexRadioDefault1">
+                                                 Axis Bank Debit Card ending in 8210
+                                             </label>
+                                           </div></td>
+                                           <td>Sasuke</td>
+                                           <td>08/2026</td>
+                                       </tr>
+                                     </tbody>
+                                 </table>
+                             </div>
+                             </label>
+                           </div>
+                     <li class="list-group-item">
+                         <div class="form-check">
+                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                             <label class="form-check-label" for="flexRadioDefault1" value=1>
+                              Credit card
+                             </label>
+                           </div>
+                     <li class="list-group-item">
+                         <div class="form-check">
+                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                             <label class="form-check-label" for="flexRadioDefault1">
+                               Net banking
+                             </label>
+                           </div>
+                     <li class="list-group-item">
+                         <div class="form-check">
+                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                             <label class="form-check-label" for="flexRadioDefault1">
+                               Wallets
+                             </label>
+                           </div>
+                     <li class="list-group-item">
+                         <div class="form-check">
+                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                             <label class="form-check-label" for="flexRadioDefault1">
+                               Cash on delivery(COD)
+                             </label>
+                           </div>
+                   </ul>
+     
+                  
+                   <span></span>
+     
+             </div>
+             </div>
+            <div class=" col-6 offset-lg-1 col-md-4 col-lg-4">
+             <div class="card address">
+                 <div class="card-content">
+                     <h3>Deliver to this address:</h3>
+                         <button type="button" class="btn" routerLink = "">Add addresss</button>
+                         <li>{{paydata.userShipping.addressLine1}}</li>
+                         <li>{{paydata.userShipping.zipcode}}</li>
+                 </div>
+             </div>
+             <br>
+             <div class="card pl-4">
+               <label *ngFor="let radiobutton of radioItems">
+                 <input type="radio" name="options" (click)="model.value = radiobutton.value"
+                 [checked]="radiobutton.value === model.value"><strong>{{radiobutton.coupon}}</strong> &nbsp; T&c applicable
+               </label>
+               <p>
+                 Selected option: {{model.value}} %
+               </p>
+               <button (click)="discount(model.value)">Apply coupon</button>
+             </div>
+             <div class="card continue">            
+                 <div class="card-content">
+                     <button type="button" class="btn" (click) = "makePayment(paydata)">Continue &nbsp;{{paydata.price|currency:'INR'}}</button>
+               </div>
+             </div>
             </div>
-            </div>
-           <div class=" col-6 offset-lg-1 col-md-4 col-lg-4">
-            <div class="card address">
-                <div class="card-content">
-                    <h3>Deliver to this address:</h3>
-                        <button type="button" class="btn" routerLink = "/user">Add addresss</button>
-                </div>
-            </div>
-            <div class="card continue">            
-                <div class="card-content">
-                    <button type="button" class="btn" (click) = "makePayment(amount)">Continue{{amount|currency:'INR'}}</button>
-              </div>
-            </div>
-           </div>
-        </div>
-    </div>
-    
+         </div>
+     </div>
+     
+ 
