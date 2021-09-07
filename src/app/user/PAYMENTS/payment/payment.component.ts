@@ -1,3 +1,5 @@
+
+  
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/SERVICES/cart.service';
 import { EcommService } from 'src/app/SERVICES/ecomm.service';
@@ -16,9 +18,9 @@ export class PaymentComponent implements OnInit {
 amount:any
 radioItems: Array<any>;
 model   = {value: ''};
-
-
-paydata:any=JSON.parse(sessionStorage.getItem('payment'));
+dataitem:any
+paydata:any={};
+ payInfo= (({ price,paycartS,userShipping }) => ({price,paycartS,userShipping }))(this.paydata);
 
 
 
@@ -27,8 +29,8 @@ paydata:any=JSON.parse(sessionStorage.getItem('payment'));
 
   constructor(private cs:CartService,private ecomm:EcommService) {
 
-    this.paydata.price=sessionStorage.getItem('addgrandtotal')
-this.paydata.paycartS=JSON.parse(sessionStorage.getItem('addproducts'));
+    this.payInfo.price=sessionStorage.getItem('addgrandtotal')
+this.payInfo.paycartS=JSON.parse(sessionStorage.getItem('addproducts'));
 
   //  this. totalData.price=sessionStorage.getItem('addgrandtotal')
     // this.totalData.products=JSON.parse(sessionStorage.getItem('addproducts'));
@@ -47,9 +49,9 @@ this.ecomm.getprofile().subscribe((res:any) => {​​​​​​
   res.map((add:any) =>{​​​​​​
 
 
-this.paydata.userShipping=add
+this.payInfo.userShipping=add
 
-console.log("paydayaaaaa",this.paydata);
+console.log("paydayaaaaa",this.payInfo);
 
   // this.address=add
   
@@ -82,7 +84,14 @@ console.log("paydayaaaaa",this.paydata);
 
         sessionStorage.setItem('payment', JSON.stringify(picked));
         //console.log("totalprod",picked);
-        
+    this. dataitem=JSON.parse(sessionStorage.getItem('payment'));
+    console.log("dataitemm111111",this.dataitem);
+        item.name=this.dataitem.name
+item.brand=this.dataitem.brand
+item.object=this.dataitem.object
+ item.last4=this.dataitem.last4
+item.id=this.dataitem.id
+item.funding=this.dataitem.funding
         alert('Stripe token generated!');
       },
     });
@@ -92,8 +101,13 @@ console.log("paydayaaaaa",this.paydata);
       description: 'BATCH-2',
       amount: item.price * 100,
     });
-    {/* item=JSON.parse(sessionStorage.getItem('payment')); */}
-    //console.log("makpayment",item)
+ 
+  
+
+console.log("itemcheck",item);
+
+    
+
     this.cs.payment(item).subscribe((res:any)=>console.log(res));
   }
   invokeStripe() {
@@ -112,6 +126,6 @@ console.log("paydayaaaaa",this.paydata);
 
   discount(x:any)
   {
-    this.paydata.price =  this.paydata.price - ((this.paydata.price * x) / 100);
+    //this.paydata.price =  this.paydata.price - ((this.paydata.price * x) / 100);
   }
 }

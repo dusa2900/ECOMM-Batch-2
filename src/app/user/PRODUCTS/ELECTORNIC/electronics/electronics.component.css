@@ -3,7 +3,9 @@
  }
  .card{
    border:none;
-   /* box-sizing: border-box; */
+   box-shadow: none;
+
+   box-sizing: border-box;
 
  }
  

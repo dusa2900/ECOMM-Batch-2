@@ -101,8 +101,8 @@
                  <div class="card-content">
                      <h3>Deliver to this address:</h3>
                          <button type="button" class="btn" routerLink = "">Add addresss</button>
-                         <li>{{paydata.userShipping.addressLine1}}</li>
-                         <li>{{paydata.userShipping.zipcode}}</li>
+                         <li>{{payInfo.userShipping.addressLine1}}</li>
+                         <li>{{payInfo.userShipping.zipcode}}</li>
                  </div>
              </div>
              <br>
@@ -118,7 +118,7 @@
              </div>
              <div class="card continue">            
                  <div class="card-content">
-                     <button type="button" class="btn" (click) = "makePayment(paydata)">Continue &nbsp;{{paydata.price|currency:'INR'}}</button>
+                     <button type="button" class="btn" (click) = "makePayment(payInfo)">Continue &nbsp;{{payInfo.price|currency:'INR'}}</button>
                </div>
              </div>
             </div>

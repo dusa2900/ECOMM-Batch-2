@@ -15,10 +15,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { DashboardComponent } from './DASHBOARD/dashboard/dashboard.component';
 
 import{AngmaterialModule} from '../ANGMATERIAL/angmaterial.module';
+import { BredcrumbComponent } from '../BREDCRUMB/bredcrumb/bredcrumb.component';
 
 @NgModule({
   declarations: [
-    CouponsComponent,
+    CouponsComponent,BredcrumbComponent,
     ViewUserComponent,
     FooterComponent,
     ProductlistStatusComponent,

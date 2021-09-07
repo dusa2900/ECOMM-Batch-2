@@ -20,7 +20,7 @@ homefurnitureList:any=[];
     this.ps.getProductsList().subscribe(
       res=>
       {
-        console.log("electronics",res);
+        console.log("electronicsssssssss",res);
         
 res.map((item:any) => {
   if(item.mCategoryName="electronics"){

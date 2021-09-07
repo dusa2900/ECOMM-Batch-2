@@ -5,7 +5,9 @@
    text-align: center;
 }
 .card{
-  border:none
+  border:none;
+  box-shadow: none;
+
 }
 
 img{

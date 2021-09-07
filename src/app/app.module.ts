@@ -14,7 +14,7 @@ import { ForbiddenComponent } from './unauth-forbidden/forbidden/forbidden.compo
 import { UserGuard } from './Auth/user.guard';
 import { LoginAuthService } from './SERVICES/login.auth.service';
 import { PagenotfoundComponent } from './unauth-forbidden/pagenotfound/pagenotfound.component';
-import { BredcrumbComponent } from './BREDCRUMB/bredcrumb/bredcrumb.component';
+// import { BredcrumbComponent } from './BREDCRUMB/bredcrumb/bredcrumb.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     JwtheaderComponent,
     ForbiddenComponent,
     PagenotfoundComponent,
-    BredcrumbComponent,
+    // BredcrumbComponent,
   ],
   imports: [
     BrowserModule,ToastrModule.forRoot(),NgxPaginationModule,

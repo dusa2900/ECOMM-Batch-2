@@ -14,17 +14,38 @@ import { ViewUserComponent } from './DASHBOARD/view-user/view-user.component';
 
 const routes: Routes = [
 
-  {path: '',component:SidenavComponent,
-
+  {path: '',component:SidenavComponent,  data: {
+    breadcrumb: 'admin' },
   children: [
-    {path: '',component:DashboardComponent} ,
-    {path: 'coupons',component:CouponsComponent},
-    {path: 'productlist',component:ProductlistStatusComponent},
-    {path: 'viewusers',component:ViewUserComponent},
-    {path: 'forgotpassword',component:ForgotpasswordUserComponent},
-    {path: 'Transactions',component:TransactionsComponent},
-    {path: 'returnorder',component:ReturnorderComponent},
-    // {path: 'dashboard',component:DashboardComponent},
+    {path: '',component:DashboardComponent,
+    data: {
+      breadcrumb: 'admin' }
+  } ,
+
+
+   { path: 'coupons',component:CouponsComponent,
+      data: {
+        breadcrumb: 'Coupons' }
+    },
+    {path: 'productlist',component:ProductlistStatusComponent,   data: {
+      breadcrumb: 'productlist' }
+  },
+    {path: 'viewusers',component:ViewUserComponent,    
+     data: {
+      breadcrumb: 'viewusers' }
+    },
+    {path: 'forgotpassword',component:ForgotpasswordUserComponent,
+    data: {
+      breadcrumb: 'forgotpassword' }},
+    {path: 'Transactions',component:TransactionsComponent,   
+      data: {
+      breadcrumb: 'Transactions' }
+    },
+    {path: 'returnorder',component:ReturnorderComponent,
+    data: {
+      breadcrumb: 'returnorder' }
+    },
+ 
 
 
 
