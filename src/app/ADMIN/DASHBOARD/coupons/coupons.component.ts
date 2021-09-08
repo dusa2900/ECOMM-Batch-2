@@ -25,12 +25,12 @@ type:any=['Percentage Discount','Amount Discount']
 
     this.couponsForm = this.formBuilder.group({
       couponCode : ['', [Validators.required,Validators.minLength(8)]],
-      CouponType: ['', [Validators.required]],
+      couponType: ['', [Validators.required]],
 
-      CouponDescription: ['', [Validators.required]],
-      CouponValue: ['', [Validators.required]],
-      StartDate: ['', [Validators.required]],
-      EndDate: ['', [Validators.required]],
+      couponDescription: ['', [Validators.required]],
+      couponValue: ['', [Validators.required]],
+      startDate: ['', [Validators.required]],
+      endDate: ['', [Validators.required]],
     }, {
     });
 
@@ -48,9 +48,11 @@ type:any=['Percentage Discount','Amount Discount']
     this.dialog.closeAll();
   }
   onSubmit(value: any) {
-    this.admin.coupons(value).subscribe((res: any)=>  {
+    console.log("valueee",value);
     
-console.log("postcoupon",res)
+    this.admin.postcoupons(value).subscribe((res: any)=>  {
+    
+console.log("postcouponnnnnn",res)
  
     })
     this.submitted = true;

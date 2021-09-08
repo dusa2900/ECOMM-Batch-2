@@ -6,9 +6,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-
-
- // public apiUrl:string="http://localhost:4000/cartItems/"
  public cartItem:any=[];
  public productList=new BehaviorSubject<any>([]);
 
@@ -25,23 +22,11 @@ export class CartService {
        return this.hc.get<any>(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/cart/cart/all/${userPhoneNumber}`);
 
   }
-   
-
-
-
 
 addToCart(item:any):Observable<any>
 { 
-  // this.cartItem.push(item);
-  // this.productList.next(this.cartItem);
-  
-  const userPhoneNumber:any = sessionStorage.getItem('username');
-  // console.log("usernumber",userPhoneNumber);
+  const userPhoneNumber:any = sessionStorage.getItem('username')
   console.log("add-service",item);
-
-//   const params = new HttpParams().append('username', userPhoneNumber );
-// console.log("ser-number",params);
-
   return this.hc.post(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/cart/cart/add/${userPhoneNumber}/${item}`,item)
 
 }
@@ -70,23 +55,20 @@ removeAllcart(): Observable<any>{
 ///payment
 payment(res:any):Observable<any>{
   console.log("payment-serviceEEEEE",res);
-
   return this.hc.post("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/order/add",res);
-  // return this.hc.post("",res);
-
 
 }
-///Return Order function////
+///Return and  Order function////
 
 // checkout payment Data
-CheckOutData(item:any):Observable<any>
-{
-  return this.hc.post("http://localhost:4000/Orders",item);
-}
+// CheckOutData(item:any):Observable<any>
+// {
+//   return this.hc.post("http://localhost:4000/Orders",item);
+// }
 
 Orders():Observable<any>
 {
-  return this.hc.get(" http://localhost:4000/Orders");
+  return this.hc.get<any>("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/order/add");
 }
 
 CancelOrder(item:any):Observable<any>

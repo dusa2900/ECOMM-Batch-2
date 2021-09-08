@@ -34,44 +34,44 @@
           
            
     
-          <!-- ////CouponDescription// -->
+          <!-- ////couponDescription// -->
                   <div class="col-md-2 form-group text-center" >
-                      <label  for="CouponDescription"> CouponDescription:</label>
+                      <label  for="couponDescription"> couponDescription:</label>
                   </div>
                   <div class="col-md-4 form-group">
-              <input type="CouponDescription" formControlName="CouponDescription" id="CouponDescription" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CouponDescription.errors }" />
-              <div *ngIf="submitted && f.CouponDescription.errors" class="invalid-feedback">
-                  <div *ngIf="f.CouponDescription.errors.required">CouponDescription is required</div>
+              <input type="couponDescription" formControlName="couponDescription" id="couponDescription" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.couponDescription.errors }" />
+              <div *ngIf="submitted && f.couponDescription.errors" class="invalid-feedback">
+                  <div *ngIf="f.couponDescription.errors.required">couponDescription is required</div>
               </div>
           </div>
 
       </div>
-<!-- ////CouponType/// -->
+<!-- ////couponType/// -->
         
               <div class="row">
                   <div class="col-md-2 form-group text-center" >
-                      <label  for="CouponType"> CouponType:</label>
+                      <label  for="couponType"> couponType:</label>
                   </div>
                   <div class="col-md-4 form-group">
-                <select class="custom-select"  formControlName="CouponType" [ngClass]="{ 'is-invalid': submitted && f.CouponType.errors }">
-                  <option value="">CouponType</option>
-                  <option *ngFor="let CouponType of type" [ngValue]="CouponType">{{CouponType}}</option>
+                <select class="custom-select"  formControlName="couponType" [ngClass]="{ 'is-invalid': submitted && f.couponType.errors }">
+                  <option value="">couponType</option>
+                  <option *ngFor="let couponType of type" [ngValue]="couponType">{{couponType}}</option>
                 </select>
-              <div *ngIf="submitted && f.CouponType.errors" class="invalid-feedback">
-                  <div *ngIf="f.CouponType.errors.required">CouponType  required</div>
+              <div *ngIf="submitted && f.couponType.errors" class="invalid-feedback">
+                  <div *ngIf="f.couponType.errors.required">couponType  required</div>
               </div>
                   </div>
          
     
-              <!-- ////CouponValue///// -->
+              <!-- ////couponValue///// -->
        
                   <div class="col-md-2 form-group text-center" >
-                      <label  for="CouponValue"> CouponValue:</label>
+                      <label  for="couponValue"> couponValue:</label>
                   </div>
                   <div class="col-md-4 form-group">
-              <input type="text" formControlName="CouponValue" id="CouponValue" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.CouponValue.errors }" />
-              <div *ngIf="submitted && f.CouponValue.errors" class="invalid-feedback">
-                  <div *ngIf="f.CouponValue.errors.required">CouponValue is required</div>
+              <input type="text" formControlName="couponValue" id="couponValue" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.couponValue.errors }" />
+              <div *ngIf="submitted && f.couponValue.errors" class="invalid-feedback">
+                  <div *ngIf="f.couponValue.errors.required">couponValue is required</div>
               </div>
           </div>
          
@@ -80,27 +80,27 @@
 
      
       
-<!-- /StartDate//////////// -->
+<!-- /startDate//////////// -->
               <div class="row">
                   <div class="col-md-2 form-group text-right" >
-                      <label  for="StartDate"> StartDate:</label>
+                      <label  for="startDate"> startDate:</label>
                   </div>
                   <div class="col-md-4 form-group">
-              <input type="date" formControlName="StartDate" id="StartDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.StartDate.errors }" />
-              <div *ngIf="submitted && f.StartDate.errors" class="invalid-feedback">
-                  <div *ngIf="f.StartDate.errors.required">StartDate is required</div>
+              <input type="date" formControlName="startDate" id="startDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }" />
+              <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
+                  <div *ngIf="f.startDate.errors.required">startDate is required</div>
               </div>
           </div>
 
-<!-- /////EndDate///// -->
+<!-- /////endDate///// -->
      
                   <div class="col-md-2 form-group text-right" >
-                      <label  for="EndDate"> EndDate:</label>
+                      <label  for="endDate"> endDate:</label>
                   </div>
                   <div class="col-md-4 form-group">
-              <input type="date" formControlName="EndDate" id="EndDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.EndDate.errors }" />
-              <div *ngIf="submitted && f.EndDate.errors" class="invalid-feedback">
-                  <div *ngIf="f.EndDate.errors.required">EndDate is required</div>
+              <input type="date" formControlName="endDate" id="endDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.endDate.errors }" />
+              <div *ngIf="submitted && f.endDate.errors" class="invalid-feedback">
+                  <div *ngIf="f.endDate.errors.required">endDate is required</div>
               </div>
           </div>
           </div>
@@ -149,13 +149,13 @@
             <tr >
               <th scope="row">{{data.id}}</th>
               <td>{{data.couponCode}}</td>
-              <td>{{data.CouponDescription}}</td>
-              <td>{{data.CouponType}}</td>
-              <td>{{data.CouponValue}}</td>
+              <td>{{data.couponDescription}}</td>
+              <td>{{data.couponType}}</td>
+              <td>{{data.couponValue}}</td>
              
-              <td>{{data.StartDate}}</td>
+              <td>{{data.startDate}}</td>
              
-              <td>{{data.EndDate}}</td>
+              <td>{{data.endDate}}</td>
 
               <td>{{data.status}}</td>
               <td>

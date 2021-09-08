@@ -2,6 +2,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductsService } from 'src/app/SERVICES/products.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { CartService } from 'src/app/SERVICES/cart.service';
 @Component({
   selector: 'app-return',
   templateUrl: './return.component.html',
@@ -17,7 +18,7 @@ export class ReturnComponent implements OnInit {
  adminStatus:any;
   adminReturn: boolean=true;
   commentForm:any
-  constructor(private ps:ProductsService,private formbuilder:FormBuilder) { 
+  constructor(private cs:CartService,private formbuilder:FormBuilder) { 
     this.commentForm=this.formbuilder.group({
       reason:['',[Validators.required,Validators.minLength(10)]],
       status:['',[Validators.required]],
@@ -65,40 +66,42 @@ export class ReturnComponent implements OnInit {
 }
 
   ngOnInit(){
-    this.fun()
-    this.ps.getOrder().subscribe(res=>
+    // this.fun()
+    this.cs.Orders().subscribe(res=>
       {
         this.order=res;
+        console.log("get orders",res);
+        
       }
       )
 
-      this.ps.getOrders().subscribe(res=>{
-        this.orders=res
-      })
-this.onReturn()
+      // this.cs.getOrders().subscribe(res=>{
+      //   this.orders=res
+      // })
+// this.onReturn()
 
     }
 
-    onReturn()
-    { 
-       console.log( this.returnProduct.nativeElement.value);
-      this.reasonStatus=this.returnProduct.nativeElement.value;
-      alert(`Return request send successfully`)
-      this.reasonReturn=false;
+    // onReturn()
+    // { 
+    //    console.log( this.returnProduct.nativeElement.value);
+    //   this.reasonStatus=this.returnProduct.nativeElement.value;
+    //   alert(`Return request send successfully`)
+    //   this.reasonReturn=false;
 
-      this.adminReturn=false
+    //   this.adminReturn=false
   
-      this.ps.postreturnorder(value).subscribe(res=>
+      // this.ps.postreturnorder(value).subscribe(res=>
 
-        {​​​
-          console.log("lnkasr",res);
+      //   {​​​
+      //     console.log("lnkasr",res);
         
-        }
-      )
-    }
+      //   }
+      // )
+    // }
 
 }
-function value(value: any) {
-  throw new Error('Function not implemented.');
-}
+// function value(value: any) {
+//   throw new Error('Function not implemented.');
+// }
 

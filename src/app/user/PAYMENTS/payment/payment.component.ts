@@ -21,10 +21,6 @@ model   = {value: ''};
 dataitem:any
 paydata:any={};
  payInfo= (({ price,paycartS,userShipping }) => ({price,paycartS,userShipping }))(this.paydata);
-
-
-
-// totalData:any = (({ street,state,zipcode}) => ({ street,state,zipcode}))(this.profile);
   address: any;
 
   constructor(private cs:CartService,private ecomm:EcommService) {
@@ -52,23 +48,13 @@ this.ecomm.getprofile().subscribe((res:any) => {​​​​​​
 this.payInfo.userShipping=add
 
 console.log("paydayaaaaa",this.payInfo);
-
-  // this.address=add
-  
-  // this.address.price=sessionStorage.getItem('addgrandtotal')
-  // this.address.paycartS=JSON.parse(sessionStorage.getItem('addproducts'));
-  // this.address=JSON.parse(sessionStorage.getItem('payment'));
-
-
-   
-          }​​​​​​)
-          }​​​​​​)
+ }​​​​​​)
+}​​​​​​)
 
     this.invokeStripe();
     this.cs.getProducts()
     .subscribe(res=>{
       this.products = res;
-      // this.grandTotal = this.cs.getTotalPrice();
     })
   }
 
@@ -77,13 +63,10 @@ console.log("paydayaaaaa",this.payInfo);
     const paymentHandler = (<any>window).StripeCheckout.configure({
       key:
         'pk_test_51HqKNkG7HcjhSjrfbDoLC6M1Ud7DFTpJkX9LKS98utMFAehGlVXa8qsEXYRV3mAKPKYwrJuZYemdpPYvxie3xPdg00TGxu9y0t',
-
       locale: 'auto',
-      token: function (stripeToken: any) {
+      token:  (stripeToken: any)=> {
         const picked = (({ name,object,last4,price,brand,id,funding,products }) => ({ name,object,last4,price,brand,id,funding,products }))(stripeToken.card);
-
         sessionStorage.setItem('payment', JSON.stringify(picked));
-        //console.log("totalprod",picked);
     this. dataitem=JSON.parse(sessionStorage.getItem('payment'));
     console.log("dataitemm111111",this.dataitem);
         item.name=this.dataitem.name
@@ -92,23 +75,16 @@ item.object=this.dataitem.object
  item.last4=this.dataitem.last4
 item.id=this.dataitem.id
 item.funding=this.dataitem.funding
+console.log("item",item);
+this.cs.payment(item).subscribe((res:any)=>console.log(res));
         alert('Stripe token generated!');
       },
     });
-
     paymentHandler.open({
       name: 'Techwave',
       description: 'BATCH-2',
       amount: item.price * 100,
     });
- 
-  
-
-console.log("itemcheck",item);
-
-    
-
-    this.cs.payment(item).subscribe((res:any)=>console.log(res));
   }
   invokeStripe() {
     if (!window.document.getElementById('stripe-script')) {
@@ -126,6 +102,6 @@ console.log("itemcheck",item);
 
   discount(x:any)
   {
-    //this.paydata.price =  this.paydata.price - ((this.paydata.price * x) / 100);
+    this.payInfo.price =  this.payInfo.price - ((this.payInfo.price * x) / 100);
   }
 }

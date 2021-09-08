@@ -13,11 +13,13 @@ export class AdminService {
   {
     return this.hc.get<any>("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/inventory/getAllData");
   }
-  coupons(value:any):Observable<any>{
-    return this.hc.post("http://localhost:4000/coupons",value)
+  postcoupons(value:any):Observable<any>{
+    console.log("postservice",value);
+    
+    return this.hc.post<any>("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/coupon/saveCouponData",value)
   }
   getcoupons():Observable<any>{
-    return this.hc.get("http://localhost:4000/coupons")
+    return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/coupon/sendCouponDetailsForadmin")
   }
 
   getlistusers():Observable<any>{
