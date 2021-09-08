@@ -56,8 +56,19 @@ removeAllcart(): Observable<any>{
 payment(res:any):Observable<any>{
   console.log("payment-serviceEEEEE",res);
   return this.hc.post("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/order/add",res);
-
+  // return this.hc.post("",res)
+// 
 }
+
+
+//get coupons-users//
+
+getCoupons():Observable<any>
+{
+  return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/coupon/sendCouponDetailsForUser");
+}
+
+
 ///Return and  Order function////
 
 // checkout payment Data
@@ -68,7 +79,7 @@ payment(res:any):Observable<any>{
 
 Orders():Observable<any>
 {
-  return this.hc.get<any>("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/order/add");
+  return this.hc.get<any>("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/order/all");
 }
 
 CancelOrder(item:any):Observable<any>

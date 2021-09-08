@@ -1,9 +1,9 @@
-
-  
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
 import { CartService } from 'src/app/SERVICES/cart.service';
 import { EcommService } from 'src/app/SERVICES/ecomm.service';
-import { ProductsService } from 'src/app/SERVICES/products.service';
+import { UserprofileComponent } from '../../COMMON/userprofile/userprofile.component';
 
 @Component({
   selector: 'app-payment',
@@ -16,36 +16,44 @@ export class PaymentComponent implements OnInit {
   paymentHandler: any = null;
   public grandTotal !: number;
 amount:any
-radioItems: Array<any>;
-model   = {value: ''};
+radioItems:any[]=[];
+// model   = {value: ''};
+model:any;
 dataitem:any
 paydata:any={};
- payInfo= (({ price,paycartS,userShipping }) => ({price,paycartS,userShipping }))(this.paydata);
-  address: any;
+profile:any;
 
-  constructor(private cs:CartService,private ecomm:EcommService) {
+address:any=[];
+ payInfo= (({ price,paycartS,userShipping }) => ({price,paycartS,userShipping }))(this.paydata);
+
+
+  constructor(private cs:CartService,private ecomm:EcommService,public dialog: MatDialog) {
 
     this.payInfo.price=sessionStorage.getItem('addgrandtotal')
 this.payInfo.paycartS=JSON.parse(sessionStorage.getItem('addproducts'));
 
-  //  this. totalData.price=sessionStorage.getItem('addgrandtotal')
-    // this.totalData.products=JSON.parse(sessionStorage.getItem('addproducts'));
-    // console.log("totalData",this.totalData)
 
-    this.radioItems = [{"coupon":"TECH0005","value":5},{"coupon":"TECH0025","value":25},{"coupon":"TECH0030","value":30} ];
+this.address=[{"street":"kothapallyy","zip":"404899843"},{"street":"karimnagar","zip":"404899843"},{"street":"hyd","zip":"404899843"}]
+  
+    
    }
 
   ngOnInit(): void {
+    this.cs.getCoupons().subscribe( (res:any)=>
+    {
+    this.radioItems = res;
+    console.log("getcoupons",this.radioItems);
 
+    })
  //get-address//
 this.ecomm.getprofile().subscribe((res:any) => {​​​​​​
   console.log("getprofile",res);
-  
+  this.profile=res;
    
   res.map((add:any) =>{​​​​​​
 
 
-this.payInfo.userShipping=add
+// this.payInfo.userShipping=add
 
 console.log("paydayaaaaa",this.payInfo);
  }​​​​​​)
@@ -104,4 +112,18 @@ this.cs.payment(item).subscribe((res:any)=>console.log(res));
   {
     this.payInfo.price =  this.payInfo.price - ((this.payInfo.price * x) / 100);
   }
+
+  openDialog() {​​​
+    const dialogRef = this.dialog.open(UserprofileComponent);
+    dialogRef.afterClosed().subscribe(result=> {​​​
+    console.log(`Dialog result: ${​​​result}​​​`);
+        }​​​);
+      }
+      
+      
+      changeaddess(item:any) {
+this.payInfo.userShipping=item
+console.log("addressssss",this.payInfo)
+      }​​​
+    
 }
