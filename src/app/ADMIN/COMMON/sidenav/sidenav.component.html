@@ -1,13 +1,18 @@
 
-
-
-
-
    
     <div class="container bar">
         <label class="floatLeft" for="navBtn"><span></span></label>
         <span class="floatRight padding Right 2rem" style="margin-top:12px">
-           <a href="/admin" style="text-decoration: none;color: white;"> <b><h1>Batch-2</h1></b></a>
+            <ul style="list-style-type: none;">
+                <li>
+                    <a style="text-decoration: none;color: white;" (click)="logout()" *ngIf="isLoggedIn()">Sign Out</a>
+
+                </li>
+                <li>
+                    <a href="/admin" style="text-decoration: none;color: white;"> <b><h1>Batch-2</h1></b></a>
+
+                </li>
+            </ul>
         </span>
     </div>
 

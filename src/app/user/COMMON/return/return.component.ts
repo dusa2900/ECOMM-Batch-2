@@ -10,7 +10,7 @@ import { CartService } from 'src/app/SERVICES/cart.service';
 })
 export class ReturnComponent implements OnInit {
   order:any=[];
-  orders:any=[]
+ orders:any=[]
   reasonReturn:boolean=true;
   @ViewChild('returnProduct') returnProduct!:ElementRef;
 
@@ -18,6 +18,7 @@ export class ReturnComponent implements OnInit {
  adminStatus:any;
   adminReturn: boolean=true;
   commentForm:any
+  products: any[]=[];
   constructor(private cs:CartService,private formbuilder:FormBuilder) { 
     this.commentForm=this.formbuilder.group({
       reason:['',[Validators.required,Validators.minLength(10)]],
@@ -70,6 +71,23 @@ export class ReturnComponent implements OnInit {
     this.cs.Orders().subscribe(res=>
       {
         this.order=res;
+        res.map((item:any) => {
+
+
+  item.paycartS.map((item:any) => {
+
+    // this.products=item.product
+    this.products.push(item.product)
+    console.log("item",this.products);
+
+
+    
+  })
+          
+
+
+        })
+  
         console.log("get orders",res);
         
       }

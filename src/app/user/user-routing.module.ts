@@ -13,7 +13,6 @@ import { RegisterComponent } from './LOGIN/register/register.component';
 import { ResetComponent } from './LOGIN/reset/reset.component';
 import { PaymentComponent } from './PAYMENTS/payment/payment.component';
 import { AppearelsComponent } from './PRODUCTS/APPEARELS/appearels/appearels.component';
-import { MensWearComponent } from './PRODUCTS/APPEARELS/mens-wear/mens-wear.component';
 import { ElectronicsComponent } from './PRODUCTS/ELECTORNIC/electronics/electronics.component';
 import { HomeKitchenComponent } from './PRODUCTS/HOME&KITCHEN/home-kitchen/home-kitchen.component';
 import { ProductCategoryTypeComponent } from './PRODUCTS/RE-USABLE/product-category-type/product-category-type.component';
@@ -44,7 +43,6 @@ children: [
 
 //APPEARELS
            {​​​ path:'appearels',component:AppearelsComponent}​​​,
-           {​​​ path:'appearels/menswear',component:MensWearComponent}​​​,
 
 // ELECTORNICS
              {​​​ path:'electronics', component:ElectronicsComponent}​​​,

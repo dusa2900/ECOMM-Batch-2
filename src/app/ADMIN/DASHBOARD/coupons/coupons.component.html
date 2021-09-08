@@ -69,7 +69,7 @@
                       <label  for="couponValue"> couponValue:</label>
                   </div>
                   <div class="col-md-4 form-group">
-              <input type="text" formControlName="couponValue" id="couponValue" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.couponValue.errors }" />
+              <input type="number" formControlName="couponValue" id="couponValue" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.couponValue.errors }" />
               <div *ngIf="submitted && f.couponValue.errors" class="invalid-feedback">
                   <div *ngIf="f.couponValue.errors.required">couponValue is required</div>
               </div>
@@ -147,7 +147,7 @@
 
           <tbody *ngFor="let data of coupon | paginate: { itemsPerPage: 5,currentPage:p}; let i = index"> 
             <tr >
-              <th scope="row">{{data.id}}</th>
+              <th scope="row">{{i+1}}</th>
               <td>{{data.couponCode}}</td>
               <td>{{data.couponDescription}}</td>
               <td>{{data.couponType}}</td>

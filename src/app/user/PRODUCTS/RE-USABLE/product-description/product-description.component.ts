@@ -14,23 +14,15 @@ export class ProductDescriptionComponent implements OnInit {
   productid: any;
   overview: any;
   star:any
-  // data={products:null};
-
-  // data={products:null};
   id: any;
   currentrating: any;
   commentsForm: any;
   commentpost: any[]=[];
   desproductid: any;
-
   form: any;
   hint: any;
   rate: number;
-
-
   constructor(private route: ActivatedRoute, private fb: FormBuilder, private _route: Router, private ps: ProductsService, private cart: CartService, private loginauth: LoginAuthService) {
-
-
 
     this.route.params.subscribe(
       params => this.productid = params['productid']);
@@ -48,9 +40,6 @@ export class ProductDescriptionComponent implements OnInit {
             this.star=this.overview.rating
             console.log("descc", this.overview.image);
             sessionStorage.setItem('productid', this.overview.productid)
-
-
-
 
           }
 
@@ -91,7 +80,6 @@ export class ProductDescriptionComponent implements OnInit {
           if (this.productid == element.product.productid) {
            
             this.commentpost.push(element);
-           // console.log("tttttt", this.commentpost)
             this.commentpost.map( (star:any)=>
             {
             this.hint = star.rating

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginAuthService } from 'src/app/SERVICES/login.auth.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor() { }
+  constructor(public loginauth:LoginAuthService , private route:Router) { }
 
   ngOnInit(): void {
   }
+  logout()
+  {
 
+    this.loginauth.clear();
+    this.route.navigate(['/login']);
+    
+  }
+
+  public isLoggedIn() {
+
+    return this.loginauth.isLoggedIn();
+  }
 }

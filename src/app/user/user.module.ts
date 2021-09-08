@@ -29,7 +29,6 @@ import { UserprofileComponent } from './COMMON/userprofile/userprofile.component
 import { ReturnComponent } from './COMMON/return/return.component';
 import { ProductDescriptionComponent } from './PRODUCTS/RE-USABLE/product-description/product-description.component';
 import { ProductCategoryTypeComponent } from './PRODUCTS/RE-USABLE/product-category-type/product-category-type.component';
-import { MensWearComponent } from './PRODUCTS/APPEARELS/mens-wear/mens-wear.component';
 
 import{SortPipe} from'../PIPES/sort.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -54,7 +53,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReturnComponent,
  ProductDescriptionComponent,
  ProductCategoryTypeComponent,
- MensWearComponent
   ],
   imports: [
     NgxStarRatingModule ,NgbModule,NgxImageZoomModule,  CommonModule,HttpClientModule, ToastrModule.forRoot(),NgxPaginationModule,

@@ -18,14 +18,15 @@
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="orders" role="tabpanel" aria-labelledby="orders-tab">
         <div class="ordered col-md-10">
-            <div class="row" *ngFor="let x of orders">
+            <div class="row" *ngFor="let x of products">
              <div class="col-6 col-md-4">
                  <img [src]="x.image">
               </div>
               <div class="col-sm-12 col-md-6 orders">
-                  <h2>{{x.productName}}</h2>
-                  <p>Product Id: {{x.productId}}</p>
-                  <p>Price: {{x.Price}}</p>
+                  <h2>{{x.title}}</h2>
+                  <p>Product Id: {{x.productid}}</p>
+                  <p>Product Id: {{x.description}}</p>
+                  <p>Price: {{x.price}}</p>
               </div>
               <div class="col-6 col-md-1">
                  <div>
@@ -37,6 +38,7 @@
                    </div>
               </div>
             </div>
+            <hr>
         </div>
     </div>
     <div class="tab-pane fade" id="History" role="tabpanel" aria-labelledby="History-tab">

@@ -257,3 +257,6 @@ nav ul li:hover a i {
 }
 
 
+ul li{
+  float: left;
+}
