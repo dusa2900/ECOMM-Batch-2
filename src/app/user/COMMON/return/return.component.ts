@@ -69,18 +69,50 @@ export class ReturnComponent implements OnInit {
   
 }
 
+getorders(){
+  this.cs.Orders().subscribe(res=>
+    {
+      this.order=res;
+    
+      this.order.map((item:any) => {
+
+        console.log("orderid",item.orderId);
+
+
+item.paycartS.map((item1:any) => {
+
+console.log("idd",item1);
+
+  this.products.push(item1)
+  console.log("item",this.products);
+
+
+  
+})
+        
+
+
+      })
+
+      console.log("get orders",res);
+      
+    }
+    )
+}
+
+
 gettrackorder(cartsid:any){
  
   
-  this.cs.trackorder(cartsid).subscribe(res=>{ 
+  this.cs.Trackorder(cartsid).subscribe(res=>{ 
     console.log("trackorder",res);
   })
 
 }
 cancelorder(cartsid:any){
  
-  
   this.cs.CancelOrder(cartsid).subscribe(res=>{ 
+
     console.log("CancelOrder",res);
   })
 
@@ -88,7 +120,7 @@ cancelorder(cartsid:any){
 
 history(){
  
-  
+
   this.cs.History().subscribe(res=>{ 
     this.historydata=res
     console.log("historydata",res);
@@ -97,60 +129,48 @@ history(){
 }
 
   ngOnInit(){
-    // this.fun()
+    this.getorders()
+
 this.history()
 
-    this.cs.Orders().subscribe(res=>
-      {
-        this.order=res;
-      
-        this.order.map((item:any) => {
-
-          console.log("orderid",item.orderId);
 
 
-  item.paycartS.map((item1:any) => {
-
-console.log("idd",item1);
-
-    this.products.push(item1)
-    console.log("item",this.products);
-
+this.cs.userOrders().subscribe( 
+  (res:any)=>
+  {
+    console.log("returnn",res);
+    
+    this.orders=res;
+    this.orders.forEach((a:any)=>{
+      Object.assign(a,{reason:'',status:'pending'})
+    })
+   
+  }
+)
+}
+//   onReturn(order:any)
+//   {
+//     order.reason=this.returnProduct.nativeElement.value;
+ 
+//     console.log("userreturn",order);
+//  this.cs.returnOrder(order).subscribe(res=>    console.log("gettt",res));
+//     alert(`Return request send successfully`)
 
     
-  })
-          
+//     this.reasonReturn=false;
+//   }
+
+  onReturn(order:any)
+  {
+
+ this.cs.returnOrder(order).subscribe(res=>    console.log("gettt",res));
+    // alert(`Return request send successfully`)
 
 
-        })
-  
-        console.log("get orders",res);
-        
-      }
-      )
+  }
 
-  
-// this.onReturn()
 
-    }
 
-    // onReturn()
-    // { 
-    //    console.log( this.returnProduct.nativeElement.value);
-    //   this.reasonStatus=this.returnProduct.nativeElement.value;
-    //   alert(`Return request send successfully`)
-    //   this.reasonReturn=false;
-
-    //   this.adminReturn=false
-  
-      // this.ps.postreturnorder(value).subscribe(res=>
-
-      //   {​​​
-      //     console.log("lnkasr",res);
-        
-      //   }
-      // )
-    // }
 
 }
 // function value(value: any) {

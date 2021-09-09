@@ -8,7 +8,7 @@ import { AdminService } from 'src/app/SERVICES/admin.service';
 })
 export class TransactionsComponent implements OnInit {
   transactions: any;
-
+  p:number=1
   constructor(private admin:AdminService) { }
 
   ngOnInit(): void {

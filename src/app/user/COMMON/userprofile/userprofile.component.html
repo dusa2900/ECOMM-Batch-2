@@ -1,5 +1,4 @@
-
-  <h4 style="text-align: center; font-size: 20px;text-decoration: underline;font-weight: bold;">User Profile</h4>
+<h4 style="text-align: center; font-size: 20px;text-decoration: underline;font-weight: bold;">User Profile</h4>
 
 <div class="container" style="margin: 40px auto; ">
 
@@ -13,8 +12,6 @@
       <div class="col-sm-6 col-md-4">
         <div class="form-group mb-3">
           <mat-label style="font-size: 20px;font-weight: bold;">Email ID:{{data.email}}</mat-label>
-
-
         </div>
       </div>
       <div class="col-sm-6 col-md-4">
@@ -24,82 +21,114 @@
       </div>
     </div>
 
+ <strong style="float: right;">   <input [(ngModel)]="toggle" type="checkbox"/> Add Address</strong>
 
-    <form  [formGroup]="profileForm" (ngSubmit)="updateProfile(profileForm.value)">
-      <div class="row">
+<div *ngIf="toggle; else prompt">
+      
+  <form  [formGroup]="profileForm" (ngSubmit)="updateProfile(profileForm.value)" #closebutton >
+    <div class="row" >
 
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-6 col-md-12 col-lg-12 flex-fill">
-          <mat-label style="font-size: 20px;font-weight: bold;" for="addressLine1">Door No: </mat-label>
-          <mat-form-field class="example-full-width dash" appearance="fill" style="width: 1000px;">
-            <input matInput color="primary" placeholder="Street" type="text" formControlName="addressLine1">
-          </mat-form-field>
-        </div>
-      </div>
-          <div class="row">
-            <div class="col-6 col-md-12 col-lg-12 flex-fill">
-              <mat-label style="font-size: 20px;font-weight: bold;" for="addressLine2">Street: </mat-label>
-              <mat-form-field class="example-full-width dash" appearance="fill" style="width: 1000px;">
-                <input matInput color="primary" placeholder="Street" type="text" formControlName="addressLine2">
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6 col-md-4 col-lg-4 flex-fill">
-             <div class="form-group mb-3">
-              <mat-label style="font-size: 20px;font-weight: bold;" for="city">City: </mat-label>
-              <mat-form-field class="example-full-width dash">
-                <input matInput type="text" placeholder="City" formControlName="city">
-              </mat-form-field>
-             </div>
-            </div>
-            <div class="col-6 col-md-4 col-lg-4 flex-fill">
-              <mat-label style="font-size: 20px;font-weight: bold;" for="state">State: </mat-label>
-              <mat-form-field class="example-full-width dash">
-                <input matInput type="text" placeholder="State" formControlName="state">
-              </mat-form-field>
-            </div>
-            <div class="col-6 col-md-4 col-lg-4 flex-fill">
-              <mat-label style="font-size: 20px;font-weight: bold;" for="zip">Pincode: </mat-label>
-              <mat-form-field class="example-full-width dash">
-                <input matInput type="text" placeholder="zipcode" formControlName="zipcode">
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6 col-md-4 col-lg-4 option">
-              <mat-label style="font-size: 20px;font-weight: bold;" for="type">Address type</mat-label>
-               <mat-form-field>
-                <mat-select matNativeControl required  formControlName="type">
-                  <mat-option value="home">Home</mat-option>
-                  <mat-option value="office">Office</mat-option>
-                  <mat-option value="others">Others</mat-option>
-                </mat-select>
-               </mat-form-field>
-            </div>
-            <div class="col-6 col-md-4 col-lg-4 offset-lg-4 offset-md-4">
-              <mat-label style="font-size: 20px;font-weight: bold;" for="type">District</mat-label>
-              <mat-form-field class="example-full-width dash">
-                <input matInput type="text" placeholder="District" formControlName="district">
-              </mat-form-field>
-            </div>
-      </div>
+    </div>
+    <br>
     <div class="row">
-      <div class="col-sm-12 col-md-12">
-        <button type="button" class="btn btn-warning">Cancel</button>
-        &nbsp; &nbsp; &nbsp;
-        <button class="btn btn-success" type="submit">Update Profile</button>
+      <div class="col-6 col-md-12 col-lg-12 flex-fill">
+        <mat-label style="font-size: 20px;font-weight: bold;" for="addressLine1">Door No: </mat-label>
+        <mat-form-field class="example-full-width dash" appearance="fill" style="width: 1000px;">
+          <input matInput color="primary" placeholder="Street" type="text" formControlName="addressLine1">
+        </mat-form-field>
       </div>
     </div>
-    </form>
+        <div class="row">
+          <div class="col-6 col-md-12 col-lg-12 flex-fill">
+            <mat-label style="font-size: 20px;font-weight: bold;" for="addressLine2">Street: </mat-label>
+            <mat-form-field class="example-full-width dash" appearance="fill" style="width: 1000px;">
+              <input matInput color="primary" placeholder="Street" type="text" formControlName="addressLine2">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 col-md-4 col-lg-4 flex-fill">
+           <div class="form-group mb-3">
+            <mat-label style="font-size: 20px;font-weight: bold;" for="city">City: </mat-label>
+            <mat-form-field class="example-full-width dash">
+              <input matInput type="text" placeholder="City" formControlName="city">
+            </mat-form-field>
+           </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-4 flex-fill">
+            <mat-label style="font-size: 20px;font-weight: bold;" for="state">State: </mat-label>
+            <mat-form-field class="example-full-width dash">
+              <input matInput type="text" placeholder="State" formControlName="state">
+            </mat-form-field>
+          </div>
+          <div class="col-6 col-md-4 col-lg-4 flex-fill">
+            <mat-label style="font-size: 20px;font-weight: bold;" for="zip">Pincode: </mat-label>
+            <mat-form-field class="example-full-width dash">
+              <input matInput type="text" placeholder="zipcode" formControlName="zipcode">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 col-md-4 col-lg-4 option">
+            <mat-label style="font-size: 20px;font-weight: bold;" for="type">Address type</mat-label>
+             <mat-form-field>
+              <mat-select matNativeControl required  formControlName="type">
+                <mat-option value="home">Home</mat-option>
+                <mat-option value="office">Office</mat-option>
+                <mat-option value="others">Others</mat-option>
+              </mat-select>
+             </mat-form-field>
+          </div>
+          <div class="col-6 col-md-4 col-lg-4 offset-lg-4 offset-md-4">
+            <mat-label style="font-size: 20px;font-weight: bold;" for="type">District</mat-label>
+            <mat-form-field class="example-full-width dash">
+              <input matInput type="text" placeholder="District" formControlName="district">
+            </mat-form-field>
+          </div>
+    </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <button type="button" class="btn btn-warning" >Cancel</button>
+      &nbsp; &nbsp; &nbsp;
+      <button class="btn btn-success" type="submit">Update Profile</button>
+    </div>
+  </div>
+  </form>
+</div>
   
   
 <!-- ///getdata///////// -->
-<div *ngFor="let x of profiledata">
-  <mat-label>city:{{x.city}}</mat-label>
+
+<ng-template #prompt>
+  <div  class="row"   >
+  <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">addressLine1</th>
+        <th scope="col">addressLine2</th>
+        <th scope="col"> city</th>
+        <th scope="col"> district</th>
+        <th scope="col"> state</th>
+        <th scope="col"> type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of profiledata;let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{x.addressLine1}}</td>
+        <td>{{x.addressLine2}}</td>
+        <td>{{x.city}}</td>
+        <td>{{x.district}}</td>
+        <td>{{x.state}}</td>
+        <td>{{x.type}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  </div>
+</ng-template>
+
 
 </div>
 
-</div>

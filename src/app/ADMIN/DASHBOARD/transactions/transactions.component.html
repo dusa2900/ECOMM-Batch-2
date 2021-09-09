@@ -1,49 +1,4 @@
-<!-- <section class="accordion">
-  <input type="checkbox" name="collapse" id="handle" checked="checked" >
-  <h2 class="handle"  *ngFor="let data of transactions ">
-    <label for="handle">ID:{{data.orderid}} Name:{{data.name}}</label>
-  </h2>
-  <div class="content">
-    <table class="table table-bordered">
-        <thead>
-          <tr>
-              <th scope="col">orderid</th>
-            <th scope="col">username</th>
-            <th scope="col">productimage</th>
-            <th scope="col">description</th>
-            <th scope="col">quantity</th>
-            <th scope="col">price</th>
-            <th scope="col">coupon</th>
-            <th scope="col">total</th>
-            <th scope="col">transactiontype</th>
-    
-    
-         
-          </tr>
-        </thead>
-        <tbody *ngFor="let data of transactions "> 
-          <tr >
-            <th scope="row">{{data.orderid}}</th>
-            <td>{{data.name}}</td>
-            <td>{{data.productimage}}</td>
-            <td>{{data.productdescription}}</td>
-            <td>{{data.quantity}}</td>
-            <td>{{data.price}}</td>
-            <td>{{data.coupon}}</td>
-            <td>{{data.total}}</td>
-            <td>{{data.transactiontype}}</td>
-    
-    
-         
-          </tr>
-        
-        </tbody>
-      </table>
-   
-  </div>
-</section>
 
- -->
  <ng-template #noData>
     <h3 style="margin-left: 320px;">No Data Available!!!</h3> 
    </ng-template>
@@ -54,31 +9,37 @@
  <table class="table table-bordered">
     <thead>
       <tr>
-          <th scope="col">orderid</th>
+          <th scope="col">sno</th>
+          <th scope="col">order-id</th>
         <th scope="col">username</th>
-        <th scope="col">productimage</th>
-        <th scope="col">description</th>
-        <th scope="col">quantity</th>
-        <th scope="col">price</th>
-     
+ 
         <th scope="col">transactiontype</th>
+
+        <th scope="col">Card-type</th>
+        <th scope="col">funding</th>
+        <th scope="col">price</th>
         <th scope="col">status</th>
 
 
 
      
       </tr>
+
+
     </thead>
-    <tbody *ngFor="let data of transactions "> 
+    <tbody *ngFor="let data of transactions | paginate: { itemsPerPage: 3,currentPage:p}; let i = index"> 
       <tr >
-        <th scope="row">{{data.orderid}}</th>
+        <td>{{i+1}}</td>
+        <th scope="row">{{data.orderId}}</th>
         <td>{{data.name}}</td>
-        <td><img src="{{data.productimage}}" style="width:100px;height:100px"></td>
-        <td>{{data.productdescription}}</td>
-        <td>{{data.quantity}}</td>
-        <td>{{data.price}}</td>
     
-        <td>{{data.transactiontype}}</td>
+        <td>{{data.object}}</td>
+    
+        <td>{{data.brand}}</td>
+
+        <td>{{data.funding}}</td>
+        <td>{{data.price}}</td>
+
         <td>{{data.status}}</td>
 
 
@@ -88,5 +49,5 @@
     
     </tbody>
   </table>
-
+  <pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls>
   </ng-container>

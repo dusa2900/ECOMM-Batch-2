@@ -16,22 +16,26 @@ ul li a.active{
     background-color: #74bcdb;
     color: black;
 }
-.orders{
-    min-height: 200px;
-}
-.ordered{
-    margin-left: 0 auto;
-}
-img{ 
-    height: 30vh;
-    }
-.btn{
+
+.card{
+    padding: 10px;
     margin: 10px;
+    box-shadow: black 5px;
+    text-align: center;
+}
+/* .orders{
+    min-height: 200px;
+} */
+
+
+.btn{
     text-align: center;
     height: 35px;
+    margin: 5px;
     width: 150px;
     color: white;
 }
+
 th{
     text-align: center;
 }

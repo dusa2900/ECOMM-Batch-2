@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EcommService } from 'src/app/SERVICES/ecomm.service';
-import { FormBuilder, FormControl, FormGroup, Validators,FormArray } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-userprofile',
   templateUrl: './userprofile.component.html',
@@ -9,6 +9,8 @@ import { FormBuilder, FormControl, FormGroup, Validators,FormArray } from '@angu
 export class UserprofileComponent implements OnInit {
   data: any;
   profiledata: any;
+  change:any;
+ toggle:boolean;
   constructor(private ecomm:EcommService, private fb:FormBuilder) { }
  submitted = false; 
  getProfile()
@@ -17,15 +19,6 @@ export class UserprofileComponent implements OnInit {
    {
    console.log("get profile",res);
 this.profiledata=res
-    //   this.profileForm.patchValue(
-    //    {
-    //     Name:res.Name,
-    //     email:res.email,
-    //      mobile:res.mobile,
-    //     addresses:res.addresses
-    //    }
-    //  )
-
     }
     )
    this.submitted = true;
@@ -78,9 +71,10 @@ value = this.fb.group({
     this.ecomm.postprofile(value).subscribe( (res)=>
     {
       console.log("posttt",res);
+      this.getProfile()
     });  
   
-  }
+}
 
- 
+
 }

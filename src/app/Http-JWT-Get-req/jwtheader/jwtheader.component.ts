@@ -67,6 +67,13 @@ token:any
         );
     }
 
-  
+//     if (request.url.indexOf('your api adress') === 0 && token) {
+//       request = request.clone({
+//         setHeaders: {
+//           Authorization: `Bearer ${token}`
+//         }
+//       });
+//     }
+// return request;
 }
 

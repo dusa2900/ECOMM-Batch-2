@@ -5,18 +5,23 @@
     margin: 10px;
 }
 .address{
-
-    margin-top: 48px;
     text-align: center;
-}
-
-.profile{
-float: left;
 }
 .continue{
     margin-top: 45px;
     text-align: center;
 }
 th,td{
-    padding-left: 15px;
+    padding-left: 10px;
+}
+.profile:hover{ 
+    transform: scale(1.1,1.1); 
+    text-align: center;
+  }
+.profile:hover{
+    border: solid 1px #555;
+    box-shadow:  0 0 10px  rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+    -o-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
 }

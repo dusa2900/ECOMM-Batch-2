@@ -55,7 +55,7 @@ export class AddCartComponent implements OnInit {
         incQnt(value:any){
           console.log("quantity",value.instock);
           
-          if(value.quantity != value.instock)
+          if(value.quantity != value.product.instock)
           {
             value.quantity +=1;
             this.calcCartTotal() ;

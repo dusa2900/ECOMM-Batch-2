@@ -56,7 +56,7 @@ removeAllcart(): Observable<any>{
 payment(res:any):Observable<any>{
   console.log("payment-serviceEEEEE",res);
   return this.hc.post("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/order/add",res);
-  // return this.hc.post("",res)
+  //  return this.hc.post("",res)
 // 
 }
 
@@ -69,20 +69,22 @@ getCoupons():Observable<any>
 }
 
 
-
+//orders//
 
 Orders():Observable<any>
 {
   return this.hc.get<any>("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/order/all");
 }
+
+
 //track-order
-trackorder(cartsid:any):Observable<any>{
+Trackorder(cartsid:any):Observable<any>{
   console.log("servvvvproductid",cartsid);
   
  return this.hc.get(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/trackorder/${cartsid}​​​​​​`);
 }
-CancelOrder(cartsid:any):Observable<any>
-{
+//cancel-order//
+CancelOrder(cartsid:any):Observable<any>{
   console.log("cancelorderservice",cartsid);
   return this.hc.get(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/deletecart/${cartsid}`);
 }
@@ -90,5 +92,16 @@ CancelOrder(cartsid:any):Observable<any>
 History():Observable<any>
 {
   return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/history/all")
+}
+
+userOrders():Observable<any>
+{
+  return this.hc.get("http://localhost:4000/Order");
+}
+returnOrder(cartsid:any):Observable<any>
+{
+  console.log("returnorder",cartsid);
+  
+  return this.hc.post(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/order/cancel/${cartsid}`,cartsid);
 }
 }
