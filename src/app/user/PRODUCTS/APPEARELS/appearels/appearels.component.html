@@ -1,6 +1,11 @@
+
 <div class="container">
   <div class="row">
     <h1>Mens Wear:</h1>
+    <div *ngIf="loaderservice.isLoading | async" class="loader-container">
+      <mat-spinner style="top: 0%; left: 10%; " diameter="40"></mat-spinner>
+    </div>
+    
     <ng-container *ngFor="let item of mensList">
       <div class="card col-md-3" routerLink="/products/{{item.categorys}}">
         <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
@@ -14,6 +19,10 @@
   <br>
   <div class="row">
     <h1>Womens Wear:</h1>
+    <div *ngIf="loaderservice.isLoading | async" class="loader-container">
+      <mat-spinner style="top: 0%; left: 10%; " diameter="40"></mat-spinner>
+    </div>
+    
     <ng-container *ngFor="let item of womensList">
 
       <div class="card col-md-3" routerLink="/products/{{item.categorys}}">
@@ -32,6 +41,10 @@
   <br>
   <div class="row">
     <h1>Kids Wear:</h1>
+    <div *ngIf="loaderservice.isLoading | async" class="loader-container">
+      <mat-spinner style="top: 0%; left: 10%; " diameter="40"></mat-spinner>
+    </div>
+    
     <ng-container *ngFor="let item of kidsList">
 
       <div class="card col-md-3" routerLink="/products/{{item.categorys}}">

@@ -3,13 +3,10 @@
       <a class="nav-link active" id="orders-tab" data-toggle="tab" href="#orders" role="tab" aria-controls="orders" aria-selected="true">Orders</a>
     </li>
 
-  
-    <!-- <li class="nav-item">
-      <a data-toggle="modal" data-target=".bd-example-modal-lg"><i data-feather="Trackorder">
-    </i>Trackorder</a></li> -->
+
 
     <li class="nav-item">
-      <a class="nav-link" id="History-tab" data-toggle="tab" href="#History" role="tab" aria-controls="History" aria-selected="false">History</a>
+      <a class="nav-link" id="History-tab" data-toggle="tab" (click)=history() role="tab" aria-controls="History" aria-selected="false">History</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="return-tab" data-toggle="tab" href="#return" role="tab" aria-controls="return" aria-selected="false">Return</a>
@@ -18,26 +15,32 @@
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="orders" role="tabpanel" aria-labelledby="orders-tab">
         <div class="ordered col-md-10">
+
+          <!-- <ng-container *ngFor="let y of order"> -->
+
+     
             <div class="row" *ngFor="let x of products">
              <div class="col-6 col-md-4">
-                 <img [src]="x.image">
+                 <img [src]="x.product.image">
               </div>
               <div class="col-sm-12 col-md-6 orders">
-                  <h2>{{x.title}}</h2>
-                  <p>Product Id: {{x.productid}}</p>
-                  <p>Product Id: {{x.description}}</p>
-                  <p>Price: {{x.price}}</p>
+                  <h2>{{x.product.title}}</h2>
+                  <p>Product Id: {{x.product.productid}}</p>
+                  <p>Product Id: {{x.product.description}}</p>
+                  <p>Price: {{x.product.price}}</p>
               </div>
               <div class="col-6 col-md-1">
                  <div>
-                     <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg"><i data-feather="Trackorder">
+                     <button type="button" (click)="gettrackorder(x.cartsid)" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg"><i data-feather="Trackorder">
                     </i> Track order</button>
-                     <button type="button" class="btn btn-danger"  id="History-tab" data-toggle="tab" href="#History" role="tab" aria-controls="History" aria-selected="false"> Cancel order</button>
+                     <button type="button" class="btn btn-danger"  id="History-tab" data-toggle="tab" (click)=cancelorder(x.cartsid) role="tab" aria-controls="History" aria-selected="false"> Cancel order</button>
                      <button  type="button" class="btn btn-warning" 
                      [disabled] > Return</button>
                    </div>
               </div>
             </div>
+
+          <!-- </ng-container> -->
             <hr>
         </div>
     </div>
@@ -46,43 +49,27 @@
             <table class="table">
                 <thead>
                     <tr>
-                      <th scope="col">Product</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Choose to</th>
+                      <th scope="col">title</th>
+                      <th scope="col">image</th>
+                      <th scope="col">status</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr  *ngFor="let x of orders">
+                    <tr  *ngFor="let x of historydata">
+                      <td> {{x.title}}</td>
                       <td><img [src]="x.image" style="max-width: 40px; max-height: 35px;">
-                            {{x.productName}}</td>
-                      <td>{{x.status}}success</td>
+                           </td>
+                           
+                      <td>{{x.status}}</td>
+
                       <td><button type="button" class="btn btn-success">Re-order</button></td>
                     </tr>
                   </tbody>
             </table>
           </div>
     </div>
-<!-- ////trackorder// -->
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-aria-hidden="true">
-<div class="modal-dialog modal-xl">
-  <div class="modal-content">
 
-    <div class="progresses py-4">
-      <ul class="d-flex align-items-center justify-content-between">
-          <li id="step-1"  [style.background-color]="bgcolor1"></li>
-          <li id="step-2"   [style.background-color]="bgcolor2"></li>
-          <li id="step-3" [style.background-color]="bgcolor3"></li>
-          <li id="step-4"  [style.background-color]="bgcolor4"></li>
-      </ul>
-      <div class="progress">
-          <div class="progress-bar" role="progressbar" [style.width]="width" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-  </div>
 
-  </div>
-</div>
-</div>
 
     <!-- //return-order// -->
 
@@ -135,3 +122,25 @@ aria-hidden="true">
     
     </div>
   </div>
+
+  <!-- ////trackorder// -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-xl">
+  <div class="modal-content">
+
+    <div class="progresses py-4">
+      <ul class="d-flex align-items-center justify-content-between">
+          <li id="step-1"  [style.background-color]="bgcolor1"></li>
+          <li id="step-2"   [style.background-color]="bgcolor2"></li>
+          <li id="step-3" [style.background-color]="bgcolor3"></li>
+          <li id="step-4"  [style.background-color]="bgcolor4"></li>
+      </ul>
+      <div class="progress">
+          <div class="progress-bar" role="progressbar" [style.width]="width" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+  </div>
+
+  </div>
+</div>
+</div>

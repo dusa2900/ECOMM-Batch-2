@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoaderService } from 'src/app/SERVICES/loader.service';
 import { ProductsService } from 'src/app/SERVICES/products.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class AppearelsComponent implements OnInit {
   mensList:any=[];
   womensList:any=[];
   kidsList:any=[];
-  constructor(private ps:ProductsService) { }
+  constructor(private ps:ProductsService,public loaderservice:LoaderService) { }
 
   ngOnInit() {
 

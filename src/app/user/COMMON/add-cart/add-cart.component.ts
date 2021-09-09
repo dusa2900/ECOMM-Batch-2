@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/SERVICES/cart.service';
+import { LoaderService } from 'src/app/SERVICES/loader.service';
 import { LoginAuthService } from 'src/app/SERVICES/login.auth.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class AddCartComponent implements OnInit {
 
 
   public products:any;
-  constructor(private cart:CartService,private login:LoginAuthService,private router: Router) { }
+  constructor(private cart:CartService,private login:LoginAuthService,private router: Router,public loaderservice:LoaderService) { }
 
   
   ngOnInit() {

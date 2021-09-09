@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/SERVICES/products.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { LoaderService } from 'src/app/SERVICES/loader.service';
 @Component({
   selector: 'app-electronics',
   templateUrl: './electronics.component.html',
@@ -19,7 +20,7 @@ export class ElectronicsComponent implements OnInit {
 
   // isCategoryTypeList:boolean=true;
 
-  constructor(private ps:ProductsService) { }
+  constructor(private ps:ProductsService,public loaderservice:LoaderService) { }
 
   ngOnInit() {
  

@@ -8,6 +8,10 @@
 
 
     <div class="row"> <h1>Laptops:</h1>
+      <div *ngIf="loaderservice.isLoading | async" class="loader-container">
+        <mat-spinner style="top: 0%; left: 10%; " diameter="40"></mat-spinner>
+      </div>
+      
         <ng-container *ngFor="let item of laptopList">
             <!-- <div class="card col-md-3" (click)="onClick(item.category)"> -->
           
@@ -31,6 +35,10 @@
     </div>
     <br>
     <div class="row"> <h1>Mobiles:</h1>
+      <div *ngIf="loaderservice.isLoading | async" class="loader-container">
+        <mat-spinner style="top: 0%; left: 10%; " diameter="40"></mat-spinner>
+      </div>
+      
       <ng-container *ngFor="let item of mobileList">
           <!-- <div class="card col-md-3" (click)="onClick(item.category)"> -->
               <div class="card col-md-3" routerLink="/products/{{item.categorys}}" >
@@ -46,6 +54,10 @@
   </div>
   <br>
   <div class="row"> <h1>Home Appliances:</h1>
+    <div *ngIf="loaderservice.isLoading | async" class="loader-container">
+      <mat-spinner style="top: 0%; left: 10%; " diameter="40"></mat-spinner>
+    </div>
+    
     <ng-container *ngFor="let item of homeappliancesList">
         <!-- <div class="card col-md-3" (click)="onClick(item.category)"> -->
             <div class="card col-md-3" routerLink="/products/{{item.categorys}}" >

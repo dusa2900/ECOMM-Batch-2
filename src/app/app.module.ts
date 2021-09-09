@@ -14,8 +14,11 @@ import { ForbiddenComponent } from './unauth-forbidden/forbidden/forbidden.compo
 import { UserGuard } from './Auth/user.guard';
 import { LoginAuthService } from './SERVICES/login.auth.service';
 import { PagenotfoundComponent } from './unauth-forbidden/pagenotfound/pagenotfound.component';
-// import { BredcrumbComponent } from './BREDCRUMB/bredcrumb/bredcrumb.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import {​​​​​​ MatProgressSpinnerModule }​​​​​​ from'@angular/material/progress-spinner';
+import {​​​​​​ InterceptorService }​​​​​​ from'./SERVICES/interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -26,10 +29,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     // BredcrumbComponent,
   ],
   imports: [
-    BrowserModule,ToastrModule.forRoot(),NgxPaginationModule,
+    BrowserModule,ToastrModule.forRoot(),NgxPaginationModule,MatProgressSpinnerModule,
     AppRoutingModule,HttpClientModule,AngmaterialModule, BrowserAnimationsModule, NgbModule
   ],
-  providers: [AuthGuard,EcommService,  UserGuard,LoginAuthService, {provide: HTTP_INTERCEPTORS, useClass: JwtheaderComponent, multi: true},],
+  providers: [AuthGuard,EcommService, UserGuard,LoginAuthService, {provide: HTTP_INTERCEPTORS, useClass: JwtheaderComponent, multi: true},{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

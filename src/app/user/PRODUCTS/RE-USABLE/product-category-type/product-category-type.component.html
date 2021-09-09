@@ -6,6 +6,9 @@
 
 <div class="container" >
 <br>
+<div *ngIf="loaderservice.isLoading | async" class="loader-container">
+    <mat-spinner style="top: 0%; left: 10%; " diameter="40"></mat-spinner>
+  </div>
     <select (change)="filterall($event)" [(ngModel)]="pricetype">
         <option>All</option>
         <option>A-Z</option>

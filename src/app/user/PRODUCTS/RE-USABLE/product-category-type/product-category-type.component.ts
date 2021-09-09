@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/SERVICES/products.service';
 import { SortPipe } from '../../../../PIPES/sort.pipe';
 import { product } from '../../../../MODEL/model';
+import { LoaderService } from 'src/app/SERVICES/loader.service';
 @Component({
   selector: 'app-product-category-type',
   templateUrl: './product-category-type.component.html',
@@ -12,7 +13,7 @@ export class ProductCategoryTypeComponent implements OnInit {
   categorys:any;
   selected:any=[];
   pricetype: string="All";
-    constructor(private route:ActivatedRoute, private ps:ProductsService) {
+    constructor(private route:ActivatedRoute, private ps:ProductsService,public loaderservice:LoaderService) {
     
       this.route.params.subscribe( params =>
        {

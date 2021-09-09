@@ -72,22 +72,12 @@ postreturnorder(value:any):Observable<any>{
   
 }
 
-//addd-to-cart///
-    // addcart(data:any):Observable<any>{
-    //   console.log("add service",data);
-    //   const userPhoneNumber:any = sessionStorage.getItem('mobilenumber');
-    //   console.log("forgotpassword user-number",userPhoneNumber);
-  
-    //   const params = new HttpParams().append('mobilenumber', userPhoneNumber );
-    //   return this.hc.post("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/cart/cart/add",{params})
-    // }
-  
-      
+
     ////SecondNavbar List function////
-    getSecondNavbar():Observable<any>
-    {
-      return this.hc.get("http://localhost:4000/secondNavbar/")
-    }
+    // getSecondNavbar():Observable<any>
+    // {
+    //   return this.hc.get("http://localhost:4000/secondNavbar/")
+    // }
     
  
 }

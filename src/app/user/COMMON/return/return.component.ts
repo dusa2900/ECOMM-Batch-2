@@ -3,6 +3,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductsService } from 'src/app/SERVICES/products.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { CartService } from 'src/app/SERVICES/cart.service';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-return',
   templateUrl: './return.component.html',
@@ -19,7 +20,9 @@ export class ReturnComponent implements OnInit {
   adminReturn: boolean=true;
   commentForm:any
   products: any[]=[];
-  constructor(private cs:CartService,private formbuilder:FormBuilder) { 
+  dataid: any;
+  historydata: any;
+  constructor(private cs:CartService,private formbuilder:FormBuilder,private hc:HttpClient) { 
     this.commentForm=this.formbuilder.group({
       reason:['',[Validators.required,Validators.minLength(10)]],
       status:['',[Validators.required]],
@@ -66,18 +69,51 @@ export class ReturnComponent implements OnInit {
   
 }
 
+gettrackorder(cartsid:any){
+ 
+  
+  this.cs.trackorder(cartsid).subscribe(res=>{ 
+    console.log("trackorder",res);
+  })
+
+}
+cancelorder(cartsid:any){
+ 
+  
+  this.cs.CancelOrder(cartsid).subscribe(res=>{ 
+    console.log("CancelOrder",res);
+  })
+
+}
+
+history(){
+ 
+  
+  this.cs.History().subscribe(res=>{ 
+    this.historydata=res
+    console.log("historydata",res);
+  })
+
+}
+
   ngOnInit(){
     // this.fun()
+this.history()
+
     this.cs.Orders().subscribe(res=>
       {
         this.order=res;
-        res.map((item:any) => {
+      
+        this.order.map((item:any) => {
+
+          console.log("orderid",item.orderId);
 
 
-  item.paycartS.map((item:any) => {
+  item.paycartS.map((item1:any) => {
 
-    // this.products=item.product
-    this.products.push(item.product)
+console.log("idd",item1);
+
+    this.products.push(item1)
     console.log("item",this.products);
 
 
@@ -93,9 +129,7 @@ export class ReturnComponent implements OnInit {
       }
       )
 
-      // this.cs.getOrders().subscribe(res=>{
-      //   this.orders=res
-      // })
+  
 // this.onReturn()
 
     }

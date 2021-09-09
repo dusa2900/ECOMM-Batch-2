@@ -69,30 +69,26 @@ getCoupons():Observable<any>
 }
 
 
-///Return and  Order function////
 
-// checkout payment Data
-// CheckOutData(item:any):Observable<any>
-// {
-//   return this.hc.post("http://localhost:4000/Orders",item);
-// }
 
 Orders():Observable<any>
 {
   return this.hc.get<any>("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/order/all");
 }
-
-CancelOrder(item:any):Observable<any>
-{
-  //console.log("cancelorder",item);
-  return this.hc.delete(`http://localhost:4000/Orders/${item.id}`);
+//track-order
+trackorder(cartsid:any):Observable<any>{
+  console.log("servvvvproductid",cartsid);
+  
+ return this.hc.get(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/trackorder/${cartsid}​​​​​​`);
 }
-// PostOrder(item:any):Observable<any>
-// {
-//   return this.hc.post("http://localhost:4000/History",item)
-// }
-// History():Observable<any>
-// {
-//   return this.hc.get("http://localhost:4000/History")
-// }
+CancelOrder(cartsid:any):Observable<any>
+{
+  console.log("cancelorderservice",cartsid);
+  return this.hc.get(`http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/deletecart/${cartsid}`);
+}
+
+History():Observable<any>
+{
+  return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/api/history/all")
+}
 }

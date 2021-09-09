@@ -30,7 +30,7 @@ export class AdminService {
     return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/userData/userRestPwdDetails")
   }
   transactions():Observable<any>{
-    return this.hc.get("http://localhost:4000/transactions")
+    return this.hc.get("http://ec2-54-172-210-123.compute-1.amazonaws.com:8080/tokenbased-0.0.1-SNAPSHOT/transaction/sendTransactionData")
   }
   getorders():Observable<any>{
     return this.hc.get("http://localhost:4000/Return")

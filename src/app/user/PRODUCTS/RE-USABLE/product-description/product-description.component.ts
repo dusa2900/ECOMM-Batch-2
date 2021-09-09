@@ -5,6 +5,7 @@ import { NgxImgZoomService } from "ngx-img-zoom";
 import { CartService } from 'src/app/SERVICES/cart.service';
 import { LoginAuthService } from 'src/app/SERVICES/login.auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { LoaderService } from 'src/app/SERVICES/loader.service';
 @Component({
   selector: 'app-product-description',
   templateUrl: './product-description.component.html',
@@ -22,7 +23,7 @@ export class ProductDescriptionComponent implements OnInit {
   form: any;
   hint: any;
   rate: number;
-  constructor(private route: ActivatedRoute, private fb: FormBuilder, private _route: Router, private ps: ProductsService, private cart: CartService, private loginauth: LoginAuthService) {
+  constructor(private route: ActivatedRoute,public loaderservice:LoaderService, private fb: FormBuilder, private _route: Router, private ps: ProductsService, private cart: CartService, private loginauth: LoginAuthService) {
 
     this.route.params.subscribe(
       params => this.productid = params['productid']);
